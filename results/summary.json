@@ -1,0 +1,302 @@
+{
+  "metrics": {
+    "n_cves": 15,
+    "ccdr_hits": 2,
+    "cdr_hits": 4,
+    "CCDR": 0.133,
+    "CDR": 0.267,
+    "detection_gap": 0.133,
+    "CCDR_pct": "13%",
+    "CDR_pct": "27%",
+    "interpretation": "Per-commit SAST detected 2/15 CVEs (13%). Cumulative SAST detected 4/15 CVEs (27%). Detection gap = 13%.",
+    "commit_span_days": {
+      "min": 21,
+      "max": 1342,
+      "mean": 244.8,
+      "median": 58
+    },
+    "severity_distribution": {
+      "critical": 9,
+      "high": 6
+    },
+    "by_cwe": {
+      "CWE-1336": {
+        "n": 1,
+        "CCDR": 0.0,
+        "CDR": 1.0
+      },
+      "CWE-20": {
+        "n": 1,
+        "CCDR": 0.0,
+        "CDR": 0.0
+      },
+      "CWE-203": {
+        "n": 1,
+        "CCDR": 0.0,
+        "CDR": 1.0
+      },
+      "CWE-22": {
+        "n": 3,
+        "CCDR": 0.0,
+        "CDR": 0.0
+      },
+      "CWE-306": {
+        "n": 1,
+        "CCDR": 1.0,
+        "CDR": 1.0
+      },
+      "CWE-321": {
+        "n": 1,
+        "CCDR": 1.0,
+        "CDR": 1.0
+      },
+      "CWE-327": {
+        "n": 1,
+        "CCDR": 0.0,
+        "CDR": 1.0
+      },
+      "CWE-345": {
+        "n": 1,
+        "CCDR": 0.0,
+        "CDR": 0.0
+      },
+      "CWE-502": {
+        "n": 1,
+        "CCDR": 0.0,
+        "CDR": 0.0
+      },
+      "CWE-693": {
+        "n": 1,
+        "CCDR": 0.0,
+        "CDR": 0.0
+      },
+      "CWE-73": {
+        "n": 1,
+        "CCDR": 0.0,
+        "CDR": 0.0
+      },
+      "CWE-78": {
+        "n": 1,
+        "CCDR": 0.0,
+        "CDR": 0.0
+      },
+      "CWE-79": {
+        "n": 1,
+        "CCDR": 0.0,
+        "CDR": 0.0
+      },
+      "CWE-798": {
+        "n": 1,
+        "CCDR": 0.0,
+        "CDR": 0.0
+      },
+      "CWE-94": {
+        "n": 4,
+        "CCDR": 0.25,
+        "CDR": 0.5
+      },
+      "CWE-943": {
+        "n": 1,
+        "CCDR": 0.0,
+        "CDR": 0.0
+      }
+    }
+  },
+  "per_cve": [
+    {
+      "cve_id": "CVE-2025-10155",
+      "repo": "mmaitre314/picklescan",
+      "cwe_ids": "CWE-20|CWE-693",
+      "severity": "critical",
+      "n_contributing": 6,
+      "commit_span_days": 1087,
+      "ccdr_this_cve": false,
+      "cdr_this_cve": false,
+      "per_commit_result": "missed",
+      "cumulative_result": "missed",
+      "annotation_status": "complete+sast"
+    },
+    {
+      "cve_id": "CVE-2025-10283",
+      "repo": "blacklanternsecurity/bbot",
+      "cwe_ids": "CWE-22",
+      "severity": "critical",
+      "n_contributing": 3,
+      "commit_span_days": 195,
+      "ccdr_this_cve": false,
+      "cdr_this_cve": false,
+      "per_commit_result": "missed",
+      "cumulative_result": "missed",
+      "annotation_status": "complete+sast"
+    },
+    {
+      "cve_id": "CVE-2025-46724",
+      "repo": "langroid/langroid",
+      "cwe_ids": "CWE-94",
+      "severity": "critical",
+      "n_contributing": 3,
+      "commit_span_days": 21,
+      "ccdr_this_cve": true,
+      "cdr_this_cve": true,
+      "per_commit_result": "CAUGHT",
+      "cumulative_result": "CAUGHT",
+      "annotation_status": "complete+sast"
+    },
+    {
+      "cve_id": "CVE-2025-5120",
+      "repo": "huggingface/smolagents",
+      "cwe_ids": "CWE-94",
+      "severity": "critical",
+      "n_contributing": 3,
+      "commit_span_days": 41,
+      "ccdr_this_cve": false,
+      "cdr_this_cve": false,
+      "per_commit_result": "missed",
+      "cumulative_result": "missed",
+      "annotation_status": "complete+sast"
+    },
+    {
+      "cve_id": "CVE-2025-55449",
+      "repo": "AstrBotDevs/AstrBot",
+      "cwe_ids": "CWE-345|CWE-798",
+      "severity": "critical",
+      "n_contributing": 3,
+      "commit_span_days": 58,
+      "ccdr_this_cve": false,
+      "cdr_this_cve": false,
+      "per_commit_result": "missed",
+      "cumulative_result": "missed",
+      "annotation_status": "complete+sast"
+    },
+    {
+      "cve_id": "CVE-2025-61622",
+      "repo": "apache/fory",
+      "cwe_ids": "CWE-502",
+      "severity": "critical",
+      "n_contributing": 4,
+      "commit_span_days": 31,
+      "ccdr_this_cve": false,
+      "cdr_this_cve": false,
+      "per_commit_result": "missed",
+      "cumulative_result": "missed",
+      "annotation_status": "complete+sast"
+    },
+    {
+      "cve_id": "CVE-2026-22584",
+      "repo": "SalesforceAIResearch/uni2ts",
+      "cwe_ids": "CWE-94",
+      "severity": "critical",
+      "n_contributing": 3,
+      "commit_span_days": 238,
+      "ccdr_this_cve": false,
+      "cdr_this_cve": false,
+      "per_commit_result": "missed",
+      "cumulative_result": "missed",
+      "annotation_status": "complete+sast"
+    },
+    {
+      "cve_id": "CVE-2026-2472",
+      "repo": "googleapis/python-aiplatform",
+      "cwe_ids": "CWE-79",
+      "severity": "high",
+      "n_contributing": 3,
+      "commit_span_days": 37,
+      "ccdr_this_cve": false,
+      "cdr_this_cve": false,
+      "per_commit_result": "missed",
+      "cumulative_result": "missed",
+      "annotation_status": "complete+sast"
+    },
+    {
+      "cve_id": "CVE-2026-25505",
+      "repo": "maziggy/bambuddy",
+      "cwe_ids": "CWE-306|CWE-321",
+      "severity": "critical",
+      "n_contributing": 4,
+      "commit_span_days": 63,
+      "ccdr_this_cve": true,
+      "cdr_this_cve": true,
+      "per_commit_result": "CAUGHT",
+      "cumulative_result": "CAUGHT",
+      "annotation_status": "complete+sast"
+    },
+    {
+      "cve_id": "CVE-2026-27602",
+      "repo": "modoboa/modoboa",
+      "cwe_ids": "CWE-78",
+      "severity": "high",
+      "n_contributing": 2,
+      "commit_span_days": 313,
+      "ccdr_this_cve": false,
+      "cdr_this_cve": false,
+      "per_commit_result": "missed",
+      "cumulative_result": "missed",
+      "annotation_status": "complete+sast"
+    },
+    {
+      "cve_id": "CVE-2026-27825",
+      "repo": "sooperset/mcp-atlassian",
+      "cwe_ids": "CWE-22|CWE-73",
+      "severity": "critical",
+      "n_contributing": 5,
+      "commit_span_days": 57,
+      "ccdr_this_cve": false,
+      "cdr_this_cve": false,
+      "per_commit_result": "missed",
+      "cumulative_result": "missed",
+      "annotation_status": "complete+sast"
+    },
+    {
+      "cve_id": "CVE-2026-28490",
+      "repo": "authlib/authlib",
+      "cwe_ids": "CWE-203|CWE-327",
+      "severity": "high",
+      "n_contributing": 2,
+      "commit_span_days": 1342,
+      "ccdr_this_cve": false,
+      "cdr_this_cve": true,
+      "per_commit_result": "missed",
+      "cumulative_result": "CAUGHT",
+      "annotation_status": "complete+sast"
+    },
+    {
+      "cve_id": "CVE-2026-29065",
+      "repo": "dgtlmoon/changedetection.io",
+      "cwe_ids": "CWE-22",
+      "severity": "high",
+      "n_contributing": 2,
+      "commit_span_days": 21,
+      "ccdr_this_cve": false,
+      "cdr_this_cve": false,
+      "per_commit_result": "missed",
+      "cumulative_result": "missed",
+      "annotation_status": "complete+sast"
+    },
+    {
+      "cve_id": "CVE-2026-32247",
+      "repo": "getzep/graphiti",
+      "cwe_ids": "CWE-943",
+      "severity": "high",
+      "n_contributing": 2,
+      "commit_span_days": 25,
+      "ccdr_this_cve": false,
+      "cdr_this_cve": false,
+      "per_commit_result": "missed",
+      "cumulative_result": "missed",
+      "annotation_status": "complete+sast"
+    },
+    {
+      "cve_id": "CVE-2026-33154",
+      "repo": "dynaconf/dynaconf",
+      "cwe_ids": "CWE-94|CWE-1336",
+      "severity": "high",
+      "n_contributing": 2,
+      "commit_span_days": 143,
+      "ccdr_this_cve": false,
+      "cdr_this_cve": true,
+      "per_commit_result": "missed",
+      "cumulative_result": "CAUGHT",
+      "annotation_status": "complete+sast"
+    }
+  ]
+}

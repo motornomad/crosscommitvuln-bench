@@ -1,0 +1,16 @@
+cve_id,repo,cwe_ids,severity,n_contributing,commit_span_days,ccdr_this_cve,cdr_this_cve,per_commit_result,cumulative_result,annotation_status
+CVE-2025-10155,mmaitre314/picklescan,CWE-20|CWE-693,critical,6,1087,False,False,missed,missed,complete+sast
+CVE-2025-10283,blacklanternsecurity/bbot,CWE-22,critical,3,195,False,False,missed,missed,complete+sast
+CVE-2025-46724,langroid/langroid,CWE-94,critical,3,21,True,True,CAUGHT,CAUGHT,complete+sast
+CVE-2025-5120,huggingface/smolagents,CWE-94,critical,3,41,False,False,missed,missed,complete+sast
+CVE-2025-55449,AstrBotDevs/AstrBot,CWE-345|CWE-798,critical,3,58,False,False,missed,missed,complete+sast
+CVE-2025-61622,apache/fory,CWE-502,critical,4,31,False,False,missed,missed,complete+sast
+CVE-2026-22584,SalesforceAIResearch/uni2ts,CWE-94,critical,3,238,False,False,missed,missed,complete+sast
+CVE-2026-2472,googleapis/python-aiplatform,CWE-79,high,3,37,False,False,missed,missed,complete+sast
+CVE-2026-25505,maziggy/bambuddy,CWE-306|CWE-321,critical,4,63,True,True,CAUGHT,CAUGHT,complete+sast
+CVE-2026-27602,modoboa/modoboa,CWE-78,high,2,313,False,False,missed,missed,complete+sast
+CVE-2026-27825,sooperset/mcp-atlassian,CWE-22|CWE-73,critical,5,57,False,False,missed,missed,complete+sast
+CVE-2026-28490,authlib/authlib,CWE-203|CWE-327,high,2,1342,False,True,missed,CAUGHT,complete+sast
+CVE-2026-29065,dgtlmoon/changedetection.io,CWE-22,high,2,21,False,False,missed,missed,complete+sast
+CVE-2026-32247,getzep/graphiti,CWE-943,high,2,25,False,False,missed,missed,complete+sast
+CVE-2026-33154,dynaconf/dynaconf,CWE-94|CWE-1336,high,2,143,False,True,missed,CAUGHT,complete+sast
