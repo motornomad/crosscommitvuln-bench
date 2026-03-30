@@ -2,6 +2,9 @@
 AGENT_HANDOFF.md
 ZENODO_PREP.md
 
+images/
+paper/
+
 # LaTeX build artifacts
 paper/*.aux
 paper/*.log
