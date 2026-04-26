@@ -6,6 +6,8 @@ static analysis — but collectively critical.
 
 **Dataset:** [10.5281/zenodo.19338596](https://doi.org/10.5281/zenodo.19338596) | **Paper:** [arXiv:2604.21917](https://arxiv.org/abs/2604.21917)
 
+> Accepted at **AIWare 2026** — 3rd ACM International Conference on AI-Powered Software, Montreal, July 6–7 2026.
+
 ---
 
 ## Core finding
