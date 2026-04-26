@@ -4,7 +4,7 @@ A curated benchmark of 15 real-world Python CVEs in which the exploitable condit
 was introduced across **multiple commits** — each individually benign to per-commit
 static analysis — but collectively critical.
 
-**Dataset:** [10.5281/zenodo.19338596](https://doi.org/10.5281/zenodo.19338596) | **Paper:** coming soon
+**Dataset:** [10.5281/zenodo.19338596](https://doi.org/10.5281/zenodo.19338596) | **Paper:** [arXiv:2604.21917](https://arxiv.org/abs/2604.21917)
 
 ---
 
