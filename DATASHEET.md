@@ -36,9 +36,12 @@ Each instance is a real-world Python CVE (Common Vulnerability and Exposure) in 
 
 **How many instances are there?**
 
-- **15 complete+sast** instances (all five annotation criteria met; SAST baselines run).
-- **6 SKIP** instances (negative examples: selection criteria not met, retained with documented rationale).
-- Total: 21 annotated candidates.
+- **50 complete+sast** instances (SAST baselines run; 15 with full chain annotation, 35 with skeleton chain descriptions pending human review).
+- **5 SKIP** instances (negative examples: selection criteria not met, retained with documented rationale).
+- **10 skeleton** instances (archaeology done, awaiting human chain annotation).
+- Total: 66 annotated candidates.
+
+*The published AIware 2026 paper reports results on the initial 15 complete+sast CVEs (CCDR=13%, CDR=27%). The remaining 35 are post-publication extensions targeting MSR 2027.*
 
 **Does the dataset contain all possible instances or a sample?**
 

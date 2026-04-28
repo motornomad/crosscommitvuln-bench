@@ -33,7 +33,16 @@ missing the primary vulnerability entirely. Practical CCDR ≈ 0%.
 
 ## Dataset
 
-15 annotated CVEs + 6 negative examples (excluded with documented rationale):
+**Published paper set:** 15 annotated CVEs + 6 negative examples (excluded with documented rationale).
+
+**Extended dataset (post-publication, MSR 2027 target):** 55 complete+sast CVEs total.
+The 40 additional entries follow the same annotation schema and SAST pipeline; vulnerability chain
+descriptions are pending human review. All 15 most recent additions scored CCDR=0%/CDR=0%,
+consistent with the paper's core finding.
+
+---
+
+### Paper set (15 CVEs)
 
 | CVE | Repo | CWE | Severity | Span |
 |---|---|---|---|---|

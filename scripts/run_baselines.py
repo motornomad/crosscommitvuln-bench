@@ -34,14 +34,20 @@ import sys
 import tempfile
 from pathlib import Path
 
+try:
+    from picklescan.scanner import scan_directory_path as _picklescan_dir
+    PICKLESCAN_AVAILABLE = True
+except ImportError:
+    PICKLESCAN_AVAILABLE = False
+
 ROOT = Path(__file__).parent.parent
 DATASET = ROOT / "dataset"
 RESULTS = ROOT / "results"
 RESULTS.mkdir(exist_ok=True)
 
-SEMGREP = "/home/arunabh_majumdar/postura/.venv/bin/semgrep"
-BANDIT = "/home/arunabh_majumdar/postura/.venv/bin/bandit"
-PYTHON = "/home/arunabh_majumdar/postura/.venv/bin/python"
+SEMGREP = "/home/arunabh/.local/bin/semgrep"
+BANDIT = "/home/arunabh/.local/bin/bandit"
+PYTHON = "/usr/bin/python3"
 
 # ── SAST runners ─────────────────────────────────────────────────────────────
 
@@ -117,6 +123,29 @@ def run_bandit(repo_dir: str, timeout: int = 120) -> list[dict]:
         return [{"error": str(e)}]
 
 
+def run_picklescan(repo_dir: str) -> list[dict]:
+    """
+    Run picklescan on repo_dir — detects malicious opcodes in .pkl/.pickle files.
+    Relevant for CWE-502 (unsafe deserialization) CVEs that commit model/data files.
+    Returns list of finding dicts per malicious file found.
+    """
+    if not PICKLESCAN_AVAILABLE:
+        return [{"error": "picklescan not installed"}]
+    try:
+        result = _picklescan_dir(repo_dir)
+        findings = []
+        for scan_result in (result.infected_files or []):
+            findings.append({
+                "tool": "picklescan",
+                "path": str(scan_result.path),
+                "issues": [str(i) for i in (scan_result.issues or [])],
+                "severity": "HIGH",
+            })
+        return findings
+    except Exception as e:
+        return [{"error": f"picklescan: {e}"}]
+
+
 # ── Relevance classifier ──────────────────────────────────────────────────────
 
 def is_relevant_finding(finding: dict, cve: dict) -> bool:
@@ -150,6 +179,11 @@ def is_relevant_finding(finding: dict, cve: dict) -> bool:
         "327": {"B303", "B304", "B305", "B413"},
         # Missing auth
         "306": {"B105", "B106"},
+        # Unsafe deserialization (pickle)
+        "502": {"B301", "B302", "B403"},
+        "913": {"B301", "B302", "B403"},
+        # Memory exhaustion via unsafe deserialization
+        "400": {"B301", "B302"},
     }
 
     # Semgrep rule keyword hints (rule_id substring match)
@@ -162,6 +196,9 @@ def is_relevant_finding(finding: dict, cve: dict) -> bool:
         "1336":["template-injection", "jinja"],
         "327": ["weak-crypto", "rsa1", "pkcs1"],
         "306": ["missing-auth", "authentication"],
+        "502": ["pickle", "deserialization", "unsafe-deserialization"],
+        "913": ["pickle", "deserialization"],
+        "400": ["pickle", "deserialization"],
     }
 
     test_id = (finding.get("test_id") or "").upper()
@@ -169,6 +206,14 @@ def is_relevant_finding(finding: dict, cve: dict) -> bool:
     path = (finding.get("path") or finding.get("filename") or "")
     sev = (finding.get("severity") or "").upper()
     conf = (finding.get("confidence") or "").upper()
+    tool = (finding.get("tool") or "").lower()
+
+    # picklescan finding: always relevant for CWE-502/913/400
+    if tool == "picklescan":
+        pickle_cwes = {"502", "913", "400"}
+        if any(c in pickle_cwes for c in cwe_ids):
+            return True
+        return False
 
     # Must be at least MEDIUM confidence for bandit
     if test_id and conf == "LOW":
@@ -204,8 +249,9 @@ def scan_commit(
     print(f"    [{label}] {commit_sha[:8]}...", flush=True)
     if dry_run:
         return {"label": label, "sha": commit_sha[:8], "dry_run": True,
-                "semgrep": [], "bandit": [], "relevant_semgrep": [],
-                "relevant_bandit": [], "any_relevant": False}
+                "semgrep": [], "bandit": [], "picklescan": [],
+                "relevant_semgrep": [], "relevant_bandit": [], "relevant_picklescan": [],
+                "any_relevant": False}
 
     # Checkout the commit
     r = subprocess.run(
@@ -215,33 +261,41 @@ def scan_commit(
     if r.returncode != 0:
         print(f"      checkout failed: {r.stderr.strip()[:100]}", flush=True)
         return {"label": label, "sha": commit_sha[:8], "error": "checkout_failed",
-                "semgrep": [], "bandit": [], "relevant_semgrep": [],
-                "relevant_bandit": [], "any_relevant": False}
+                "semgrep": [], "bandit": [], "picklescan": [],
+                "relevant_semgrep": [], "relevant_bandit": [], "relevant_picklescan": [],
+                "any_relevant": False}
 
     # Run SAST tools
     semgrep_findings = run_semgrep(tmpdir)
     bandit_findings = run_bandit(tmpdir)
+    picklescan_findings = run_picklescan(tmpdir)
 
     relevant_semgrep = [f for f in semgrep_findings if is_relevant_finding(f, cve)]
     relevant_bandit = [f for f in bandit_findings if is_relevant_finding(f, cve)]
-    any_relevant = bool(relevant_semgrep or relevant_bandit)
+    relevant_picklescan = [f for f in picklescan_findings if is_relevant_finding(f, cve)]
+    any_relevant = bool(relevant_semgrep or relevant_bandit or relevant_picklescan)
 
     total_s = len([f for f in semgrep_findings if "error" not in f])
     total_b = len([f for f in bandit_findings if "error" not in f])
+    total_p = len([f for f in picklescan_findings if "error" not in f])
     rel_s = len(relevant_semgrep)
     rel_b = len(relevant_bandit)
+    rel_p = len(relevant_picklescan)
 
     flag = "⚠ RELEVANT FINDING" if any_relevant else "✓ no relevant findings"
     print(f"      semgrep: {total_s} total, {rel_s} relevant | "
-          f"bandit: {total_b} total, {rel_b} relevant  {flag}", flush=True)
+          f"bandit: {total_b} total, {rel_b} relevant | "
+          f"picklescan: {total_p} total, {rel_p} relevant  {flag}", flush=True)
 
     return {
         "label": label,
         "sha": commit_sha[:8],
         "semgrep_total": total_s,
         "bandit_total": total_b,
+        "picklescan_total": total_p,
         "relevant_semgrep": relevant_semgrep,
         "relevant_bandit": relevant_bandit,
+        "relevant_picklescan": relevant_picklescan,
         "any_relevant": any_relevant,
     }
 
@@ -327,6 +381,7 @@ def evaluate_cve(annotation_path: Path, dry_run: bool = False) -> dict:
                     scan = result["per_commit_scans"][i]
                     commit["semgrep_findings"] = scan.get("relevant_semgrep", [])
                     commit["bandit_findings"] = scan.get("relevant_bandit", [])
+                    commit["picklescan_findings"] = scan.get("relevant_picklescan", [])
                     commit["sast_flagged_relevant"] = scan.get("any_relevant", False)
             annotation["cumulative_scan"] = cumulative
             annotation["ccdr_this_cve"] = result["ccdr_this_cve"]

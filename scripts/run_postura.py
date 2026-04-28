@@ -28,8 +28,10 @@ from pathlib import Path
 from dataclasses import asdict
 
 # ── POSTURA on path ───────────────────────────────────────────────────────────
-POSTURA_SRC = Path("/home/arunabh_majumdar/postura/src")
-sys.path.insert(0, str(POSTURA_SRC))
+for _p in ["/root/postura/src", "/home/arunabh_majumdar/postura/src"]:
+    if Path(_p).exists():
+        sys.path.insert(0, _p)
+        break
 
 from postura.ingest.ast_parser import parse_file                     # noqa: E402
 from postura.models.ingest import TaintFlow, ASTNode, CallEdge       # noqa: E402

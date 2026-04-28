@@ -223,6 +223,34 @@ def build_annotation(candidate: dict, key_commits: list[dict], repo_dir: str) ->
 
 # ── main archaeology function ─────────────────────────────────────────────────
 
+def deep_log_trace(repo_dir: str, files: list[dict], fix_sha: str, max_commits: int = 30) -> list[str]:
+    """
+    When phase2 blame gives ≤1 commit, do a deeper git log trace:
+    walk the log history of each fix file before the fix commit and
+    return distinct shas (excluding the fix commit itself).
+    """
+    all_shas: list[str] = []
+    seen: set[str] = set()
+    for f in files:
+        fname = f.get("filename", "")
+        if not fname.endswith(".py"):
+            continue
+        r = subprocess.run(
+            ["git", "log", "--follow", "--format=%H", f"{fix_sha}^", "--", fname],
+            cwd=repo_dir, capture_output=True, text=True, timeout=30,
+        )
+        for sha in r.stdout.strip().splitlines():
+            sha = sha.strip()
+            if sha and sha not in seen and not fix_sha.startswith(sha[:8]):
+                seen.add(sha)
+                all_shas.append(sha)
+            if len(all_shas) >= max_commits:
+                break
+        if len(all_shas) >= max_commits:
+            break
+    return all_shas[:max_commits]
+
+
 def analyse_cve(candidate: dict) -> bool:
     cve_id = candidate["cve_id"]
     owner = candidate["owner"]
@@ -254,9 +282,13 @@ def analyse_cve(candidate: dict) -> bool:
             print(f"Clone failed: {r.stderr[:200]}")
             return False
 
-        # Fetch fix commit if needed
+        # Fetch fix commit + deepen history if needed
         subprocess.run(
-            ["git", "fetch", "--depth=200", "origin", fix_sha],
+            ["git", "fetch", "--depth=500", "origin", fix_sha],
+            cwd=tmpdir, capture_output=True, timeout=60,
+        )
+        subprocess.run(
+            ["git", "fetch", "--deepen=300"],
             cwd=tmpdir, capture_output=True, timeout=60,
         )
 
@@ -266,7 +298,16 @@ def analyse_cve(candidate: dict) -> bool:
         (out_dir / "fix_commit_diff.txt").write_text(fix_diff)
         print(f"  Fix diff: {len(fix_diff.splitlines())} lines")
 
-        # 2. Get details for all blame commits
+        # 2. Get details for all blame commits; do deep log trace if sparse
+        if len(blame_commits) <= 1:
+            print(f"Phase2 blame sparse ({len(blame_commits)}), running deep git log trace...", flush=True)
+            traced = deep_log_trace(tmpdir, candidate["files"], fix_sha)
+            if traced:
+                print(f"  Deep trace found {len(traced)} commits in file history")
+                blame_commits = list(dict.fromkeys(blame_commits + traced))
+            else:
+                print("  Deep trace found nothing — single-commit pattern likely")
+
         print(f"Fetching details for {len(blame_commits)} blame commits...", flush=True)
         all_commit_details = []
         for sha in blame_commits:
@@ -386,6 +427,8 @@ def main():
     parser.add_argument("--cves", nargs="+", help="Specific CVE IDs to analyse")
     parser.add_argument("--top", type=int, default=5,
                         help="Auto-pick top N by blame commits (2-20 range, skip outliers)")
+    parser.add_argument("--force", action="store_true",
+                        help="Process candidates even if multi_commit_confirmed=false (uses deep log trace)")
     args = parser.parse_args()
 
     if not RANKED.exists():
@@ -393,13 +436,19 @@ def main():
         sys.exit(1)
 
     all_candidates = json.loads(RANKED.read_text())
-    confirmed = [c for c in all_candidates if c.get("multi_commit_confirmed")]
+    confirmed = [c for c in all_candidates if c.get("multi_commit_confirmed")] if not args.force else all_candidates
 
     if args.cves:
         targets = [c for c in confirmed if c["cve_id"] in args.cves]
+        if args.force:
+            # Also pick any from all_candidates not yet in confirmed
+            found_ids = {c["cve_id"] for c in targets}
+            for c in all_candidates:
+                if c["cve_id"] in args.cves and c["cve_id"] not in found_ids:
+                    targets.append(c)
         missing = set(args.cves) - {c["cve_id"] for c in targets}
         if missing:
-            print(f"Warning: CVEs not found in confirmed list: {missing}")
+            print(f"Warning: CVEs not found in candidates list: {missing}")
     else:
         # Auto-pick: exclude outliers (>25 blame commits = likely repo-wide refactor)
         # and sort by 2-15 range (cleanest stories)
@@ -412,7 +461,8 @@ def main():
 
     print(f"\nTargets for archaeology ({len(targets)}):")
     for t in targets:
-        print(f"  {t['cve_id']:22} commits={t['distinct_blame_commits']:3}  {t['owner']}/{t['repo_name']}")
+        n = t.get('distinct_blame_commits') or '?'
+        print(f"  {t['cve_id']:22} commits={n!s:>3}  {t['owner']}/{t['repo_name']}")
 
     results = {}
     for candidate in targets:

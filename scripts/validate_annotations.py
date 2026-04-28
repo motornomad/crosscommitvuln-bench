@@ -56,6 +56,8 @@ REQUIRED_CHAIN_FIELDS = {
 VALID_STATUSES = {
     "complete",
     "complete+sast",
+    "complete+agent",
+    "complete+sast+agent",
     "partial — ambiguous chain",
 }
 SKIP_PREFIX = "SKIP"

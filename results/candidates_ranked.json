@@ -8805,11 +8805,74 @@
         "patch_preview": "@@ -1,6 +1,10 @@\n \"\"\"Tests for the URL utilities module.\"\"\"\n \n-from mcp_atlassian.utils.urls import is_atlassian_cloud_url\n+import os\n+import socket\n+from unittest.mock import patch\n+\n+from mcp_atlassian.utils.urls import is_atlassian_cloud_url, validate_url_for_ssrf\n \n \n def test_is_atlassian_cloud"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 11,
+    "blame_commits": [
+      "52b9b0997681e87244b20d58034deae89c91631e",
+      "726d0ffca9e2d563396eaa3cb65f752e0e6066e2",
+      "813b008ca176655e37da0ba5ac2780e41cd0d26a",
+      "846fa36be20c7954f63b28ba0e925a371b367167",
+      "88917c1c18741e3f32e1313401abc8a53050101f",
+      "a876f1cce8bb620ed3a161e69a22caed2b56ed65",
+      "bd38399085097f280f226ac04b661a98341a3edc",
+      "d57b7fd66a1b66386d8acf5837f885300c293b15",
+      "d73a7253e0191f1ae496dac0e14e0faa29b1bd61",
+      "fb3c79eb3f202565b8400a7ee6f180506cfe6023",
+      "ffa6b3956ab8515b4796c5a4df1e8e8c0f96ec1a"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "src/mcp_atlassian/servers/dependencies.py",
+        "distinct_blame_commits": 6,
+        "blame_commits": [
+          "813b008ca176655e37da0ba5ac2780e41cd0d26a",
+          "846fa36be20c7954f63b28ba0e925a371b367167",
+          "88917c1c18741e3f32e1313401abc8a53050101f",
+          "a876f1cce8bb620ed3a161e69a22caed2b56ed65",
+          "bd38399085097f280f226ac04b661a98341a3edc",
+          "d73a7253e0191f1ae496dac0e14e0faa29b1bd61"
+        ]
+      },
+      {
+        "filename": "src/mcp_atlassian/servers/main.py",
+        "distinct_blame_commits": 5,
+        "blame_commits": [
+          "813b008ca176655e37da0ba5ac2780e41cd0d26a",
+          "846fa36be20c7954f63b28ba0e925a371b367167",
+          "d57b7fd66a1b66386d8acf5837f885300c293b15",
+          "d73a7253e0191f1ae496dac0e14e0faa29b1bd61",
+          "fb3c79eb3f202565b8400a7ee6f180506cfe6023"
+        ]
+      },
+      {
+        "filename": "src/mcp_atlassian/utils/__init__.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "52b9b0997681e87244b20d58034deae89c91631e",
+          "846fa36be20c7954f63b28ba0e925a371b367167"
+        ]
+      },
+      {
+        "filename": "src/mcp_atlassian/utils/urls.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "846fa36be20c7954f63b28ba0e925a371b367167",
+          "ffa6b3956ab8515b4796c5a4df1e8e8c0f96ec1a"
+        ]
+      },
+      {
+        "filename": "tests/unit/servers/test_dependencies.py",
+        "distinct_blame_commits": 5,
+        "blame_commits": [
+          "726d0ffca9e2d563396eaa3cb65f752e0e6066e2",
+          "813b008ca176655e37da0ba5ac2780e41cd0d26a",
+          "846fa36be20c7954f63b28ba0e925a371b367167",
+          "bd38399085097f280f226ac04b661a98341a3edc",
+          "d73a7253e0191f1ae496dac0e14e0faa29b1bd61"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -8876,11 +8939,91 @@
         "patch_preview": "@@ -1,3 +1,5 @@\n+import ipaddress\n+import socket\n from functools import lru_cache\n from loguru import logger\n from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode\n@@ -56,6 +58,23 @@ def normalize_url_encoding(url):\n         return url\n \n \n+def is_private_hostname(hostname):\n+    \"\"\"Re"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 21,
+    "blame_commits": [
+      "0cbf345e8494559e54e35fdddc335a8f6b7b2e89",
+      "1dbf1f5db54a15c4b0e4d44a69afbdfbb81a04f6",
+      "2349344d9eab74e99a0fd6308da13ae62a9a38f1",
+      "2658f81f02d2abaf208ff790446ec76fa639f916",
+      "30dc4ac23b821d573836ab94c3e16d8e3c858a99",
+      "4dec1e017b3a081a4fb03eb628eaf293c8ed2183",
+      "4fd477a60ce0923285c68770b3587363565f725e",
+      "549e167746900c179dd948f3232eac8239ebd747",
+      "84d26640cc5eca29ed48ba65844663c86ff49fdf",
+      "892b645147e05b206af2ec952539593e6d57b9a7",
+      "987789425dd6acbf44d89bf540b48c7cfc5d99df",
+      "9d38b4517364831889b5b0d7b3465fd060403fd4",
+      "a239480272bf4be600ba81f1eb01264d0371ad7c",
+      "b6d3d633724c2582aa24a76965fd068577ca382f",
+      "c577bd700cf82c90018c06f1fd6f3d0e564dcb6e",
+      "c5bd7da64786a097349cf2ddb0c738092ed92e2e",
+      "dc8b387f4030f242e0be410323b13ac5081f2cad",
+      "ef41dd304c7856cba823cc2a9fb3c50b06384d94",
+      "fafea1b5c6fa4f914773e4975ac935c8aee23046",
+      "fceb3cf39f041ceffe1bfb052fae86eb37176e3d",
+      "fe465de73c6953753c9483063f6b51beaa380b31"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "changedetectionio/content_fetchers/requests.py",
+        "distinct_blame_commits": 3,
+        "blame_commits": [
+          "0cbf345e8494559e54e35fdddc335a8f6b7b2e89",
+          "30dc4ac23b821d573836ab94c3e16d8e3c858a99",
+          "fe465de73c6953753c9483063f6b51beaa380b31"
+        ]
+      },
+      {
+        "filename": "changedetectionio/store/__init__.py",
+        "distinct_blame_commits": 15,
+        "blame_commits": [
+          "2349344d9eab74e99a0fd6308da13ae62a9a38f1",
+          "2658f81f02d2abaf208ff790446ec76fa639f916",
+          "30dc4ac23b821d573836ab94c3e16d8e3c858a99",
+          "4fd477a60ce0923285c68770b3587363565f725e",
+          "549e167746900c179dd948f3232eac8239ebd747",
+          "84d26640cc5eca29ed48ba65844663c86ff49fdf",
+          "892b645147e05b206af2ec952539593e6d57b9a7",
+          "987789425dd6acbf44d89bf540b48c7cfc5d99df",
+          "a239480272bf4be600ba81f1eb01264d0371ad7c",
+          "b6d3d633724c2582aa24a76965fd068577ca382f",
+          "c577bd700cf82c90018c06f1fd6f3d0e564dcb6e",
+          "dc8b387f4030f242e0be410323b13ac5081f2cad",
+          "ef41dd304c7856cba823cc2a9fb3c50b06384d94",
+          "fafea1b5c6fa4f914773e4975ac935c8aee23046",
+          "fceb3cf39f041ceffe1bfb052fae86eb37176e3d"
+        ]
+      },
+      {
+        "filename": "changedetectionio/tests/conftest.py",
+        "distinct_blame_commits": 4,
+        "blame_commits": [
+          "0cbf345e8494559e54e35fdddc335a8f6b7b2e89",
+          "30dc4ac23b821d573836ab94c3e16d8e3c858a99",
+          "4dec1e017b3a081a4fb03eb628eaf293c8ed2183",
+          "c5bd7da64786a097349cf2ddb0c738092ed92e2e"
+        ]
+      },
+      {
+        "filename": "changedetectionio/tests/test_security.py",
+        "distinct_blame_commits": 4,
+        "blame_commits": [
+          "0cbf345e8494559e54e35fdddc335a8f6b7b2e89",
+          "1dbf1f5db54a15c4b0e4d44a69afbdfbb81a04f6",
+          "9d38b4517364831889b5b0d7b3465fd060403fd4",
+          "c5bd7da64786a097349cf2ddb0c738092ed92e2e"
+        ]
+      },
+      {
+        "filename": "changedetectionio/validate_url.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "0cbf345e8494559e54e35fdddc335a8f6b7b2e89"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -9019,11 +9162,44 @@
         "patch_preview": "@@ -62,3 +62,66 @@ async def test_save_store_api_key(client: AsyncClient, logged_in_headers):\n     assert response.status_code == status.HTTP_200_OK\n     assert isinstance(result, dict), \"The result must be a dictionary\"\n     assert \"detail\" in result, \"The dictionary must contain a key called 'deta"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 2,
+    "blame_commits": [
+      "7f073562e2651f30a99d7d2b7b79c6e92e5e8b32",
+      "b05d0eb55cd35ee945faec2c4df3b7691c5589b4"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "src/backend/base/langflow/__main__.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "7f073562e2651f30a99d7d2b7b79c6e92e5e8b32"
+        ]
+      },
+      {
+        "filename": "src/backend/base/langflow/api/v1/api_key.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "7f073562e2651f30a99d7d2b7b79c6e92e5e8b32"
+        ]
+      },
+      {
+        "filename": "src/backend/base/langflow/services/database/models/api_key/crud.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "7f073562e2651f30a99d7d2b7b79c6e92e5e8b32",
+          "b05d0eb55cd35ee945faec2c4df3b7691c5589b4"
+        ]
+      },
+      {
+        "filename": "src/backend/tests/unit/api/v1/test_api_key.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "7f073562e2651f30a99d7d2b7b79c6e92e5e8b32"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -9084,12 +9260,12 @@
         "patch_preview": "@@ -0,0 +1,466 @@\n+#!/usr/bin/env python\n+#\n+# Glances - An eye on your system\n+#\n+# SPDX-FileCopyrightText: 2024 Nicolas Hennion <nicolas@nicolargo.com>\n+#\n+# SPDX-License-Identifier: LGPL-3.0-only\n+#\n+\n+\"\"\"Glances unit tests for the TUI Central Browser mode.\n+\n+Tests cover:\n+- Config generation fr"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
+    "phase2_done": true,
+    "distinct_blame_commits": 0,
     "blame_commits": [],
     "file_blame_results": [],
     "multi_commit_confirmed": false,
-    "phase2_error": null
+    "phase2_error": "no_py_files"
   },
   {
     "cve_id": "CVE-2025-58438",
@@ -9150,12 +9326,12 @@
         "patch_preview": "@@ -1,4 +1,8 @@\n import string\n+import warnings\n+from unittest.mock import patch\n+\n+import pytest\n \n import internetarchive.utils\n from tests.conftest import NASA_METADATA_PATH, IaRequestsMock\n@@ -95,3 +99,89 @@ def test_is_valid_metadata_key():\n \n     for metadata_key in invalid:\n         assert no"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
+    "phase2_done": true,
+    "distinct_blame_commits": 0,
     "blame_commits": [],
     "file_blame_results": [],
     "multi_commit_confirmed": false,
-    "phase2_error": null
+    "phase2_error": "no_py_files"
   },
   {
     "cve_id": "CVE-2025-58367",
@@ -9204,11 +9380,67 @@
         "patch_preview": "@@ -384,9 +384,10 @@ def test_get__should_not_populate_defaultdict():\n @parametrize(\n     \"obj,path\",\n     [\n-        (helpers.Object(), \"__init__\"),\n-        (helpers.Object(subobj=helpers.Object()), \"subobj.__init__\"),\n-        (namedtuple(\"a\", [\"a\"])(a=1), \"__len__\"),\n+        (helpers.Object(), "
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 17,
+    "blame_commits": [
+      "030403aae92989aa2d6b3e9d16a56c64dd0d5761",
+      "348b87f42f423a210f2d0b8b34419478fbfa5e0b",
+      "3d963d2a0435186aec446c8eab53c43f34f763c4",
+      "533122c84661c9f2291daed505f9047cabe5cd13",
+      "6ff0831ad285fff937cafd2a853f20cc9ae92021",
+      "96f6e4813b150948f73b6235d4381b2747c72739",
+      "a43ea36e46d24000f06eddd75b3fedbe6c9dec28",
+      "bf5047aaf29c703dea7c25cb67c97b93377fe73f",
+      "c326057b444f971c9215d57d1f8a28d491150024",
+      "ca89cdeb4c57d2443b3db2736924c05c505aa855",
+      "cb1d35baff12015e7f0ba7a2ac519d332585292f",
+      "d6fe70c3cbf047c1d128456aabf94160a7a25ccd",
+      "e7ecbe5cca5f6fee4f4e4c2025e0494dc3463c30",
+      "e90dac68688d4b8dd11993f0e79e18969c156c32",
+      "ebc34c22c41803803023fcbd402e37692562822e",
+      "f0ac1686ef74de1f2b147be5e85fff6cc60c70cc",
+      "f9bf88a2bb3c27d2835c5efe8af37d1be47654ad"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "src/pydash/helpers.py",
+        "distinct_blame_commits": 14,
+        "blame_commits": [
+          "030403aae92989aa2d6b3e9d16a56c64dd0d5761",
+          "348b87f42f423a210f2d0b8b34419478fbfa5e0b",
+          "3d963d2a0435186aec446c8eab53c43f34f763c4",
+          "6ff0831ad285fff937cafd2a853f20cc9ae92021",
+          "bf5047aaf29c703dea7c25cb67c97b93377fe73f",
+          "c326057b444f971c9215d57d1f8a28d491150024",
+          "ca89cdeb4c57d2443b3db2736924c05c505aa855",
+          "cb1d35baff12015e7f0ba7a2ac519d332585292f",
+          "d6fe70c3cbf047c1d128456aabf94160a7a25ccd",
+          "e7ecbe5cca5f6fee4f4e4c2025e0494dc3463c30",
+          "e90dac68688d4b8dd11993f0e79e18969c156c32",
+          "ebc34c22c41803803023fcbd402e37692562822e",
+          "f0ac1686ef74de1f2b147be5e85fff6cc60c70cc",
+          "f9bf88a2bb3c27d2835c5efe8af37d1be47654ad"
+        ]
+      },
+      {
+        "filename": "tests/test_objects.py",
+        "distinct_blame_commits": 11,
+        "blame_commits": [
+          "030403aae92989aa2d6b3e9d16a56c64dd0d5761",
+          "348b87f42f423a210f2d0b8b34419478fbfa5e0b",
+          "3d963d2a0435186aec446c8eab53c43f34f763c4",
+          "533122c84661c9f2291daed505f9047cabe5cd13",
+          "6ff0831ad285fff937cafd2a853f20cc9ae92021",
+          "96f6e4813b150948f73b6235d4381b2747c72739",
+          "a43ea36e46d24000f06eddd75b3fedbe6c9dec28",
+          "c326057b444f971c9215d57d1f8a28d491150024",
+          "d6fe70c3cbf047c1d128456aabf94160a7a25ccd",
+          "e7ecbe5cca5f6fee4f4e4c2025e0494dc3463c30",
+          "f9bf88a2bb3c27d2835c5efe8af37d1be47654ad"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -9347,11 +9579,30 @@
         "patch_preview": "@@ -32,20 +32,22 @@\n # distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the\n # License for the specific language governing permissions and limitations under the License.\n \n+import datetime\n import os\n import re\n+from decimal import Decimal"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 2,
+    "blame_commits": [
+      "71df1160792d9b0a4efb49142d8e724d841e2f87",
+      "c65fecf45e2fae05fd5b4e9941dddd7faf4ecbf7"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "src/pretix/base/services/mail.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "71df1160792d9b0a4efb49142d8e724d841e2f87"
+        ]
+      },
+      {
+        "filename": "src/tests/base/test_mail.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "71df1160792d9b0a4efb49142d8e724d841e2f87",
+          "c65fecf45e2fae05fd5b4e9941dddd7faf4ecbf7"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -9417,10 +9668,41 @@
         "patch_preview": "@@ -33,6 +33,7 @@\n from weblate.trans.util import cleanup_path\n from weblate.utils.const import WEBHOOKS_SECRET_PREFIX\n from weblate.utils.data import data_dir\n+from weblate.utils.files import is_excluded\n \n USERNAME_MATCHER = re.compile(r\"^[\\w@+-][\\w.@+-]*$\")\n \n@@ -238,7 +239,7 @@ def validate_plur"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
+    "phase2_done": true,
+    "distinct_blame_commits": 1,
+    "blame_commits": [
+      "a631ebbbeae140777687001f6c1a5ce8d6b75487"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "weblate/trans/backups.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "a631ebbbeae140777687001f6c1a5ce8d6b75487"
+        ]
+      },
+      {
+        "filename": "weblate/utils/files.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "a631ebbbeae140777687001f6c1a5ce8d6b75487"
+        ]
+      },
+      {
+        "filename": "weblate/utils/tests/test_validators.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "a631ebbbeae140777687001f6c1a5ce8d6b75487"
+        ]
+      },
+      {
+        "filename": "weblate/utils/validators.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "a631ebbbeae140777687001f6c1a5ce8d6b75487"
+        ]
+      }
+    ],
     "multi_commit_confirmed": false,
     "phase2_error": null
   },
@@ -9482,11 +9764,49 @@
         "patch_preview": "@@ -592,3 +592,74 @@ def test_rss_xpath(client, live_server, measure_memory_usage, datastore_path):\n         set_rss_atom_feed_response(header=feed_header, datastore_path=datastore_path)\n         for content_type in RSS_XML_CONTENT_TYPES:\n             _subtest_xpath_rss(client, content_type=content_"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 8,
+    "blame_commits": [
+      "0b9cfcdf09ea8a82a2dafd8719b9262c85315e45",
+      "30dc4ac23b821d573836ab94c3e16d8e3c858a99",
+      "7c8d59c79579db60967480469a98fbb5a594b2c7",
+      "83d7ce0fcf6053bcb00b3ead26c095b6e795fef3",
+      "954582a581f649fee4c588d27fd1fce3d265b2e2",
+      "d8ef86a8b5cdf3fa62a8b5d647604ff750733cf0",
+      "dc8b387f4030f242e0be410323b13ac5081f2cad",
+      "fe465de73c6953753c9483063f6b51beaa380b31"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "changedetectionio/forms.py",
+        "distinct_blame_commits": 4,
+        "blame_commits": [
+          "0b9cfcdf09ea8a82a2dafd8719b9262c85315e45",
+          "83d7ce0fcf6053bcb00b3ead26c095b6e795fef3",
+          "dc8b387f4030f242e0be410323b13ac5081f2cad",
+          "fe465de73c6953753c9483063f6b51beaa380b31"
+        ]
+      },
+      {
+        "filename": "changedetectionio/html_tools.py",
+        "distinct_blame_commits": 4,
+        "blame_commits": [
+          "0b9cfcdf09ea8a82a2dafd8719b9262c85315e45",
+          "7c8d59c79579db60967480469a98fbb5a594b2c7",
+          "954582a581f649fee4c588d27fd1fce3d265b2e2",
+          "d8ef86a8b5cdf3fa62a8b5d647604ff750733cf0"
+        ]
+      },
+      {
+        "filename": "changedetectionio/tests/test_xpath_selector.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "0b9cfcdf09ea8a82a2dafd8719b9262c85315e45",
+          "30dc4ac23b821d573836ab94c3e16d8e3c858a99"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -9543,11 +9863,55 @@
         "patch_preview": "@@ -161,6 +161,12 @@ def validate_token(self, token: str) -> bool:\n         except ValueError:\n             return False\n \n+<<<<<<< HEAD\n     def _hash(self, expiry_days: Union[int, str]) -> bytes:\n         hash_data = secret_key_derive(\"web.password_reset_token\") + self.user_key + str(expiry_days)\n"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 10,
+    "blame_commits": [
+      "20f7c29949b13f59c4505ea6313f3068ecb36b1e",
+      "43e26647e18f8ff3459bbf89ffbff329a0f1eed5",
+      "4441889e13153ed3020aa871ff52e5a6951b5bca",
+      "8ac8a300dfa31f2e2d90760fc351e3f231aec28f",
+      "9128d5c36bfc3f3c966b9fbf464b4aebf906c703",
+      "978dec94a484528411b301d2d2c6850295af347e",
+      "9c2ba0a7f863d7069d22d7c4dea574dabbe4555c",
+      "b0d8db9e45a88b9d7abd0af8beb644dab380eacf",
+      "ebd6f321c786347fbafa2bed6b12d211df023844",
+      "f1520f5ec7867ee52dbe13eef4403bfa0841305d"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "irrd/integration_tests/run.py",
+        "distinct_blame_commits": 4,
+        "blame_commits": [
+          "4441889e13153ed3020aa871ff52e5a6951b5bca",
+          "8ac8a300dfa31f2e2d90760fc351e3f231aec28f",
+          "b0d8db9e45a88b9d7abd0af8beb644dab380eacf",
+          "ebd6f321c786347fbafa2bed6b12d211df023844"
+        ]
+      },
+      {
+        "filename": "irrd/server/http/app.py",
+        "distinct_blame_commits": 7,
+        "blame_commits": [
+          "20f7c29949b13f59c4505ea6313f3068ecb36b1e",
+          "9128d5c36bfc3f3c966b9fbf464b4aebf906c703",
+          "978dec94a484528411b301d2d2c6850295af347e",
+          "9c2ba0a7f863d7069d22d7c4dea574dabbe4555c",
+          "b0d8db9e45a88b9d7abd0af8beb644dab380eacf",
+          "ebd6f321c786347fbafa2bed6b12d211df023844",
+          "f1520f5ec7867ee52dbe13eef4403bfa0841305d"
+        ]
+      },
+      {
+        "filename": "irrd/webui/auth/users.py",
+        "distinct_blame_commits": 3,
+        "blame_commits": [
+          "43e26647e18f8ff3459bbf89ffbff329a0f1eed5",
+          "978dec94a484528411b301d2d2c6850295af347e",
+          "b0d8db9e45a88b9d7abd0af8beb644dab380eacf"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -9617,11 +9981,53 @@
         "patch_preview": "@@ -102,25 +102,25 @@ def check_header(self, header: Header, check_more: bool = False) -> None:\n \n     def validate_protected_header_size(self, header: bytes) -> None:\n         if header and len(header) > self.max_protected_header_length:\n-            raise ExceededSizeError(f\"Header size of '{heade"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 11,
+    "blame_commits": [
+      "05ccff5d3c78e6e84175080ee5c44b713f733e42",
+      "1c2be1cad6551fe0e5fd74ace58b588487534c69",
+      "27257960c23df576d27a2b0d2ba07c15ce931ef5",
+      "62d968b019ff0b9d4ad2ad04864d311cb826f5ca",
+      "7008512f1867a6ef2918eee5f5001e8b4fc9e354",
+      "8553afb6cbb3eb3a7b77e87bc4b1175919835905",
+      "b829715a5cc7d016f8937ae257e59717a44a9284",
+      "b9379f7d4e5f440594c45d6961f64cb3acd37e24",
+      "cba4132b1d88bfdaebc48783a147eb46c1e308df",
+      "cc479a32882ded827308d571e0ee85123cdcfa05",
+      "ff77f5c3546c64e61877452795277c0d3da3f7e6"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "src/joserfc/_rfc7515/registry.py",
+        "distinct_blame_commits": 10,
+        "blame_commits": [
+          "05ccff5d3c78e6e84175080ee5c44b713f733e42",
+          "1c2be1cad6551fe0e5fd74ace58b588487534c69",
+          "27257960c23df576d27a2b0d2ba07c15ce931ef5",
+          "62d968b019ff0b9d4ad2ad04864d311cb826f5ca",
+          "7008512f1867a6ef2918eee5f5001e8b4fc9e354",
+          "8553afb6cbb3eb3a7b77e87bc4b1175919835905",
+          "b829715a5cc7d016f8937ae257e59717a44a9284",
+          "b9379f7d4e5f440594c45d6961f64cb3acd37e24",
+          "cc479a32882ded827308d571e0ee85123cdcfa05",
+          "ff77f5c3546c64e61877452795277c0d3da3f7e6"
+        ]
+      },
+      {
+        "filename": "src/joserfc/_rfc7516/registry.py",
+        "distinct_blame_commits": 7,
+        "blame_commits": [
+          "1c2be1cad6551fe0e5fd74ace58b588487534c69",
+          "62d968b019ff0b9d4ad2ad04864d311cb826f5ca",
+          "7008512f1867a6ef2918eee5f5001e8b4fc9e354",
+          "b829715a5cc7d016f8937ae257e59717a44a9284",
+          "b9379f7d4e5f440594c45d6961f64cb3acd37e24",
+          "cba4132b1d88bfdaebc48783a147eb46c1e308df",
+          "cc479a32882ded827308d571e0ee85123cdcfa05"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -9667,11 +10073,34 @@
         "patch_preview": "@@ -85,6 +85,13 @@\n \n IS_WINDOWS = sys.platform == \"win32\"\n \n+UNSAFE_MESSAGE = (\n+    \"In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` \"\n+    \"from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, \"\n+    \"b"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 3,
+    "blame_commits": [
+      "6628b70f024234e87d48004211edddb11163ef5e",
+      "95b17f6346842ddf5ee82506d2a87136120bc247",
+      "9c34a2076b37c040b1b9a48b729656fe9e992949"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "test/test_serialization.py",
+        "distinct_blame_commits": 3,
+        "blame_commits": [
+          "6628b70f024234e87d48004211edddb11163ef5e",
+          "95b17f6346842ddf5ee82506d2a87136120bc247",
+          "9c34a2076b37c040b1b9a48b729656fe9e992949"
+        ]
+      },
+      {
+        "filename": "torch/serialization.py",
+        "distinct_blame_commits": 3,
+        "blame_commits": [
+          "6628b70f024234e87d48004211edddb11163ef5e",
+          "95b17f6346842ddf5ee82506d2a87136120bc247",
+          "9c34a2076b37c040b1b9a48b729656fe9e992949"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -9723,11 +10152,45 @@
         "patch_preview": "@@ -15,7 +15,7 @@\n     handle_ne,\n )\n from dtale.pandas_util import check_pandas_version\n-from dtale.query import run_query\n+from dtale.query import run_query, validate_query_safety\n \n \n @pytest.mark.unit\n@@ -232,10 +232,10 @@ def test_numeric_filter_operators():\n     assert \"==\" in fltr[\"query\"]\n  "
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 6,
+    "blame_commits": [
+      "5e31da59f4c45a8dc2881bac1179323e2ce60c30",
+      "6fbc7ba8201f5d87a9565ea8fb67c6cd95b8118f",
+      "8c44907cf239ad59dd0f9e76e164f6c0556cbee1",
+      "e65e30c2639b62c1b518317a07318a775653b4fb",
+      "e6abe2974fb7e0da7152a669b92de171d01df15a",
+      "fafcb415337e7eb08d36f93de5818d38bef10558"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "dtale/column_filters.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "8c44907cf239ad59dd0f9e76e164f6c0556cbee1",
+          "e65e30c2639b62c1b518317a07318a775653b4fb"
+        ]
+      },
+      {
+        "filename": "dtale/query.py",
+        "distinct_blame_commits": 3,
+        "blame_commits": [
+          "6fbc7ba8201f5d87a9565ea8fb67c6cd95b8118f",
+          "8c44907cf239ad59dd0f9e76e164f6c0556cbee1",
+          "e6abe2974fb7e0da7152a669b92de171d01df15a"
+        ]
+      },
+      {
+        "filename": "tests/dtale/test_column_filters.py",
+        "distinct_blame_commits": 3,
+        "blame_commits": [
+          "5e31da59f4c45a8dc2881bac1179323e2ce60c30",
+          "8c44907cf239ad59dd0f9e76e164f6c0556cbee1",
+          "fafcb415337e7eb08d36f93de5818d38bef10558"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -9777,11 +10240,138 @@
         "patch_preview": "@@ -361,6 +361,48 @@ def testDecodeOpenTypesUnknownId(self):\n         assert s[1][0] == univ.OctetString(hexValue='02010C')\n \n \n+class NestingDepthLimitTestCase(BaseTestCase):\n+    \"\"\"Test DER decoder protection against deeply nested structures.\"\"\"\n+\n+    def testDefiniteLenNesting(self):\n+        \""
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 36,
+    "blame_commits": [
+      "001bc19e531c023d3ccc2747b1f667d395ded110",
+      "21135452e5e8250ca66860a207f7e4f81cf4ac72",
+      "317452bd76d711c35a1bbdda54879606dd693268",
+      "3318f76a16ce30abc6a74da9739d91a48effea0f",
+      "3908f144229eed4df24bd569d16e5991ace44970",
+      "3cf920db9e1c41fe5c4b834a263d3e0fe06e4440",
+      "3fb3fcff21d65194c5774cf90042183096bb6f08",
+      "4176c0a8ccde8a89d81d8ce93735e8a8543322f8",
+      "507eca7e7e97963b5415cbc81a2e35daebdca45d",
+      "5283ebbad9905606eb44a8daeb39da34353b3d99",
+      "626cddb7743b6b614a90246647c93da60e53b408",
+      "62efcb94b15ca7fbd5261ca999bf5eca5680de5f",
+      "66afc8921e4f5d3a41e407ab6d95ce7e4ec5383a",
+      "6993b85ff7a4bd758a40ffc3447b9c85a7e35e59",
+      "6f770ba886a8931c35cb090a5c3a6d67f5a41bd9",
+      "71f486e6c32d0f270868aa1b2bb5ceb7d5fd5476",
+      "7a599a1355568da807a474df3cd09149909b9922",
+      "7bdade5c71642ad34487db53130cd0c3372dc860",
+      "81ce8d0d5f1c6ae4662cdc1fe141b7ea0cd28e00",
+      "8393983359edc25b75cbe07f0d4c13497285aa71",
+      "8446ab5f523cb78707ef3aa0532c29ffda6db9b5",
+      "8c4f5e529bd13584fcd17581472565350dd6dbdb",
+      "93e11a2dfded950827ba3393b5a4562270a766da",
+      "a7d2ac036866e5f437bd6f9a9f01723f601b4073",
+      "aa81e4b2e01356c93ff838f8032e5c06135f764a",
+      "acb78299d1270a2fea0d11e5509777b7c5777f3f",
+      "adf4c5b1ef11026102dad0bb77b54576e0ebd71c",
+      "b5e2eebe53736eb96f3baf5c17ae953261e09d6c",
+      "b627c817c972b5d376fc92669896b2efe728d603",
+      "b75800d3c5b7b0996f5d19c1787106509882d212",
+      "bac135a0ac35acb6ebefa683541fc34b920f7671",
+      "d17e0e17fddc3ea68d6fd48d14247bc124d9e5d8",
+      "d7cb42dcaa9a66e18f14c4609c2ed00c5b65f7e8",
+      "e1500c60c0a15a641d5ee834f792fd0f2167c8b8",
+      "e279319d412c6d7045c8bf90d0d887ed5097ff29",
+      "f0484d424454fd294a5ee55d5e862c051905b1a9"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "pyasn1/codec/ber/decoder.py",
+        "distinct_blame_commits": 28,
+        "blame_commits": [
+          "21135452e5e8250ca66860a207f7e4f81cf4ac72",
+          "317452bd76d711c35a1bbdda54879606dd693268",
+          "3318f76a16ce30abc6a74da9739d91a48effea0f",
+          "3908f144229eed4df24bd569d16e5991ace44970",
+          "4176c0a8ccde8a89d81d8ce93735e8a8543322f8",
+          "507eca7e7e97963b5415cbc81a2e35daebdca45d",
+          "5283ebbad9905606eb44a8daeb39da34353b3d99",
+          "626cddb7743b6b614a90246647c93da60e53b408",
+          "66afc8921e4f5d3a41e407ab6d95ce7e4ec5383a",
+          "6993b85ff7a4bd758a40ffc3447b9c85a7e35e59",
+          "6f770ba886a8931c35cb090a5c3a6d67f5a41bd9",
+          "71f486e6c32d0f270868aa1b2bb5ceb7d5fd5476",
+          "7a599a1355568da807a474df3cd09149909b9922",
+          "7bdade5c71642ad34487db53130cd0c3372dc860",
+          "8393983359edc25b75cbe07f0d4c13497285aa71",
+          "8c4f5e529bd13584fcd17581472565350dd6dbdb",
+          "93e11a2dfded950827ba3393b5a4562270a766da",
+          "aa81e4b2e01356c93ff838f8032e5c06135f764a",
+          "acb78299d1270a2fea0d11e5509777b7c5777f3f",
+          "adf4c5b1ef11026102dad0bb77b54576e0ebd71c",
+          "b5e2eebe53736eb96f3baf5c17ae953261e09d6c",
+          "b627c817c972b5d376fc92669896b2efe728d603",
+          "b75800d3c5b7b0996f5d19c1787106509882d212",
+          "bac135a0ac35acb6ebefa683541fc34b920f7671",
+          "d17e0e17fddc3ea68d6fd48d14247bc124d9e5d8",
+          "d7cb42dcaa9a66e18f14c4609c2ed00c5b65f7e8",
+          "e1500c60c0a15a641d5ee834f792fd0f2167c8b8",
+          "f0484d424454fd294a5ee55d5e862c051905b1a9"
+        ]
+      },
+      {
+        "filename": "tests/codec/ber/test_decoder.py",
+        "distinct_blame_commits": 24,
+        "blame_commits": [
+          "001bc19e531c023d3ccc2747b1f667d395ded110",
+          "317452bd76d711c35a1bbdda54879606dd693268",
+          "3908f144229eed4df24bd569d16e5991ace44970",
+          "3cf920db9e1c41fe5c4b834a263d3e0fe06e4440",
+          "3fb3fcff21d65194c5774cf90042183096bb6f08",
+          "5283ebbad9905606eb44a8daeb39da34353b3d99",
+          "62efcb94b15ca7fbd5261ca999bf5eca5680de5f",
+          "6993b85ff7a4bd758a40ffc3447b9c85a7e35e59",
+          "6f770ba886a8931c35cb090a5c3a6d67f5a41bd9",
+          "7bdade5c71642ad34487db53130cd0c3372dc860",
+          "81ce8d0d5f1c6ae4662cdc1fe141b7ea0cd28e00",
+          "8393983359edc25b75cbe07f0d4c13497285aa71",
+          "8446ab5f523cb78707ef3aa0532c29ffda6db9b5",
+          "8c4f5e529bd13584fcd17581472565350dd6dbdb",
+          "93e11a2dfded950827ba3393b5a4562270a766da",
+          "a7d2ac036866e5f437bd6f9a9f01723f601b4073",
+          "acb78299d1270a2fea0d11e5509777b7c5777f3f",
+          "adf4c5b1ef11026102dad0bb77b54576e0ebd71c",
+          "b5e2eebe53736eb96f3baf5c17ae953261e09d6c",
+          "b627c817c972b5d376fc92669896b2efe728d603",
+          "d17e0e17fddc3ea68d6fd48d14247bc124d9e5d8",
+          "d7cb42dcaa9a66e18f14c4609c2ed00c5b65f7e8",
+          "e279319d412c6d7045c8bf90d0d887ed5097ff29",
+          "f0484d424454fd294a5ee55d5e862c051905b1a9"
+        ]
+      },
+      {
+        "filename": "tests/codec/cer/test_decoder.py",
+        "distinct_blame_commits": 7,
+        "blame_commits": [
+          "62efcb94b15ca7fbd5261ca999bf5eca5680de5f",
+          "6f770ba886a8931c35cb090a5c3a6d67f5a41bd9",
+          "93e11a2dfded950827ba3393b5a4562270a766da",
+          "a7d2ac036866e5f437bd6f9a9f01723f601b4073",
+          "acb78299d1270a2fea0d11e5509777b7c5777f3f",
+          "adf4c5b1ef11026102dad0bb77b54576e0ebd71c",
+          "b627c817c972b5d376fc92669896b2efe728d603"
+        ]
+      },
+      {
+        "filename": "tests/codec/der/test_decoder.py",
+        "distinct_blame_commits": 6,
+        "blame_commits": [
+          "62efcb94b15ca7fbd5261ca999bf5eca5680de5f",
+          "6f770ba886a8931c35cb090a5c3a6d67f5a41bd9",
+          "a7d2ac036866e5f437bd6f9a9f01723f601b4073",
+          "acb78299d1270a2fea0d11e5509777b7c5777f3f",
+          "adf4c5b1ef11026102dad0bb77b54576e0ebd71c",
+          "b627c817c972b5d376fc92669896b2efe728d603"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -9835,11 +10425,38 @@
         "patch_preview": "@@ -279,8 +279,23 @@ def _attachment_file_name(self) -> str:\n         \"\"\"The original name of the attached file, no path.\n \n         This value is 'unknown' if it is not present in the MSG file (not expected).\n+        The filename is sanitized to prevent path traversal attacks.\n         \"\"\"\n-      "
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 3,
+    "blame_commits": [
+      "1c519efef5f888ae02ee4621b213eda527662d5f",
+      "5852260a75d742cd539675baa043a41f5f9d4773",
+      "dfa17bd3a0c476dce571b8b493dd2ff80ddaebc1"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "test_unstructured/partition/test_msg.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "5852260a75d742cd539675baa043a41f5f9d4773",
+          "dfa17bd3a0c476dce571b8b493dd2ff80ddaebc1"
+        ]
+      },
+      {
+        "filename": "unstructured/__version__.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "1c519efef5f888ae02ee4621b213eda527662d5f"
+        ]
+      },
+      {
+        "filename": "unstructured/partition/msg.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "5852260a75d742cd539675baa043a41f5f9d4773"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -9893,11 +10510,41 @@
         "patch_preview": "@@ -419,10 +419,16 @@ def test_browser_no_post_no_put(enable_test_module, ray_start_with_dashboard):\n     webui_url = ray_start_with_dashboard[\"webui_url\"]\n     webui_url = format_web_url(webui_url)\n \n+    def dashboard_available():\n+        try:\n+            return requests.get(webui_url).status_co"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 4,
+    "blame_commits": [
+      "31f904f630809152ceba67c8bf1684c8c9b685ea",
+      "412220e6f73e4324a676ed6fb664f85d93ed72a2",
+      "d496ea87808706333703be6ff25ecc9472330fd5",
+      "ea5bc3491a74e2b71f4cb6fdb14787fdcb3314fc"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "python/ray/dashboard/http_server_head.py",
+        "distinct_blame_commits": 4,
+        "blame_commits": [
+          "31f904f630809152ceba67c8bf1684c8c9b685ea",
+          "412220e6f73e4324a676ed6fb664f85d93ed72a2",
+          "d496ea87808706333703be6ff25ecc9472330fd5",
+          "ea5bc3491a74e2b71f4cb6fdb14787fdcb3314fc"
+        ]
+      },
+      {
+        "filename": "python/ray/dashboard/optional_utils.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "412220e6f73e4324a676ed6fb664f85d93ed72a2"
+        ]
+      },
+      {
+        "filename": "python/ray/dashboard/tests/test_dashboard.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "412220e6f73e4324a676ed6fb664f85d93ed72a2"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -9942,10 +10589,27 @@
         "patch_preview": "@@ -1,5 +1,7 @@\n+import ipaddress\n import os\n import pathlib\n+import socket\n from urllib.parse import quote\n from urllib.parse import unquote\n from urllib.parse import urlparse\n@@ -50,3 +52,45 @@ def encode_path_for_uri(path: str) -> str:\n \n def is_http_url(url: str) -> bool:\n     return urlparse(ur"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
+    "phase2_done": true,
+    "distinct_blame_commits": 1,
+    "blame_commits": [
+      "93acf9eea5f355e74326055397378d3a1dd1cfb8"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "src/_bentoml_impl/serde.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "93acf9eea5f355e74326055397378d3a1dd1cfb8"
+        ]
+      },
+      {
+        "filename": "src/bentoml/_internal/utils/uri.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "93acf9eea5f355e74326055397378d3a1dd1cfb8"
+        ]
+      }
+    ],
     "multi_commit_confirmed": false,
     "phase2_error": null
   },
@@ -9997,11 +10661,39 @@
         "patch_preview": "@@ -99,9 +99,10 @@ def test_validate_at_hash():\n     )\n     claims.params = {\"access_token\": \"a\"}\n \n-    # invalid alg won't raise\n+    # invalid alg will raise too\n     claims.header = {\"alg\": \"HS222\"}\n-    claims.validate(1000)\n+    with pytest.raises(InvalidClaimError):\n+        claims.validate(1"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 6,
+    "blame_commits": [
+      "098dd9f8fa5ceff37d6f390570302cbe4fee1332",
+      "273a85ef9ee4469c1c1389b4a00c5cdc13d69f2e",
+      "449a1a24a42f5090f339dc60cab29ac89203e971",
+      "9ec24449c28f72e435f2f293944793601fc6cdad",
+      "cfa15c00ba0175e515309d33e0cd347a15779994",
+      "d44986efa105bdc30eff591dda120a0c86b43e5a"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "authlib/oidc/core/claims.py",
+        "distinct_blame_commits": 4,
+        "blame_commits": [
+          "098dd9f8fa5ceff37d6f390570302cbe4fee1332",
+          "449a1a24a42f5090f339dc60cab29ac89203e971",
+          "9ec24449c28f72e435f2f293944793601fc6cdad",
+          "cfa15c00ba0175e515309d33e0cd347a15779994"
+        ]
+      },
+      {
+        "filename": "tests/core/test_oidc/test_core.py",
+        "distinct_blame_commits": 4,
+        "blame_commits": [
+          "098dd9f8fa5ceff37d6f390570302cbe4fee1332",
+          "273a85ef9ee4469c1c1389b4a00c5cdc13d69f2e",
+          "cfa15c00ba0175e515309d33e0cd347a15779994",
+          "d44986efa105bdc30eff591dda120a0c86b43e5a"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -10055,11 +10747,63 @@
         "patch_preview": "@@ -123,7 +123,21 @@ def extend(image, size):\n         nova.privsep.libvirt.ploop_resize(image.path, size)\n         return\n \n-    processutils.execute('qemu-img', 'resize', image.path, size)\n+    # NOTE(danms): We should not call qemu-img without a format, and\n+    # only qcow2 and raw are supported"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 17,
+    "blame_commits": [
+      "0751ee19d88193d2b4579a0ee79a9c9c9c8f52cf",
+      "21fecc7060179ab62564db901ea932a1f723020e",
+      "231908a7f42b8329a58e62c8a89204fdeaa16dca",
+      "606d588e3eca1d88ad26b4c2cfa3f2e1d5ed553e",
+      "6c3520ac5ba789dd40d51c0d20a30d0dc44a8c07",
+      "7b43fb4ebda7eb1dac74d1aaac1d347a3b611a96",
+      "88f39a0df0a3f18072991a88b7c412228a4f77c5",
+      "89ef050b8c049b9a6f0e2c70408fc93c826c55e0",
+      "9851a80ed38d23c35d4469fd1089adc87871b2b5",
+      "c1eb6f0e5078051ff03e4592e5aaff7cf04aa449",
+      "c7dae4e19bfb45a3cd6cbf78fa771f5e34e2651c",
+      "cc33bdb239c4535f6d32dbef923bbe039831ba9d",
+      "d06a10f09699ef260002cc3474b33f08aca06583",
+      "d41ea9d87894111051b591d513cd046e5e357124",
+      "ecb11043e9c2a798950d63b55cd08684b1d77c4a",
+      "fcb0691b72f2ca175b186b0252eed4224b90e3ed",
+      "fd4b2aa4cbff797ed7904c0c3b7ebb72e8d6da47"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "nova/tests/unit/virt/disk/test_api.py",
+        "distinct_blame_commits": 8,
+        "blame_commits": [
+          "7b43fb4ebda7eb1dac74d1aaac1d347a3b611a96",
+          "88f39a0df0a3f18072991a88b7c412228a4f77c5",
+          "89ef050b8c049b9a6f0e2c70408fc93c826c55e0",
+          "c1eb6f0e5078051ff03e4592e5aaff7cf04aa449",
+          "cc33bdb239c4535f6d32dbef923bbe039831ba9d",
+          "d06a10f09699ef260002cc3474b33f08aca06583",
+          "ecb11043e9c2a798950d63b55cd08684b1d77c4a",
+          "fcb0691b72f2ca175b186b0252eed4224b90e3ed"
+        ]
+      },
+      {
+        "filename": "nova/virt/disk/api.py",
+        "distinct_blame_commits": 13,
+        "blame_commits": [
+          "0751ee19d88193d2b4579a0ee79a9c9c9c8f52cf",
+          "21fecc7060179ab62564db901ea932a1f723020e",
+          "231908a7f42b8329a58e62c8a89204fdeaa16dca",
+          "606d588e3eca1d88ad26b4c2cfa3f2e1d5ed553e",
+          "6c3520ac5ba789dd40d51c0d20a30d0dc44a8c07",
+          "7b43fb4ebda7eb1dac74d1aaac1d347a3b611a96",
+          "88f39a0df0a3f18072991a88b7c412228a4f77c5",
+          "9851a80ed38d23c35d4469fd1089adc87871b2b5",
+          "c1eb6f0e5078051ff03e4592e5aaff7cf04aa449",
+          "c7dae4e19bfb45a3cd6cbf78fa771f5e34e2651c",
+          "d41ea9d87894111051b591d513cd046e5e357124",
+          "fcb0691b72f2ca175b186b0252eed4224b90e3ed",
+          "fd4b2aa4cbff797ed7904c0c3b7ebb72e8d6da47"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -10107,11 +10851,37 @@
         "patch_preview": "@@ -0,0 +1,69 @@\n+from typing import Optional\n+\n+import ormar\n+import pytest\n+\n+from tests.lifespan import init_tests\n+from tests.settings import create_config\n+\n+base_ormar_config = create_config()\n+\n+\n+class Category(ormar.Model):\n+    ormar_config = base_ormar_config.copy(tablename=\"categories\")\n"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 4,
+    "blame_commits": [
+      "2da1e4542c9a158f7db0d528bb79494919a0a5c3",
+      "8c9f0016112a624d52d3cd313e6866b5fc40288d",
+      "a0b5ee5d0c66f773fe19d65e68bea0eba9ba1855",
+      "c88784610241251ecf7b6defcbd97a2aaedb48e8"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "ormar/queryset/queryset.py",
+        "distinct_blame_commits": 4,
+        "blame_commits": [
+          "2da1e4542c9a158f7db0d528bb79494919a0a5c3",
+          "8c9f0016112a624d52d3cd313e6866b5fc40288d",
+          "a0b5ee5d0c66f773fe19d65e68bea0eba9ba1855",
+          "c88784610241251ecf7b6defcbd97a2aaedb48e8"
+        ]
+      },
+      {
+        "filename": "tests/test_vulnerabilities/__init__.py",
+        "distinct_blame_commits": 0,
+        "blame_commits": []
+      },
+      {
+        "filename": "tests/test_vulnerabilities/test_aggregated_functions.py",
+        "distinct_blame_commits": 0,
+        "blame_commits": []
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -10201,10 +10971,25 @@
         "patch_preview": "@@ -0,0 +1,29 @@\n+import getpass\n+import pathlib\n+\n+import salt.channel.client\n+\n+\n+def test_file_recv_path(salt_master, salt_minion):\n+    config = salt_minion.config.copy()\n+    config[\"master_uri\"] = f\"tcp://127.0.0.1:{salt_master.config['ret_port']}\"\n+    keyfile = f\".{getpass.getuser()}_key\"\n+ "
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
+    "phase2_done": true,
+    "distinct_blame_commits": 1,
+    "blame_commits": [
+      "7b4741d27f123401cab919ffba93eb455d89308c"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "salt/master.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "7b4741d27f123401cab919ffba93eb455d89308c"
+        ]
+      },
+      {
+        "filename": "tests/pytests/integration/master/test_recv_file.py",
+        "distinct_blame_commits": 0,
+        "blame_commits": []
+      }
+    ],
     "multi_commit_confirmed": false,
     "phase2_error": null
   },
@@ -10253,10 +11038,34 @@
         "patch_preview": "@@ -1,5 +1,6 @@\n import filecmp\n import hashlib\n+import io\n import os\n import shutil\n import stat\n@@ -10,11 +11,13 @@\n from pyspark.sql import SparkSession\n \n import mlflow\n+from mlflow.exceptions import MlflowException\n from mlflow.utils import file_utils\n from mlflow.utils.file_utils import (\n    "
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
+    "phase2_done": true,
+    "distinct_blame_commits": 1,
+    "blame_commits": [
+      "10562d3241e94787b76fe4bd46fb85a5cc196eff"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "mlflow/pyfunc/dbconnect_artifact_cache.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "10562d3241e94787b76fe4bd46fb85a5cc196eff"
+        ]
+      },
+      {
+        "filename": "mlflow/utils/file_utils.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "10562d3241e94787b76fe4bd46fb85a5cc196eff"
+        ]
+      },
+      {
+        "filename": "tests/utils/test_file_utils.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "10562d3241e94787b76fe4bd46fb85a5cc196eff"
+        ]
+      }
+    ],
     "multi_commit_confirmed": false,
     "phase2_error": null
   },
@@ -10306,11 +11115,30 @@
         "patch_preview": "@@ -3,8 +3,12 @@\n \n \"\"\"Import/export tests\"\"\"\n \n+import io\n+import zipfile\n from pathlib import Path\n \n+import pytest\n+\n from openviking import AsyncOpenViking\n \n \n@@ -111,3 +115,61 @@ async def test_import_export_roundtrip(\n \n         # Verify content consistency\n         assert original_content =="
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 2,
+    "blame_commits": [
+      "37b5d0d359f4af3efae520388c6fbcb37516853e",
+      "749463a5a7f0a7e02cc54c4d961c001550993a55"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "openviking/storage/local_fs.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "37b5d0d359f4af3efae520388c6fbcb37516853e",
+          "749463a5a7f0a7e02cc54c4d961c001550993a55"
+        ]
+      },
+      {
+        "filename": "tests/client/test_import_export.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "749463a5a7f0a7e02cc54c4d961c001550993a55"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -10415,10 +11243,27 @@
         "patch_preview": "@@ -353,7 +353,7 @@ def test_build_agent_response_cleans_up_on_error(self, component_class, mock_lan\n                 assert not Path(temp_file_path).exists()\n \n     def test_build_agent(self, component_class, mock_langchain_experimental):\n-        \"\"\"Test build_agent method.\"\"\"\n+        \"\"\"Test bui"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
+    "phase2_done": true,
+    "distinct_blame_commits": 1,
+    "blame_commits": [
+      "0689810bf3f45909b2c95861b254370cc9a29e66"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "src/lfx/src/lfx/components/langchain_utilities/csv_agent.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "0689810bf3f45909b2c95861b254370cc9a29e66"
+        ]
+      },
+      {
+        "filename": "src/lfx/tests/unit/components/langchain_utilities/test_csv_agent.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "0689810bf3f45909b2c95861b254370cc9a29e66"
+        ]
+      }
+    ],
     "multi_commit_confirmed": false,
     "phase2_error": null
   },
@@ -10468,10 +11313,27 @@
         "patch_preview": "@@ -3987,3 +3987,53 @@ def test_get_experiment_missing_and_empty_metadata_file(tmp_path):\n     # Should raise MissingConfigException about invalid metadata\n     with pytest.raises(MissingConfigException, match=rf\"Experiment {exp_id} is invalid with empty\"):\n         fs._get_experiment(exp_id)\n+\n+\n+d"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
+    "phase2_done": true,
+    "distinct_blame_commits": 1,
+    "blame_commits": [
+      "b14d20aa082c52c0937cb7228f71b2b45d0cdb21"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "mlflow/store/tracking/file_store.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "b14d20aa082c52c0937cb7228f71b2b45d0cdb21"
+        ]
+      },
+      {
+        "filename": "tests/store/tracking/test_file_store.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "b14d20aa082c52c0937cb7228f71b2b45d0cdb21"
+        ]
+      }
+    ],
     "multi_commit_confirmed": false,
     "phase2_error": null
   },
@@ -10513,11 +11375,95 @@
         "patch_preview": "@@ -55,10 +55,15 @@\n     PROTOCOL_DTLSv1_3, WolfSSLMethod as _WolfSSLMethod\n )\n \n-CERT_NONE = 0\n-CERT_REQUIRED = 1\n+_SSL_VERIFY_NONE = 0\n+_SSL_VERIFY_PEER = 1\n+_SSL_VERIFY_FAIL_IF_NO_PEER_CERT = 2\n \n-_VERIFY_MODE_LIST = [CERT_NONE, CERT_REQUIRED]\n+CERT_NONE = _SSL_VERIFY_NONE\n+CERT_OPTIONAL = _SSL_V"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 33,
+    "blame_commits": [
+      "032f2e01679e7ae8687d80d7c86e5d5bcb6185a4",
+      "0ca4dd9a080c07a56c86a951da174a25901cbea9",
+      "0e6e405db554da159dfef68adc33c16f2567bacd",
+      "1d588a8465334156304fa9ae18f27e6fd03eec81",
+      "1f88948c5188bb3bda900d212cccfa7044194dba",
+      "25fc942c90578485d18be7bc0fa77d286c993077",
+      "2a19d75d798d8a32801d58a0dfdd8f6e65aa9335",
+      "2b0cf6754538418efbce25e7513ee93aee3120bc",
+      "4064227489cc261125e9752e2c20ebeebb810f04",
+      "436b2360b6327af50874f028bc589d7cf5a6f869",
+      "48fefc2a80277899c86d3ce982dc2eeae8442150",
+      "4d2c51353dbfcb235da3b0d17815018f7424c76c",
+      "4fed878960d1841cdac9af1821c6dd6753dcab9f",
+      "52ee72a6e4d59505225c5f59c38786bfc8627eeb",
+      "6268085fc5049444d01511e5ac92e4365fa3f4ab",
+      "6d60fa4b4be30e199f00a0c025aa998335c53cf6",
+      "7afda6b253d2747a3f632235e8eaf16d4acb05ba",
+      "7db065dd344a88a4797e2de4ff8207c694787920",
+      "81175698661315c4e79a478a7630324f29eb4706",
+      "84592548fa16d630be09f9e063d3678bb1a7831a",
+      "9118da9acc0c94fcd0e2820c8e65a4e9a5213abc",
+      "9ff47b572862b5ba7bb3f209ffba6c4158bb576b",
+      "a0fed9d8d266f97214a264fdf5b6e9862dee78c6",
+      "a28185bc3d315ba775c04859a5d65d32bc8a2724",
+      "a58fa13a60d07b72dd6d13d41a5cb877d1bfdbca",
+      "b34b40f7f4ec3e6107f474fafcb76f7bb7790d53",
+      "cf75110fd926f03a8df668fc57762efdfdb10496",
+      "d57b7e9dcd74d15c13d260bcb381bc516887eb13",
+      "e26560bf55b34a115469c799dbf9d54ddc25ac40",
+      "e594b6128093a782423485b38a154337376af359",
+      "f349d0830263760d871b0c2c4f5b0bbaafdc8c68",
+      "f7072afbb38990f9fc880a14ba1a32e0e921f546",
+      "fb42244d31fd8c45b17dfc2c743f5020c210d34a"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "tests/test_context.py",
+        "distinct_blame_commits": 5,
+        "blame_commits": [
+          "032f2e01679e7ae8687d80d7c86e5d5bcb6185a4",
+          "2b0cf6754538418efbce25e7513ee93aee3120bc",
+          "52ee72a6e4d59505225c5f59c38786bfc8627eeb",
+          "7afda6b253d2747a3f632235e8eaf16d4acb05ba",
+          "a0fed9d8d266f97214a264fdf5b6e9862dee78c6"
+        ]
+      },
+      {
+        "filename": "wolfssl/__init__.py",
+        "distinct_blame_commits": 32,
+        "blame_commits": [
+          "0ca4dd9a080c07a56c86a951da174a25901cbea9",
+          "0e6e405db554da159dfef68adc33c16f2567bacd",
+          "1d588a8465334156304fa9ae18f27e6fd03eec81",
+          "1f88948c5188bb3bda900d212cccfa7044194dba",
+          "25fc942c90578485d18be7bc0fa77d286c993077",
+          "2a19d75d798d8a32801d58a0dfdd8f6e65aa9335",
+          "2b0cf6754538418efbce25e7513ee93aee3120bc",
+          "4064227489cc261125e9752e2c20ebeebb810f04",
+          "436b2360b6327af50874f028bc589d7cf5a6f869",
+          "48fefc2a80277899c86d3ce982dc2eeae8442150",
+          "4d2c51353dbfcb235da3b0d17815018f7424c76c",
+          "4fed878960d1841cdac9af1821c6dd6753dcab9f",
+          "52ee72a6e4d59505225c5f59c38786bfc8627eeb",
+          "6268085fc5049444d01511e5ac92e4365fa3f4ab",
+          "6d60fa4b4be30e199f00a0c025aa998335c53cf6",
+          "7afda6b253d2747a3f632235e8eaf16d4acb05ba",
+          "7db065dd344a88a4797e2de4ff8207c694787920",
+          "81175698661315c4e79a478a7630324f29eb4706",
+          "84592548fa16d630be09f9e063d3678bb1a7831a",
+          "9118da9acc0c94fcd0e2820c8e65a4e9a5213abc",
+          "9ff47b572862b5ba7bb3f209ffba6c4158bb576b",
+          "a0fed9d8d266f97214a264fdf5b6e9862dee78c6",
+          "a28185bc3d315ba775c04859a5d65d32bc8a2724",
+          "a58fa13a60d07b72dd6d13d41a5cb877d1bfdbca",
+          "b34b40f7f4ec3e6107f474fafcb76f7bb7790d53",
+          "cf75110fd926f03a8df668fc57762efdfdb10496",
+          "d57b7e9dcd74d15c13d260bcb381bc516887eb13",
+          "e26560bf55b34a115469c799dbf9d54ddc25ac40",
+          "e594b6128093a782423485b38a154337376af359",
+          "f349d0830263760d871b0c2c4f5b0bbaafdc8c68",
+          "f7072afbb38990f9fc880a14ba1a32e0e921f546",
+          "fb42244d31fd8c45b17dfc2c743f5020c210d34a"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -10566,12 +11512,12 @@
         "patch_preview": "@@ -1165,7 +1165,7 @@ def _api_config(self):\n         \"\"\"\n         try:\n             # Get the RAW value of the config' dict\n-            args_json = self.config.as_dict()\n+            args_json = self.config.as_dict() if self.args.password else self.config.as_dict_secure()\n         except Exception"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
+    "phase2_done": true,
+    "distinct_blame_commits": 0,
     "blame_commits": [],
     "file_blame_results": [],
     "multi_commit_confirmed": false,
-    "phase2_error": null
+    "phase2_error": "no_py_files"
   },
   {
     "cve_id": "CVE-2026-2033",
@@ -10619,10 +11565,27 @@
         "patch_preview": "@@ -3987,3 +3987,53 @@ def test_get_experiment_missing_and_empty_metadata_file(tmp_path):\n     # Should raise MissingConfigException about invalid metadata\n     with pytest.raises(MissingConfigException, match=rf\"Experiment {exp_id} is invalid with empty\"):\n         fs._get_experiment(exp_id)\n+\n+\n+d"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
+    "phase2_done": true,
+    "distinct_blame_commits": 1,
+    "blame_commits": [
+      "b14d20aa082c52c0937cb7228f71b2b45d0cdb21"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "mlflow/store/tracking/file_store.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "b14d20aa082c52c0937cb7228f71b2b45d0cdb21"
+        ]
+      },
+      {
+        "filename": "tests/store/tracking/test_file_store.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "b14d20aa082c52c0937cb7228f71b2b45d0cdb21"
+        ]
+      }
+    ],
     "multi_commit_confirmed": false,
     "phase2_error": null
   },
@@ -10715,11 +11678,31 @@
         "patch_preview": "@@ -508,6 +508,7 @@ def test_codegen_unboxed_specialized(self) -> None:\n     \"custom_1::op_1\",\n     \"v1/7;0,1,2,3|7;0,1,2,3|7;0,1,2,3\",\n     [](torch::executor::KernelRuntimeContext & context, Span<EValue*> stack) {\n+        ET_KERNEL_CHECK_MSG(context, stack.size() == 1, InvalidProgram, /*void*/, \\"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 2,
+    "blame_commits": [
+      "72bb4f4e334a51aa9bd1772b6752206e6b0508be",
+      "ec9b0c072ac76b33519c056c1058c6fed403e177"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "codegen/gen.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "72bb4f4e334a51aa9bd1772b6752206e6b0508be",
+          "ec9b0c072ac76b33519c056c1058c6fed403e177"
+        ]
+      },
+      {
+        "filename": "codegen/test/test_executorch_gen.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "72bb4f4e334a51aa9bd1772b6752206e6b0508be",
+          "ec9b0c072ac76b33519c056c1058c6fed403e177"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -10764,11 +11747,86 @@
         "patch_preview": "@@ -123,6 +123,21 @@ def test_load(impl):\n         assert impl.load(fp=stream) == 1\n \n \n+def test_stream_position_after_decode(impl):\n+    \"\"\"Test that stream position is exactly at end of decoded CBOR value.\"\"\"\n+    # CBOR: integer 1 (1 byte: 0x01) followed by extra data\n+    cbor_data = b\"\\x01\"\n+ "
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 25,
+    "blame_commits": [
+      "00898ebc77eac78ecc1ffd6f30f8340adc7cfcf0",
+      "2349197bea8ebd1bf57a68f4a6549d8fd7585e66",
+      "2eeaab89c839a7524d6efc0f6ec180cbdfcde8be",
+      "387755eacf0be35591a478d3c67fe10618a6d542",
+      "403c2ce3d61ce5ddc2d2143127baf31b7ab4a75c",
+      "4ef178b4d489093f9e27a268f49ef8fddf38059e",
+      "538582fab621cc52ad5c52c57e5209bb410d1df0",
+      "600c86feaaf96021735902f613c70db1a8c26088",
+      "6d8e2a4c1affa5e5aeeb7c54570c5e067c65e41d",
+      "70aae502b100068a732612d8225bdeec5190b761",
+      "75279162a019d20db3bff8d64d41c7e97b555b53",
+      "7c6e6470e4de4e5c13d4f1a1e64146c745dde376",
+      "88eabb7ccbcb0b69a685e89822e96e0368055ea6",
+      "8b46c766c743815e2fe4a0e8fb8316297dd89cc4",
+      "98bdde3f73c988dc30f9c41d10862f8720b4dbfa",
+      "9ff48e3ce4ec3f0f2db8752558756b9e95dbc3d0",
+      "b4f7fce48cf9ae26098c55c2710ee1156bca542b",
+      "ba81d7f04d4318275fe2e5a1d7c44d26d59a8563",
+      "cab811ee4c3c9ae19fc02adf5437db27f294b188",
+      "d9cee77308056776859d40c81a82fac5f414d4db",
+      "dba7265710d2b9f88f12934a51c6a6c4d702ec97",
+      "e26956242734956a2647e98913b68088229bcfff",
+      "ed997ac7ffa17e8a37c05f9f4ca3f5081ca8f580",
+      "f1d701cd2c411ee40bb1fe383afe7f365f35abf0",
+      "fb4ee1612a8a1ac0dbd8cf2f2f6f931a4e06d824"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "cbor2/_decoder.py",
+        "distinct_blame_commits": 15,
+        "blame_commits": [
+          "00898ebc77eac78ecc1ffd6f30f8340adc7cfcf0",
+          "2eeaab89c839a7524d6efc0f6ec180cbdfcde8be",
+          "387755eacf0be35591a478d3c67fe10618a6d542",
+          "403c2ce3d61ce5ddc2d2143127baf31b7ab4a75c",
+          "4ef178b4d489093f9e27a268f49ef8fddf38059e",
+          "70aae502b100068a732612d8225bdeec5190b761",
+          "7c6e6470e4de4e5c13d4f1a1e64146c745dde376",
+          "88eabb7ccbcb0b69a685e89822e96e0368055ea6",
+          "8b46c766c743815e2fe4a0e8fb8316297dd89cc4",
+          "98bdde3f73c988dc30f9c41d10862f8720b4dbfa",
+          "9ff48e3ce4ec3f0f2db8752558756b9e95dbc3d0",
+          "b4f7fce48cf9ae26098c55c2710ee1156bca542b",
+          "cab811ee4c3c9ae19fc02adf5437db27f294b188",
+          "dba7265710d2b9f88f12934a51c6a6c4d702ec97",
+          "f1d701cd2c411ee40bb1fe383afe7f365f35abf0"
+        ]
+      },
+      {
+        "filename": "tests/test_decoder.py",
+        "distinct_blame_commits": 21,
+        "blame_commits": [
+          "2349197bea8ebd1bf57a68f4a6549d8fd7585e66",
+          "387755eacf0be35591a478d3c67fe10618a6d542",
+          "403c2ce3d61ce5ddc2d2143127baf31b7ab4a75c",
+          "4ef178b4d489093f9e27a268f49ef8fddf38059e",
+          "538582fab621cc52ad5c52c57e5209bb410d1df0",
+          "600c86feaaf96021735902f613c70db1a8c26088",
+          "6d8e2a4c1affa5e5aeeb7c54570c5e067c65e41d",
+          "70aae502b100068a732612d8225bdeec5190b761",
+          "75279162a019d20db3bff8d64d41c7e97b555b53",
+          "7c6e6470e4de4e5c13d4f1a1e64146c745dde376",
+          "88eabb7ccbcb0b69a685e89822e96e0368055ea6",
+          "8b46c766c743815e2fe4a0e8fb8316297dd89cc4",
+          "98bdde3f73c988dc30f9c41d10862f8720b4dbfa",
+          "9ff48e3ce4ec3f0f2db8752558756b9e95dbc3d0",
+          "b4f7fce48cf9ae26098c55c2710ee1156bca542b",
+          "ba81d7f04d4318275fe2e5a1d7c44d26d59a8563",
+          "d9cee77308056776859d40c81a82fac5f414d4db",
+          "e26956242734956a2647e98913b68088229bcfff",
+          "ed997ac7ffa17e8a37c05f9f4ca3f5081ca8f580",
+          "f1d701cd2c411ee40bb1fe383afe7f365f35abf0",
+          "fb4ee1612a8a1ac0dbd8cf2f2f6f931a4e06d824"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -10809,12 +11867,12 @@
         "patch_preview": "@@ -229,6 +229,31 @@\n     deployments on non-loopback interfaces, always set ``webui_allowed_hosts``\n     and consider enabling authentication.\n \n+**CORS (Cross-Origin Resource Sharing)** controls which external websites can\n+make requests to the Glances API from a browser. By default, Glances allow"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
+    "phase2_done": true,
+    "distinct_blame_commits": 0,
     "blame_commits": [],
     "file_blame_results": [],
     "multi_commit_confirmed": false,
-    "phase2_error": null
+    "phase2_error": "no_py_files"
   },
   {
     "cve_id": "CVE-2026-31958",
@@ -10858,11 +11916,87 @@
         "patch_preview": "@@ -9,6 +9,7 @@\n     qs_to_qsl,\n     HTTPInputError,\n     HTTPFile,\n+    ParseMultipartConfig,\n )\n from tornado.escape import utf8, native_str\n from tornado.log import gen_log\n@@ -298,10 +299,45 @@ def f(n):\n             return time.perf_counter() - start\n \n         d1 = f(1_000)\n+        # Note tha"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 25,
+    "blame_commits": [
+      "002f3a174bd8817c9b63c06d89c8c16ea5f94205",
+      "04ebadd87ded3588c868dcfeb0cc8aeb19e039c7",
+      "0d519f6679479132053d750a8691b131524d5ee0",
+      "170a58af2c1708c22529daf37536b6ba63403fd0",
+      "1cfc0d127a287cd732ff9f5419450a7ce1163454",
+      "1ea1435f89796e115351ba3b25715bc63a0ed00e",
+      "259a380dbbe01b8889ce2c75d3db916d23d39f84",
+      "31431c9aecefeb64b4c2fddcff5a25eccc12e981",
+      "39346ce1853cf12934c7a002f2aa042b4f96094b",
+      "4bdd0bc63d363b844c7b5471488fe45c6fefa471",
+      "4ce700affdd23631a0514d1a0460c0854b0687fe",
+      "4d4d80c1d076dcb4e051c969ae4b66557d3856b8",
+      "4ff5594ffd71c6dc9c82b0f003d63ed543a8e6d3",
+      "69e4d80485e5b2780713069545fc3ba79778c650",
+      "771472cfdaeebc0d89a9cc46e249f8891a6b29cd",
+      "88344aef46861c41202ec361bdf9640afadfb95d",
+      "8d721a877dd5c2bc0693d9c4d3954eb11fbd404b",
+      "9e9043e3cbf4605b272f74ede2c8e6a4d71049c1",
+      "bbc2b1429c6db80765a8a95c09ddddc7bb40e4e8",
+      "bc7e2ac5fa4be8efc74b9b86321f886e613a7066",
+      "cc61050e8f26697463142d99864b562e8470b41d",
+      "ddd89bafb1d9e278d82e154567a841d55c148326",
+      "e7dff512f8329dfc92590f144abbeaff55fce6ad",
+      "f4b3e9600e925ab57fc7b6ce250af175aa3e1356",
+      "f7818e799a0fc72e136b93d34c94eda2e127a88c"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "tornado/httputil.py",
+        "distinct_blame_commits": 22,
+        "blame_commits": [
+          "002f3a174bd8817c9b63c06d89c8c16ea5f94205",
+          "04ebadd87ded3588c868dcfeb0cc8aeb19e039c7",
+          "0d519f6679479132053d750a8691b131524d5ee0",
+          "170a58af2c1708c22529daf37536b6ba63403fd0",
+          "1cfc0d127a287cd732ff9f5419450a7ce1163454",
+          "1ea1435f89796e115351ba3b25715bc63a0ed00e",
+          "39346ce1853cf12934c7a002f2aa042b4f96094b",
+          "4bdd0bc63d363b844c7b5471488fe45c6fefa471",
+          "4ce700affdd23631a0514d1a0460c0854b0687fe",
+          "4d4d80c1d076dcb4e051c969ae4b66557d3856b8",
+          "4ff5594ffd71c6dc9c82b0f003d63ed543a8e6d3",
+          "771472cfdaeebc0d89a9cc46e249f8891a6b29cd",
+          "88344aef46861c41202ec361bdf9640afadfb95d",
+          "8d721a877dd5c2bc0693d9c4d3954eb11fbd404b",
+          "9e9043e3cbf4605b272f74ede2c8e6a4d71049c1",
+          "bbc2b1429c6db80765a8a95c09ddddc7bb40e4e8",
+          "bc7e2ac5fa4be8efc74b9b86321f886e613a7066",
+          "cc61050e8f26697463142d99864b562e8470b41d",
+          "ddd89bafb1d9e278d82e154567a841d55c148326",
+          "e7dff512f8329dfc92590f144abbeaff55fce6ad",
+          "f4b3e9600e925ab57fc7b6ce250af175aa3e1356",
+          "f7818e799a0fc72e136b93d34c94eda2e127a88c"
+        ]
+      },
+      {
+        "filename": "tornado/test/httputil_test.py",
+        "distinct_blame_commits": 15,
+        "blame_commits": [
+          "0d519f6679479132053d750a8691b131524d5ee0",
+          "170a58af2c1708c22529daf37536b6ba63403fd0",
+          "1ea1435f89796e115351ba3b25715bc63a0ed00e",
+          "259a380dbbe01b8889ce2c75d3db916d23d39f84",
+          "31431c9aecefeb64b4c2fddcff5a25eccc12e981",
+          "4bdd0bc63d363b844c7b5471488fe45c6fefa471",
+          "4d4d80c1d076dcb4e051c969ae4b66557d3856b8",
+          "69e4d80485e5b2780713069545fc3ba79778c650",
+          "771472cfdaeebc0d89a9cc46e249f8891a6b29cd",
+          "8d721a877dd5c2bc0693d9c4d3954eb11fbd404b",
+          "9e9043e3cbf4605b272f74ede2c8e6a4d71049c1",
+          "bbc2b1429c6db80765a8a95c09ddddc7bb40e4e8",
+          "bc7e2ac5fa4be8efc74b9b86321f886e613a7066",
+          "cc61050e8f26697463142d99864b562e8470b41d",
+          "f4b3e9600e925ab57fc7b6ce250af175aa3e1356"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -10908,11 +12042,33 @@
         "patch_preview": "@@ -92,9 +92,12 @@ def test_compact_rsa_pss(self):\n         self.assertRaises(errors.BadSignatureError, jws.deserialize, s, ssh_pub_key)\n \n     def test_compact_none(self):\n-        jws = JsonWebSignature()\n-        s = jws.serialize({\"alg\": \"none\"}, \"hello\", \"\")\n-        self.assertRaises(errors.Ba"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 3,
+    "blame_commits": [
+      "098dd9f8fa5ceff37d6f390570302cbe4fee1332",
+      "2063e95eea693c980cfcc7608ce03e0b9ba8f6f2",
+      "cc414516b5e5cd76628326bc77ee1a8dd03c48bf"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "authlib/jose/rfc7518/jws_algs.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "098dd9f8fa5ceff37d6f390570302cbe4fee1332",
+          "cc414516b5e5cd76628326bc77ee1a8dd03c48bf"
+        ]
+      },
+      {
+        "filename": "tests/jose/test_jws.py",
+        "distinct_blame_commits": 3,
+        "blame_commits": [
+          "098dd9f8fa5ceff37d6f390570302cbe4fee1332",
+          "2063e95eea693c980cfcc7608ce03e0b9ba8f6f2",
+          "cc414516b5e5cd76628326bc77ee1a8dd03c48bf"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -10957,11 +12113,32 @@
         "patch_preview": "@@ -8,6 +8,7 @@\n from joserfc.jwa import JWE_ENC_MODELS\n from joserfc.jwk import RSAKey, ECKey, OctKey, OKPKey, KeySet\n from joserfc.errors import (\n+    SecurityWarning,\n     InvalidKeyLengthError,\n     MissingAlgorithmError,\n     MissingEncryptionError,\n@@ -180,6 +181,50 @@ def test_PBES2HS_with_h"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 3,
+    "blame_commits": [
+      "62d968b019ff0b9d4ad2ad04864d311cb826f5ca",
+      "830c6475031a0442b9efd43f74b6103f14f48da5",
+      "e10e1733593b4d8b91f4eb7a68334c0dd43f8c9d"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "src/joserfc/_rfc7518/jwe_algs.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "830c6475031a0442b9efd43f74b6103f14f48da5",
+          "e10e1733593b4d8b91f4eb7a68334c0dd43f8c9d"
+        ]
+      },
+      {
+        "filename": "tests/jwe/test_compact.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "62d968b019ff0b9d4ad2ad04864d311cb826f5ca",
+          "830c6475031a0442b9efd43f74b6103f14f48da5"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -11002,10 +12179,27 @@
         "patch_preview": "@@ -196,6 +196,31 @@ def test_memory_backend_clear_stale_sessions():\n   assert states == {type(StateA): StateA()}\n \n \n+@pytest.mark.parametrize(\n+  \"malicious_token\",\n+  [\n+    \"../../../../etc/passwd\",\n+    \"../sibling\",\n+    \"token/../../escape\",\n+    \"token\\x00null\",\n+    \"token with spaces\",\n+  "
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
+    "phase2_done": true,
+    "distinct_blame_commits": 1,
+    "blame_commits": [
+      "897bf09e0b67b352cf332b8647de182b1d7b9a34"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "mesop/server/state_session.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "897bf09e0b67b352cf332b8647de182b1d7b9a34"
+        ]
+      },
+      {
+        "filename": "mesop/server/state_session_test.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "897bf09e0b67b352cf332b8647de182b1d7b9a34"
+        ]
+      }
+    ],
     "multi_commit_confirmed": false,
     "phase2_error": null
   },
@@ -11052,11 +12246,37 @@
         "patch_preview": "@@ -80,6 +80,8 @@ def test_pygmentize_lines_newline_on_otherwise_empty_line(self):\n         self._pygmentize_lines([\"\\n\", \"\\n\", \"\\n\"])\n \n     def test_pygmentize_lines_ruby_regression(self):\n+        # deal with https://github.com/pygments/pygments/issues/2998\n+\n         # code taken from:\n         "
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 5,
+    "blame_commits": [
+      "4564131ff53291ca56bdde90d3297b48f9de393b",
+      "71f4db0136243c25a63f3bf25d6bc05e77f5129a",
+      "77da3835c41a4f4b92280450a5b3cfdbc795ac3b",
+      "bddc2e8f640e82b7d1f861f1b8b363535d8a22a1",
+      "e048285474bfcd03bae40ff174cf0349baeb2675"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "theme/templatetags/issues.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "4564131ff53291ca56bdde90d3297b48f9de393b",
+          "bddc2e8f640e82b7d1f861f1b8b363535d8a22a1"
+        ]
+      },
+      {
+        "filename": "theme/tests.py",
+        "distinct_blame_commits": 5,
+        "blame_commits": [
+          "4564131ff53291ca56bdde90d3297b48f9de393b",
+          "71f4db0136243c25a63f3bf25d6bc05e77f5129a",
+          "77da3835c41a4f4b92280450a5b3cfdbc795ac3b",
+          "bddc2e8f640e82b7d1f861f1b8b363535d8a22a1",
+          "e048285474bfcd03bae40ff174cf0349baeb2675"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -11106,11 +12326,30 @@
         "patch_preview": "@@ -1,5 +1,5 @@\n import uuid\n-from typing import List, Sequence, cast\n+from typing import List, Sequence, Optional, cast\n \n from llama_index.core.agent.react.formatter import ReActChatFormatter\n from llama_index.core.agent.react.output_parser import ReActOutputParser\n@@ -28,9 +28,10 @@\n from llama_i"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 2,
+    "blame_commits": [
+      "23b420f8996e9aaa25cc942fcb9a2965f848efb6",
+      "fb871e4751b136b04cbf104bdd36c5ead9b1af10"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "llama-index-core/llama_index/core/__init__.py",
+        "distinct_blame_commits": 2,
+        "blame_commits": [
+          "23b420f8996e9aaa25cc942fcb9a2965f848efb6",
+          "fb871e4751b136b04cbf104bdd36c5ead9b1af10"
+        ]
+      },
+      {
+        "filename": "llama-index-core/llama_index/core/agent/workflow/react_agent.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "23b420f8996e9aaa25cc942fcb9a2965f848efb6"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -11151,12 +12390,12 @@
         "patch_preview": "@@ -0,0 +1,346 @@\n+#!/usr/bin/env python\n+#\n+# Glances - An eye on your system\n+#\n+# SPDX-FileCopyrightText: 2024 Nicolas Hennion <nicolas@nicolargo.com>\n+#\n+# SPDX-License-Identifier: LGPL-3.0-only\n+#\n+\n+\"\"\"Glances unit tests for action command sanitization.\n+\n+Tests cover:\n+- _sanitize_mustache_di"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
+    "phase2_done": true,
+    "distinct_blame_commits": 0,
     "blame_commits": [],
     "file_blame_results": [],
     "multi_commit_confirmed": false,
-    "phase2_error": null
+    "phase2_error": "no_py_files"
   },
   {
     "cve_id": "CVE-2026-25481",
@@ -11191,10 +12430,27 @@
         "patch_preview": "@@ -40,6 +40,29 @@\n         r\"unexpected variable 'other_var'\",\n     ),\n     (DEEP_EXPR, r\"AST nesting too deep\"),\n+    # CVE-2025-46724 bypass tests - dunder attribute access\n+    (\"df.__init__\", r\"dunder attribute '__init__' not allowed\"),\n+    (\"df.__class__\", r\"dunder attribute '__class__' not a"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
+    "phase2_done": true,
+    "distinct_blame_commits": 1,
+    "blame_commits": [
+      "2eb647efa8bd98ed2f9d1106ca463304b84285c5"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "langroid/utils/pandas_utils.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "2eb647efa8bd98ed2f9d1106ca463304b84285c5"
+        ]
+      },
+      {
+        "filename": "tests/main/test_pandas_utils.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "2eb647efa8bd98ed2f9d1106ca463304b84285c5"
+        ]
+      }
+    ],
     "multi_commit_confirmed": false,
     "phase2_error": null
   },
@@ -11231,11 +12487,89 @@
         "patch_preview": "@@ -5106,6 +5106,44 @@ def test_it_works_at_all(self) -> None:\n     def test_it_works_with_srtp(self) -> None:\n         self._test_handshake_and_data(srtp_profile=b\"SRTP_AES128_CM_SHA1_80\")\n \n+    def test_cookie_generate_too_long(self) -> None:\n+        s_ctx = Context(DTLS_METHOD)\n+\n+        def g"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 27,
+    "blame_commits": [
+      "08ec8e68df2ab3d3a3af666ec5d3db3535e40613",
+      "0ca1c978c0d68b1a3e216474c5225281a115f3af",
+      "10acb2bf09a85e3f6f087b4ed8f882c7d585af9b",
+      "1f052ccd7bb9908acb1522443f218b2bd45397d6",
+      "24cc2c1765fe4534692e493208c403cbdfc46205",
+      "317c7fa65b5dc0473f038452f4df334b910812b9",
+      "35b55a3bcecbb3e9174eddfbb0e259c9e0db3f69",
+      "38888abdca9bef2be510e71ea0933202a96985d5",
+      "56199439d5c0b7c462b6c4f190855099f7296417",
+      "5f46403a4adb28c331a36f2129efccf4af219c20",
+      "67d973a3b32d7e0fd46bb43a8d2d7cc2d4f09d05",
+      "70e2835232ce76d07e696601d21746abcde752f2",
+      "8afc1d84236ce095accadd00f02969995a245952",
+      "9422c3688eec75f825949e367ea7cfb26b1c49c5",
+      "95cf8fa3cec8d8ec9f0dca8dd1977a0fd86363b2",
+      "9b8c497e91ae5c50cfaf27a591698d547eee9c1d",
+      "9baefbaade98c6b76650fbfe07bf19b926578779",
+      "9f82d9715c6221c7e702a07d34c70ebb42240008",
+      "a157163278b829d866f21b7b7c85abd61a1e9777",
+      "a1b4f7fcd4eb7d81d44f4f3d45ede8dfcc6a3694",
+      "a3972a02d573f8d1ffee6835107824a9dd64fb63",
+      "b6989438be4a8dbc1d6ad3607c4d2e5a5c6025e8",
+      "c52ae6df92f483b98fb069ad45b8c36a517f6266",
+      "d41a814759a9fb49584ca8ab3f7295de49a85aa0",
+      "ee017b29d7df99a14ec09838a43b1f04f6dd95af",
+      "f46314fda6e6cfa5db31aece9c2c8fc7f9f908e4",
+      "f9a68e6ccd477258b442e168a868889e07f70021"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "src/OpenSSL/SSL.py",
+        "distinct_blame_commits": 14,
+        "blame_commits": [
+          "08ec8e68df2ab3d3a3af666ec5d3db3535e40613",
+          "1f052ccd7bb9908acb1522443f218b2bd45397d6",
+          "317c7fa65b5dc0473f038452f4df334b910812b9",
+          "56199439d5c0b7c462b6c4f190855099f7296417",
+          "5f46403a4adb28c331a36f2129efccf4af219c20",
+          "8afc1d84236ce095accadd00f02969995a245952",
+          "9b8c497e91ae5c50cfaf27a591698d547eee9c1d",
+          "9f82d9715c6221c7e702a07d34c70ebb42240008",
+          "a157163278b829d866f21b7b7c85abd61a1e9777",
+          "a1b4f7fcd4eb7d81d44f4f3d45ede8dfcc6a3694",
+          "c52ae6df92f483b98fb069ad45b8c36a517f6266",
+          "d41a814759a9fb49584ca8ab3f7295de49a85aa0",
+          "f46314fda6e6cfa5db31aece9c2c8fc7f9f908e4",
+          "f9a68e6ccd477258b442e168a868889e07f70021"
+        ]
+      },
+      {
+        "filename": "tests/test_ssl.py",
+        "distinct_blame_commits": 23,
+        "blame_commits": [
+          "0ca1c978c0d68b1a3e216474c5225281a115f3af",
+          "10acb2bf09a85e3f6f087b4ed8f882c7d585af9b",
+          "24cc2c1765fe4534692e493208c403cbdfc46205",
+          "317c7fa65b5dc0473f038452f4df334b910812b9",
+          "35b55a3bcecbb3e9174eddfbb0e259c9e0db3f69",
+          "38888abdca9bef2be510e71ea0933202a96985d5",
+          "56199439d5c0b7c462b6c4f190855099f7296417",
+          "5f46403a4adb28c331a36f2129efccf4af219c20",
+          "67d973a3b32d7e0fd46bb43a8d2d7cc2d4f09d05",
+          "70e2835232ce76d07e696601d21746abcde752f2",
+          "9422c3688eec75f825949e367ea7cfb26b1c49c5",
+          "95cf8fa3cec8d8ec9f0dca8dd1977a0fd86363b2",
+          "9b8c497e91ae5c50cfaf27a591698d547eee9c1d",
+          "9baefbaade98c6b76650fbfe07bf19b926578779",
+          "9f82d9715c6221c7e702a07d34c70ebb42240008",
+          "a157163278b829d866f21b7b7c85abd61a1e9777",
+          "a1b4f7fcd4eb7d81d44f4f3d45ede8dfcc6a3694",
+          "a3972a02d573f8d1ffee6835107824a9dd64fb63",
+          "b6989438be4a8dbc1d6ad3607c4d2e5a5c6025e8",
+          "c52ae6df92f483b98fb069ad45b8c36a517f6266",
+          "d41a814759a9fb49584ca8ab3f7295de49a85aa0",
+          "ee017b29d7df99a14ec09838a43b1f04f6dd95af",
+          "f46314fda6e6cfa5db31aece9c2c8fc7f9f908e4"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -11271,11 +12605,62 @@
         "patch_preview": "@@ -163,6 +163,13 @@ def test_negative_offset(self) -> None:\n             with pytest.raises(ValueError, match=\"Tile offset cannot be negative\"):\n                 im.load()\n \n+    @pytest.mark.parametrize(\"xy\", ((-1, 0), (0, -1)))\n+    def test_negative_tile_extents(self, xy: tuple[int, int]) -> Non"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 18,
+    "blame_commits": [
+      "06c331af5d85825b7c2595ca3861730d52b22e00",
+      "14fb62e36c5e933faf9f88e9c0418f71be883a9c",
+      "2756cd527360e4d7646d50b84f0d1580cb52ce65",
+      "29ff5fcb5527ff38b15a724cdb03a115eea43be9",
+      "3607d1ade397fc5a5b41f2a0607a15927e2810fa",
+      "3cdaee45f50a1a4c020c382b516299a2bb531ec7",
+      "413bbb31c959a3e2a6929d4a12861a79d82f8e80",
+      "497080f63b62c9acbb427c7e554f222de70fe3a9",
+      "4aa24f88d9a066318b75f0ad4bf69240d595ffb6",
+      "5bae9343171d653dcf5dff0669c3665fd97dea3e",
+      "6bffa3a9d4fe3d5a50c505ec0637d70cc1e8d59b",
+      "6d19b8adeff16674e62bd1e0aed95f29ff1932fb",
+      "7f414846a3ef1cc5a740a74aa6cdeb49b58a373d",
+      "8a05e32336bfbece4aed16a63d009efa55a1b4bb",
+      "d00f3656a684825569152ea1d6e74526ffa5d14b",
+      "dcd52ebf652399d4f900cbc5579e97902ed1ff4d",
+      "e19a1496c21ee5cca0fcbfcd0f1d97b9d8aa6bcc",
+      "e6e5ef5c5fbd83ac5dd63301e4d7d6860a7b2d09"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "Tests/test_file_psd.py",
+        "distinct_blame_commits": 5,
+        "blame_commits": [
+          "14fb62e36c5e933faf9f88e9c0418f71be883a9c",
+          "2756cd527360e4d7646d50b84f0d1580cb52ce65",
+          "413bbb31c959a3e2a6929d4a12861a79d82f8e80",
+          "7f414846a3ef1cc5a740a74aa6cdeb49b58a373d",
+          "dcd52ebf652399d4f900cbc5579e97902ed1ff4d"
+        ]
+      },
+      {
+        "filename": "Tests/test_imagefile.py",
+        "distinct_blame_commits": 14,
+        "blame_commits": [
+          "06c331af5d85825b7c2595ca3861730d52b22e00",
+          "2756cd527360e4d7646d50b84f0d1580cb52ce65",
+          "29ff5fcb5527ff38b15a724cdb03a115eea43be9",
+          "3607d1ade397fc5a5b41f2a0607a15927e2810fa",
+          "3cdaee45f50a1a4c020c382b516299a2bb531ec7",
+          "497080f63b62c9acbb427c7e554f222de70fe3a9",
+          "4aa24f88d9a066318b75f0ad4bf69240d595ffb6",
+          "5bae9343171d653dcf5dff0669c3665fd97dea3e",
+          "6bffa3a9d4fe3d5a50c505ec0637d70cc1e8d59b",
+          "6d19b8adeff16674e62bd1e0aed95f29ff1932fb",
+          "8a05e32336bfbece4aed16a63d009efa55a1b4bb",
+          "d00f3656a684825569152ea1d6e74526ffa5d14b",
+          "e19a1496c21ee5cca0fcbfcd0f1d97b9d8aa6bcc",
+          "e6e5ef5c5fbd83ac5dd63301e4d7d6860a7b2d09"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -11321,11 +12706,54 @@
         "patch_preview": "@@ -754,6 +754,4 @@ def _validate_private_headers(self, header, alg):\n def prepare_key(alg, header, key):\n     if callable(key):\n         key = key(header, None)\n-    elif key is None and \"jwk\" in header:\n-        key = header[\"jwk\"]\n     return alg.prepare_key(key)"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
-    "multi_commit_confirmed": false,
+    "phase2_done": true,
+    "distinct_blame_commits": 12,
+    "blame_commits": [
+      "06f0813901a5238dd0b94521d26a7af9064497a0",
+      "098dd9f8fa5ceff37d6f390570302cbe4fee1332",
+      "1e1ef0005b91a1bef17db08dac169c2958450d87",
+      "2063e95eea693c980cfcc7608ce03e0b9ba8f6f2",
+      "3a382780907226d99c09606aac78e29fe5bd3bf6",
+      "46f1c112fd29f3afaf9e0f7c134fee62530d2bf1",
+      "55e8517c637fb4540d44e3c46edc23542083e7ae",
+      "7c46c8c7a229727db284964f783afc07a5ecb253",
+      "867e3f87b072347a1ae9cf6983cc8bbf88447e5e",
+      "9ec24449c28f72e435f2f293944793601fc6cdad",
+      "b8f7cc7b709a5222591ee7d56954b6e893696fa4",
+      "eb07119430e7afe52d60f885f9dda3287f80ca6b"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "authlib/jose/rfc7515/jws.py",
+        "distinct_blame_commits": 10,
+        "blame_commits": [
+          "06f0813901a5238dd0b94521d26a7af9064497a0",
+          "098dd9f8fa5ceff37d6f390570302cbe4fee1332",
+          "1e1ef0005b91a1bef17db08dac169c2958450d87",
+          "2063e95eea693c980cfcc7608ce03e0b9ba8f6f2",
+          "3a382780907226d99c09606aac78e29fe5bd3bf6",
+          "46f1c112fd29f3afaf9e0f7c134fee62530d2bf1",
+          "55e8517c637fb4540d44e3c46edc23542083e7ae",
+          "867e3f87b072347a1ae9cf6983cc8bbf88447e5e",
+          "9ec24449c28f72e435f2f293944793601fc6cdad",
+          "eb07119430e7afe52d60f885f9dda3287f80ca6b"
+        ]
+      },
+      {
+        "filename": "authlib/jose/rfc7516/jwe.py",
+        "distinct_blame_commits": 7,
+        "blame_commits": [
+          "098dd9f8fa5ceff37d6f390570302cbe4fee1332",
+          "1e1ef0005b91a1bef17db08dac169c2958450d87",
+          "3a382780907226d99c09606aac78e29fe5bd3bf6",
+          "46f1c112fd29f3afaf9e0f7c134fee62530d2bf1",
+          "7c46c8c7a229727db284964f783afc07a5ecb253",
+          "9ec24449c28f72e435f2f293944793601fc6cdad",
+          "b8f7cc7b709a5222591ee7d56954b6e893696fa4"
+        ]
+      }
+    ],
+    "multi_commit_confirmed": true,
     "phase2_error": null
   },
   {
@@ -11361,10 +12789,27 @@
         "patch_preview": "@@ -272,6 +272,11 @@ def test_create_helper(self):\n                     Q(*items, _connector=connector),\n                 )\n \n+    def test_connector_validation(self):\n+        msg = f\"_connector must be one of {Q.AND!r}, {Q.OR!r}, {Q.XOR!r}, or None.\"\n+        with self.assertRaisesMessage(ValueErr"
       }
     ],
-    "phase2_done": false,
-    "distinct_blame_commits": null,
-    "blame_commits": [],
-    "file_blame_results": [],
+    "phase2_done": true,
+    "distinct_blame_commits": 1,
+    "blame_commits": [
+      "424e0d86973d88b402b55f20884938715aad740b"
+    ],
+    "file_blame_results": [
+      {
+        "filename": "django/db/models/query_utils.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "424e0d86973d88b402b55f20884938715aad740b"
+        ]
+      },
+      {
+        "filename": "tests/queries/test_q.py",
+        "distinct_blame_commits": 1,
+        "blame_commits": [
+          "424e0d86973d88b402b55f20884938715aad740b"
+        ]
+      }
+    ],
     "multi_commit_confirmed": false,
     "phase2_error": null
   },
@@ -11406,6 +12851,348 @@
     "blame_commits": [],
     "file_blame_results": [],
     "multi_commit_confirmed": false,
+    "phase2_error": null
+  },
+  {
+    "cve_id": "CVE-2025-27520",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-502"
+    ],
+    "summary": "BentoML Allows Remote Code Execution (RCE) via Insecure Deserialization",
+    "repo": "https://github.com/bentoml/BentoML",
+    "owner": "bentoml",
+    "repo_name": "BentoML",
+    "fix_commit": "b35f4f4fcc53a8c3fe8ed9c18a013fe0a728e194",
+    "fix_commit_url": "https://github.com/bentoml/BentoML/commit/b35f4f4fcc53a8c3fe8ed9c18a013fe0a728e194",
+    "py_files_changed": 1,
+    "total_deletions": 0,
+    "total_additions": 0,
+    "phase1_score": 0,
+    "files": [
+      {
+        "filename": "src/_bentoml_impl/server/app.py",
+        "blame_commits": 0
+      }
+    ],
+    "phase2_done": true,
+    "distinct_blame_commits": 9,
+    "blame_commits": [
+      "4a71393f7120a80882488325f37e1c1dcbff7b1d",
+      "6c0c4bbb4562f8c05d7054dd62456a2365520816",
+      "74076a7f3314b874d24158d8ec9f101674b7e8a5",
+      "889845162dacf42d16a6e44df022e2581f11c340",
+      "a3959b73787a8b02f0b400d9953aff84a29bb409",
+      "a9692fb1525ba93e8d2cd962152c7f1d53cf04e1",
+      "b64e9b481b89c70157b8275c06d2ed909a1fb4cf",
+      "b65eb2c32bcdefefb40563d7374edb4f86f218ec",
+      "d1a43c74db54ebc196cc1b63fe22d6be2fea66a5"
+    ],
+    "file_blame_results": {},
+    "multi_commit_confirmed": true,
+    "phase2_error": null
+  },
+  {
+    "cve_id": "CVE-2025-23042",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-178",
+      "CWE-285"
+    ],
+    "summary": "Gradio Blocked Path ACL Bypass Vulnerability",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "6b63fdec441b5c9bf910f910a2505d8defbb6bf8",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/6b63fdec441b5c9bf910f910a2505d8defbb6bf8",
+    "py_files_changed": 2,
+    "total_deletions": 0,
+    "total_additions": 0,
+    "phase1_score": 0,
+    "files": [
+      {
+        "filename": "gradio/utils.py",
+        "blame_commits": 0
+      },
+      {
+        "filename": "test/test_routes.py",
+        "blame_commits": 0
+      }
+    ],
+    "phase2_done": true,
+    "distinct_blame_commits": 5,
+    "blame_commits": [
+      "19e1ef52dcd2c7f2bae49ef7844fbfd31c1785fe",
+      "3f192100d6997751d0246b396a4fd8eaa86a826b",
+      "5ce28324971e974ae24dc9a229b2160793140fb2",
+      "5da6c1da474cc5cfe2e6abfb242a3b1f3dcdfcb7",
+      "cb5b89108e0217131a914315be698827a4d05c15"
+    ],
+    "file_blame_results": {},
+    "multi_commit_confirmed": true,
+    "phase2_error": null
+  },
+  {
+    "cve_id": "CVE-2024-1728",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "Gradio allows users to access arbitrary files",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "16fbe9cd0cffa9f2a824a0165beb43446114eec7",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/16fbe9cd0cffa9f2a824a0165beb43446114eec7",
+    "py_files_changed": 4,
+    "total_deletions": 0,
+    "total_additions": 0,
+    "phase1_score": 0,
+    "files": [
+      {
+        "filename": "gradio/blocks.py",
+        "blame_commits": 0
+      },
+      {
+        "filename": "gradio/processing_utils.py",
+        "blame_commits": 0
+      },
+      {
+        "filename": "gradio/routes.py",
+        "blame_commits": 0
+      },
+      {
+        "filename": "gradio/utils.py",
+        "blame_commits": 0
+      }
+    ],
+    "phase2_done": true,
+    "distinct_blame_commits": 18,
+    "blame_commits": [
+      "0fddd0f971761bff3ef6ccc7ab9deb1891cd80d0",
+      "32b317f24e3d43f26684bb9f3964f31efd0ea556",
+      "3e4e680a52ba5a73c108ef1b328dacd7b6e4b566",
+      "49d9c48537aa706bf72628e3640389470138bdc6",
+      "4ab399f40a300f267231f1b2dbe2a07494322d4d",
+      "4faf8a7e86bfe811ef3d90ac5abdbd41409fafb1",
+      "7302a6e151dac553c17833be64d4639ee4cf97aa",
+      "87d510580e7061c00848b70613c74838d9c71de7",
+      "b25e95e164e80d66203ef71ce6bdb67ceb6b24df",
+      "b5c74ffadbee351b2d5d79e578246f5343255508",
+      "ba747adb87e1937c0a791186eee3997d034363e6",
+      "c88290d90a81811911361e26fa9523c9b13db527",
+      "d901b7c80717ce38066c9d2b66c9a3e3a9734a2f",
+      "ddd4d3e4d3883fb7540d1df240fb08202fc77705",
+      "e329f1fd38935213fe0e73962e8cbd5d3af6e87b",
+      "edfd05d18d20542d350d883d5e7f84d2774ad99e",
+      "fa8225d24d86c0ec9a48cadee78dcc11b7084584",
+      "fb1f6befad12106faafd94d221c1ed0e50b0a037"
+    ],
+    "file_blame_results": {},
+    "multi_commit_confirmed": true,
+    "phase2_error": null
+  },
+  {
+    "cve_id": "CVE-2024-0520",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-22",
+      "CWE-23"
+    ],
+    "summary": "Remote code execution in mlflow",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "400c226953b4568f4361bc0a0c223511652c2b9d",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/400c226953b4568f4361bc0a0c223511652c2b9d",
+    "py_files_changed": 2,
+    "total_deletions": 0,
+    "total_additions": 0,
+    "phase1_score": 0,
+    "files": [
+      {
+        "filename": "mlflow/data/http_dataset_source.py",
+        "blame_commits": 0
+      },
+      {
+        "filename": "tests/data/test_http_dataset_source.py",
+        "blame_commits": 0
+      }
+    ],
+    "phase2_done": true,
+    "distinct_blame_commits": 2,
+    "blame_commits": [
+      "770d84ca182b98fdb9ce865587229dc31afa9abf",
+      "b77667898c9f1a137a5987cc0936555f2139ade5"
+    ],
+    "file_blame_results": {},
+    "multi_commit_confirmed": true,
+    "phase2_error": null
+  },
+  {
+    "cve_id": "CVE-2024-36039",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "PyMySQL SQL Injection vulnerability",
+    "repo": "https://github.com/PyMySQL/PyMySQL",
+    "owner": "PyMySQL",
+    "repo_name": "PyMySQL",
+    "fix_commit": "521e40050cb386a499f68f483fefd144c493053c",
+    "fix_commit_url": "https://github.com/PyMySQL/PyMySQL/commit/521e40050cb386a499f68f483fefd144c493053c",
+    "py_files_changed": 2,
+    "total_deletions": 0,
+    "total_additions": 0,
+    "phase1_score": 0,
+    "files": [
+      {
+        "filename": "pymysql/converters.py",
+        "blame_commits": 0
+      },
+      {
+        "filename": "pymysql/tests/test_connection.py",
+        "blame_commits": 0
+      }
+    ],
+    "phase2_done": true,
+    "distinct_blame_commits": 9,
+    "blame_commits": [
+      "062384c26d10556529af91d0f0946e302b727d18",
+      "103004d6ed59d8eef95fe069e8ca4f60d4965be3",
+      "2fe0b1293d1a24140f6d35f5ff37d7b5a46a28e1",
+      "69290924144f961167c257ae33959c46e298efd2",
+      "d206182822d61650eed8ccd167171ea6131113d1",
+      "e77b21898ab46887067df981eaa19809533ec4bf",
+      "ed56379dcc165f8810c8678c56bff7bb544a710f",
+      "f0091e09889a3db2400f821bee6a411fa1822a44",
+      "f24cb9aa7295921bcd8f34f752c8a05b981d3125"
+    ],
+    "file_blame_results": {},
+    "multi_commit_confirmed": true,
+    "phase2_error": null
+  },
+  {
+    "cve_id": "CVE-2024-3573",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-29"
+    ],
+    "summary": "mlflow vulnerable to Path Traversal",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "438a450714a3ca06285eeea34bdc6cf79d7f6cbc",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/438a450714a3ca06285eeea34bdc6cf79d7f6cbc",
+    "py_files_changed": 9,
+    "total_deletions": 0,
+    "total_additions": 0,
+    "phase1_score": 0,
+    "files": [
+      {
+        "filename": "mlflow/environment_variables.py",
+        "blame_commits": 0
+      },
+      {
+        "filename": "mlflow/server/handlers.py",
+        "blame_commits": 0
+      },
+      {
+        "filename": "mlflow/utils/uri.py",
+        "blame_commits": 0
+      },
+      {
+        "filename": "tests/artifacts/test_artifacts.py",
+        "blame_commits": 0
+      },
+      {
+        "filename": "tests/store/tracking/test_file_store.py",
+        "blame_commits": 0
+      }
+    ],
+    "phase2_done": true,
+    "distinct_blame_commits": 6,
+    "blame_commits": [
+      "119eef6a0a8008eeb5820f41a5b7afcb92f2d118",
+      "1da75dfcecd4d169e34809ade55748384e8af6c1",
+      "4bd7f27c810ba7487d53ed5ef1038fca0f8dc28c",
+      "5044878da0c1851ccfdd5c0a867157ed9a502fbc",
+      "8174250f83352a04c2d42079f414759060458555",
+      "b4b0b8aa34866071bcf128e108445c4743920e1b"
+    ],
+    "file_blame_results": {},
+    "multi_commit_confirmed": true,
+    "phase2_error": null
+  },
+  {
+    "cve_id": "CVE-2024-2912",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-1188"
+    ],
+    "summary": "Insecure deserialization in BentoML",
+    "repo": "https://github.com/bentoml/bentoml",
+    "owner": "bentoml",
+    "repo_name": "bentoml",
+    "fix_commit": "fd70379733c57c6368cc022ac1f841b7b426db7b",
+    "fix_commit_url": "https://github.com/bentoml/bentoml/commit/fd70379733c57c6368cc022ac1f841b7b426db7b",
+    "py_files_changed": 6,
+    "total_deletions": 0,
+    "total_additions": 0,
+    "phase1_score": 0,
+    "files": [
+      {
+        "filename": "src/_bentoml_impl/client/__init__.py",
+        "blame_commits": 0
+      },
+      {
+        "filename": "src/_bentoml_impl/client/http.py",
+        "blame_commits": 0
+      },
+      {
+        "filename": "src/_bentoml_impl/loader.py",
+        "blame_commits": 0
+      },
+      {
+        "filename": "src/_bentoml_impl/server/app.py",
+        "blame_commits": 0
+      },
+      {
+        "filename": "src/_bentoml_impl/server/serving.py",
+        "blame_commits": 0
+      }
+    ],
+    "phase2_done": true,
+    "distinct_blame_commits": 18,
+    "blame_commits": [
+      "0a158caf48f9b80f6d292450e62d827d84f87ac2",
+      "2cc2c546730f31e71ee84afb545da4cccba13d78",
+      "2ea0ddee02264a4501d289c8b2d82af41e877a0a",
+      "30f05efd9428468210388d09cb86893088bfa12e",
+      "342e5f65f8df529ec395398b44451486e87cb800",
+      "51ca3b2d873200848f66daaf1db41997bcfc1dee",
+      "6ad31058d3b9e596eae97efbc9acca05641ebe18",
+      "6c2ac389799b6f18ec529904139a09af5d0349f6",
+      "7a0e9b352f2213bb555e9f175a039f5df44e1ebd",
+      "808c1ea4c183baa7c3f00d7c54e89dd44b54a2cf",
+      "821ad9a7bf87286eb26c08dea213198b06b59572",
+      "8ef882ae20bbb240762824245b4c2fdad62116a7",
+      "abd8e09ca9816c27db0846cd68530c370ef17841",
+      "b346b6cfed5bd5c3f883f739362ff8214ad8ba78",
+      "d86e5236c6fc896939af06ec9b995f273c27b7d5",
+      "da08bfabb0805f01079f8bd176e22b3658a780eb",
+      "e9e40b5d2b524cf30554ad84b541b87147bd197b",
+      "f0d1676ce1940929408a3b600049dfad7742ab60"
+    ],
+    "file_blame_results": {},
+    "multi_commit_confirmed": true,
     "phase2_error": null
   }
 ]

@@ -1,0 +1,3597 @@
+[
+  {
+    "cve_id": "CVE-2024-27133",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-79"
+    ],
+    "summary": "MLFlow Cross-site Scripting vulnerability leads to client-side Remote Code Execution",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "c43823750bffa5b6abcc086683b15a068513b67b",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/c43823750bffa5b6abcc086683b15a068513b67b",
+    "package": "mlflow",
+    "published": "2024-02-24"
+  },
+  {
+    "cve_id": "CVE-2023-6014",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-598"
+    ],
+    "summary": "MLflow authentication requirement bypass can allow a user to arbitrarily create an account",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "32de2154ef9f946160e5dc01a4d8a449dd0bd259",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/32de2154ef9f946160e5dc01a4d8a449dd0bd259",
+    "package": "mlflow",
+    "published": "2023-11-16"
+  },
+  {
+    "cve_id": "CVE-2023-6831",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-22",
+      "CWE-29"
+    ],
+    "summary": "Path traversal in MLflow",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "1da75dfcecd4d169e34809ade55748384e8af6c1",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/1da75dfcecd4d169e34809ade55748384e8af6c1",
+    "package": "mlflow",
+    "published": "2023-12-15"
+  },
+  {
+    "cve_id": "CVE-2023-6974",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-918"
+    ],
+    "summary": "MLflow Server-Side Request Forgery (SSRF)",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "8174250f83352a04c2d42079f414759060458555",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/8174250f83352a04c2d42079f414759060458555",
+    "package": "mlflow",
+    "published": "2023-12-20"
+  },
+  {
+    "cve_id": "CVE-2023-6018",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-78"
+    ],
+    "summary": "Remote Code Execution due to Full Controled File Write in mlflow",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "55c72d02380e8db8118595a4fdae7879cb7ac5bd",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/55c72d02380e8db8118595a4fdae7879cb7ac5bd",
+    "package": "mlflow",
+    "published": "2023-11-16"
+  },
+  {
+    "cve_id": "CVE-2024-0520",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-22",
+      "CWE-23"
+    ],
+    "summary": "Remote code execution in mlflow",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "400c226953b4568f4361bc0a0c223511652c2b9d",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/400c226953b4568f4361bc0a0c223511652c2b9d",
+    "package": "mlflow",
+    "published": "2024-06-06"
+  },
+  {
+    "cve_id": "CVE-2023-6015",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "MLflow allowed arbitrary files to be PUT onto the server",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "cf83dad4df26dd4a850622fe8a51ccab1471a5e7",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/cf83dad4df26dd4a850622fe8a51ccab1471a5e7",
+    "package": "mlflow",
+    "published": "2023-11-16"
+  },
+  {
+    "cve_id": "CVE-2023-3765",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-36"
+    ],
+    "summary": "MLflow Path Traversal vulnerability",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "6dde93758d42455cb90ef324407919ed67668b9b",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/6dde93758d42455cb90ef324407919ed67668b9b",
+    "package": "mlflow",
+    "published": "2023-07-19"
+  },
+  {
+    "cve_id": "CVE-2026-2635",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-1393"
+    ],
+    "summary": "MLflow Use of Default Password Authentication Bypass Vulnerability",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "5bf2ec2bd4222a18d78631183ac7f6b752afe8a4",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/5bf2ec2bd4222a18d78631183ac7f6b752afe8a4",
+    "package": "mlflow",
+    "published": "2026-02-21"
+  },
+  {
+    "cve_id": "CVE-2023-6975",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-29"
+    ],
+    "summary": "MLFlow Path Traversal Vulnerability",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "b9ab9ed77e1deda9697fe472fb1079fd428149ee",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/b9ab9ed77e1deda9697fe472fb1079fd428149ee",
+    "package": "mlflow",
+    "published": "2023-12-20"
+  },
+  {
+    "cve_id": "CVE-2024-3573",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-29"
+    ],
+    "summary": "mlflow vulnerable to Path Traversal",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "438a450714a3ca06285eeea34bdc6cf79d7f6cbc",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/438a450714a3ca06285eeea34bdc6cf79d7f6cbc",
+    "package": "mlflow",
+    "published": "2024-04-16"
+  },
+  {
+    "cve_id": "CVE-2025-15379",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-77"
+    ],
+    "summary": "MLflow Command Injection vulnerability",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "361b6f620adf98385c6721e384fb5ef9a30bb05e",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/361b6f620adf98385c6721e384fb5ef9a30bb05e",
+    "package": "mlflow",
+    "published": "2026-03-30"
+  },
+  {
+    "cve_id": "CVE-2025-15036",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-29"
+    ],
+    "summary": "MLFlow path traversal vulnerability",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "3bf6d81ac4d38654c8ff012dbd0c3e9f17e7e346",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/3bf6d81ac4d38654c8ff012dbd0c3e9f17e7e346",
+    "package": "mlflow",
+    "published": "2026-03-30"
+  },
+  {
+    "cve_id": "CVE-2023-2780",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-29"
+    ],
+    "summary": "mlflow Path Traversal vulnerability",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "fae77a525dd908c56d6204a4cef1c1c75b4e9857",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/fae77a525dd908c56d6204a4cef1c1c75b4e9857",
+    "package": "mlflow",
+    "published": "2023-05-17"
+  },
+  {
+    "cve_id": "CVE-2023-1177",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-22",
+      "CWE-29"
+    ],
+    "summary": "mlflow is vulnerable to remote file access in `mlflow server` and `mlflow ui` CLIs",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "7162a50c654792c21f3e4a160eb1a0e6a34f6e6e",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/7162a50c654792c21f3e4a160eb1a0e6a34f6e6e",
+    "package": "mlflow",
+    "published": "2023-03-24"
+  },
+  {
+    "cve_id": "CVE-2025-27520",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-502"
+    ],
+    "summary": "BentoML Allows Remote Code Execution (RCE) via Insecure Deserialization",
+    "repo": "https://github.com/bentoml/BentoML",
+    "owner": "bentoml",
+    "repo_name": "BentoML",
+    "fix_commit": "b35f4f4fcc53a8c3fe8ed9c18a013fe0a728e194",
+    "fix_commit_url": "https://github.com/bentoml/BentoML/commit/b35f4f4fcc53a8c3fe8ed9c18a013fe0a728e194",
+    "package": "bentoml",
+    "published": "2025-04-04"
+  },
+  {
+    "cve_id": "CVE-2024-2912",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-1188"
+    ],
+    "summary": "Insecure deserialization in BentoML",
+    "repo": "https://github.com/bentoml/bentoml",
+    "owner": "bentoml",
+    "repo_name": "bentoml",
+    "fix_commit": "fd70379733c57c6368cc022ac1f841b7b426db7b",
+    "fix_commit_url": "https://github.com/bentoml/bentoml/commit/fd70379733c57c6368cc022ac1f841b7b426db7b",
+    "package": "bentoml",
+    "published": "2024-04-16"
+  },
+  {
+    "cve_id": "CVE-2025-54381",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-918"
+    ],
+    "summary": "BentoML SSRF Vulnerability in File Upload Processing  ",
+    "repo": "https://github.com/bentoml/BentoML",
+    "owner": "bentoml",
+    "repo_name": "BentoML",
+    "fix_commit": "534c3584621da4ab954bdc3d814cc66b95ae5fb8",
+    "fix_commit_url": "https://github.com/bentoml/BentoML/commit/534c3584621da4ab954bdc3d814cc66b95ae5fb8",
+    "package": "bentoml",
+    "published": "2025-07-29"
+  },
+  {
+    "cve_id": "CVE-2023-6572",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-200",
+      "CWE-77"
+    ],
+    "summary": "Gradio Exposure of Sensitive Information to an Unauthorized Actor vulnerability",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "5b5af1899dd98d63e1f9b48a93601c2db1f56520",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/5b5af1899dd98d63e1f9b48a93601c2db1f56520",
+    "package": "gradio",
+    "published": "2023-12-14"
+  },
+  {
+    "cve_id": "CVE-2025-23042",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-178",
+      "CWE-285"
+    ],
+    "summary": "Gradio Blocked Path ACL Bypass Vulnerability",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "6b63fdec441b5c9bf910f910a2505d8defbb6bf8",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/6b63fdec441b5c9bf910f910a2505d8defbb6bf8",
+    "package": "gradio",
+    "published": "2025-01-14"
+  },
+  {
+    "cve_id": "CVE-2024-1728",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "Gradio allows users to access arbitrary files",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "16fbe9cd0cffa9f2a824a0165beb43446114eec7",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/16fbe9cd0cffa9f2a824a0165beb43446114eec7",
+    "package": "gradio",
+    "published": "2024-09-25"
+  },
+  {
+    "cve_id": "CVE-2021-43831",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "Files on the host computer can be accessed from the Gradio interface",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "41bd3645bdb616e1248b2167ca83636a2653f781",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/41bd3645bdb616e1248b2167ca83636a2653f781",
+    "package": "gradio",
+    "published": "2022-01-21"
+  },
+  {
+    "cve_id": "CVE-2023-48022",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-829",
+      "CWE-918"
+    ],
+    "summary": "Ray has arbitrary code execution via jobs submission API",
+    "repo": "https://github.com/ray-project/ray",
+    "owner": "ray-project",
+    "repo_name": "ray",
+    "fix_commit": "978947083b1e192dba61ef653c863b11d56b0936",
+    "fix_commit_url": "https://github.com/ray-project/ray/commit/978947083b1e192dba61ef653c863b11d56b0936",
+    "package": "ray",
+    "published": "2023-11-28"
+  },
+  {
+    "cve_id": "CVE-2024-36039",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "PyMySQL SQL Injection vulnerability",
+    "repo": "https://github.com/PyMySQL/PyMySQL",
+    "owner": "PyMySQL",
+    "repo_name": "PyMySQL",
+    "fix_commit": "521e40050cb386a499f68f483fefd144c493053c",
+    "fix_commit_url": "https://github.com/PyMySQL/PyMySQL/commit/521e40050cb386a499f68f483fefd144c493053c",
+    "package": "pymysql",
+    "published": "2024-05-21"
+  },
+  {
+    "cve_id": "CVE-2022-31799",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-755"
+    ],
+    "summary": "Denial of service in bottle",
+    "repo": "https://github.com/bottlepy/bottle",
+    "owner": "bottlepy",
+    "repo_name": "bottle",
+    "fix_commit": "a2b0ee6bb4ce88895429ec4aca856616244c4c4c",
+    "fix_commit_url": "https://github.com/bottlepy/bottle/commit/a2b0ee6bb4ce88895429ec4aca856616244c4c4c",
+    "package": "bottle",
+    "published": "2022-06-03"
+  },
+  {
+    "cve_id": "CVE-2016-7036",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-208"
+    ],
+    "summary": "python-jose failure to use a constant time comparison for HMAC keys",
+    "repo": "https://github.com/mpdavis/python-jose",
+    "owner": "mpdavis",
+    "repo_name": "python-jose",
+    "fix_commit": "73007d6887a7517ac07c6e755e494baee49ef513",
+    "fix_commit_url": "https://github.com/mpdavis/python-jose/commit/73007d6887a7517ac07c6e755e494baee49ef513",
+    "package": "python-jose",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2022-28346",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "SQL Injection in Django",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "2044dac5c6968441be6f534c4139bcf48c5c7e48",
+    "fix_commit_url": "https://github.com/django/django/commit/2044dac5c6968441be6f534c4139bcf48c5c7e48",
+    "package": "django",
+    "published": "2022-04-13"
+  },
+  {
+    "cve_id": "CVE-2016-9014",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [],
+    "summary": "Django DNS Rebinding Vulnerability",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "45acd6d836895a4c36575f48b3fb36a3dae98d19",
+    "fix_commit_url": "https://github.com/django/django/commit/45acd6d836895a4c36575f48b3fb36a3dae98d19",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2012-3442",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-79"
+    ],
+    "summary": "Django Allows Redirect via Data URL",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "4dea4883e6c50d75f215a6b9bcbd95273f57c72d",
+    "fix_commit_url": "https://github.com/django/django/commit/4dea4883e6c50d75f215a6b9bcbd95273f57c72d",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2025-64459",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "Django vulnerable to SQL injection via _connector keyword argument in QuerySet and Q objects.",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "06dd38324ac3d60d83d9f3adabf0dcdf423d2a85",
+    "fix_commit_url": "https://github.com/django/django/commit/06dd38324ac3d60d83d9f3adabf0dcdf423d2a85",
+    "package": "django",
+    "published": "2025-11-05"
+  },
+  {
+    "cve_id": "CVE-2020-7471",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "SQL injection in Django",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "001b0634cd309e372edb6d7d95d083d02b8e37bd",
+    "fix_commit_url": "https://github.com/django/django/commit/001b0634cd309e372edb6d7d95d083d02b8e37bd",
+    "package": "django",
+    "published": "2020-02-11"
+  },
+  {
+    "cve_id": "CVE-2016-9013",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-798"
+    ],
+    "summary": "Django user with hardcoded password created when running tests on Oracle",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "34e10720d81b8d407aa14d763b6a7fe8f13b4f2e",
+    "fix_commit_url": "https://github.com/django/django/commit/34e10720d81b8d407aa14d763b6a7fe8f13b4f2e",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2022-34265",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "Django `Trunc()` and `Extract()` database functions vulnerable to SQL Injection",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "0dc9c016fadb71a067e5a42be30164e3f96c0492",
+    "fix_commit_url": "https://github.com/django/django/commit/0dc9c016fadb71a067e5a42be30164e3f96c0492",
+    "package": "django",
+    "published": "2022-07-05"
+  },
+  {
+    "cve_id": "CVE-2024-42005",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "Django SQL injection vulnerability",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "32ebcbf2e1fe3e5ba79a6554a167efce81f7422d",
+    "fix_commit_url": "https://github.com/django/django/commit/32ebcbf2e1fe3e5ba79a6554a167efce81f7422d",
+    "package": "django",
+    "published": "2024-08-07"
+  },
+  {
+    "cve_id": "CVE-2014-1418",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-349"
+    ],
+    "summary": "Django Vulnerable to Cache Poisoning",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "1abcf3a808b35abae5d425ed4d44cb6e886dc769",
+    "fix_commit_url": "https://github.com/django/django/commit/1abcf3a808b35abae5d425ed4d44cb6e886dc769",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2023-31047",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "Django bypasses validation when using one form field to upload multiple files",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "21b1b1fc03e5f9e9f8c977ee6e35618dd3b353dd",
+    "fix_commit_url": "https://github.com/django/django/commit/21b1b1fc03e5f9e9f8c977ee6e35618dd3b353dd",
+    "package": "django",
+    "published": "2023-05-07"
+  },
+  {
+    "cve_id": "CVE-2014-0472",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-94"
+    ],
+    "summary": "Code Injection in Django",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "2a5bcb69f42b84464b24b5c835dca6467b6aa7f1",
+    "fix_commit_url": "https://github.com/django/django/commit/2a5bcb69f42b84464b24b5c835dca6467b6aa7f1",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2019-19844",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-640"
+    ],
+    "summary": "Django Potential account hijack via password reset form",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "302a4ff1e8b1c798aab97673909c7a3dfda42c26",
+    "fix_commit_url": "https://github.com/django/django/commit/302a4ff1e8b1c798aab97673909c7a3dfda42c26",
+    "package": "django",
+    "published": "2020-01-16"
+  },
+  {
+    "cve_id": "CVE-2022-28347",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "SQL Injection in Django",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "00b0fc50e1738c7174c495464a5ef069408a4402",
+    "fix_commit_url": "https://github.com/django/django/commit/00b0fc50e1738c7174c495464a5ef069408a4402",
+    "package": "django",
+    "published": "2022-04-13"
+  },
+  {
+    "cve_id": "CVE-2021-35042",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "SQL Injection in Django",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "0bd57a879a0d54920bb9038a732645fb917040e9",
+    "fix_commit_url": "https://github.com/django/django/commit/0bd57a879a0d54920bb9038a732645fb917040e9",
+    "package": "django",
+    "published": "2021-09-22"
+  },
+  {
+    "cve_id": "CVE-2021-41945",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "Improper Input Validation in httpx",
+    "repo": "https://github.com/encode/httpx",
+    "owner": "encode",
+    "repo_name": "httpx",
+    "fix_commit": "e9b0c85dd4f4e4469c57c4b38e5101fd12081b5c",
+    "fix_commit_url": "https://github.com/encode/httpx/commit/e9b0c85dd4f4e4469c57c4b38e5101fd12081b5c",
+    "package": "httpx",
+    "published": "2022-04-29"
+  },
+  {
+    "cve_id": "CVE-2020-1747",
+    "ghsa_id": "GHSA-fm6c-f59h-7mmg",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "Improper Input Validation in PyYAML",
+    "repo": "https://github.com/yaml/pyyaml",
+    "owner": "yaml",
+    "repo_name": "pyyaml",
+    "fix_commit": "0cedb2a0697b2bc49e4f3841b8d4590b6b15657e",
+    "fix_commit_url": "https://github.com/yaml/pyyaml/commit/0cedb2a0697b2bc49e4f3841b8d4590b6b15657e",
+    "package": "pyyaml",
+    "published": "2021-04-20"
+  },
+  {
+    "cve_id": "CVE-2020-14343",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "Improper Input Validation in PyYAML",
+    "repo": "https://github.com/yaml/pyyaml",
+    "owner": "yaml",
+    "repo_name": "pyyaml",
+    "fix_commit": "a001f2782501ad2d24986959f0239a354675f9dc",
+    "fix_commit_url": "https://github.com/yaml/pyyaml/commit/a001f2782501ad2d24986959f0239a354675f9dc",
+    "package": "pyyaml",
+    "published": "2021-03-25"
+  },
+  {
+    "cve_id": "CVE-2022-24801",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-444"
+    ],
+    "summary": "Inconsistent Interpretation of HTTP Requests in twisted.web",
+    "repo": "https://github.com/twisted/twisted",
+    "owner": "twisted",
+    "repo_name": "twisted",
+    "fix_commit": "592217e951363d60e9cd99c5bbfd23d4615043ac",
+    "fix_commit_url": "https://github.com/twisted/twisted/commit/592217e951363d60e9cd99c5bbfd23d4615043ac",
+    "package": "twisted",
+    "published": "2022-04-04"
+  },
+  {
+    "cve_id": "CVE-2020-10108",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-20",
+      "CWE-444"
+    ],
+    "summary": "Improper Input Validation in Twisted",
+    "repo": "https://github.com/twisted/twisted",
+    "owner": "twisted",
+    "repo_name": "twisted",
+    "fix_commit": "4a7d22e490bb8ff836892cc99a1f54b85ccb0281",
+    "fix_commit_url": "https://github.com/twisted/twisted/commit/4a7d22e490bb8ff836892cc99a1f54b85ccb0281",
+    "package": "twisted",
+    "published": "2020-03-31"
+  },
+  {
+    "cve_id": "CVE-2020-10109",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-444"
+    ],
+    "summary": "HTTP Request Smuggling in Twisted",
+    "repo": "https://github.com/twisted/twisted",
+    "owner": "twisted",
+    "repo_name": "twisted",
+    "fix_commit": "4a7d22e490bb8ff836892cc99a1f54b85ccb0281",
+    "fix_commit_url": "https://github.com/twisted/twisted/commit/4a7d22e490bb8ff836892cc99a1f54b85ccb0281",
+    "package": "twisted",
+    "published": "2020-03-31"
+  },
+  {
+    "cve_id": "CVE-2023-50447",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-94",
+      "CWE-95"
+    ],
+    "summary": "Arbitrary Code Execution in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "45c726fd4daa63236a8f3653530f297dc87b160a",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/45c726fd4daa63236a8f3653530f297dc87b160a",
+    "package": "pillow",
+    "published": "2024-01-19"
+  },
+  {
+    "cve_id": "CVE-2020-11538",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-125"
+    ],
+    "summary": "Out-of-bounds read in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "2ef59fdbaeb756bc512ab3f2ad15ac45665b303d",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/2ef59fdbaeb756bc512ab3f2ad15ac45665b303d",
+    "package": "pillow",
+    "published": "2020-07-27"
+  },
+  {
+    "cve_id": "CVE-2021-25289",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-787"
+    ],
+    "summary": "Out of bounds write in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "3fee28eb9479bf7d59e0fa08068f9cc4a6e2f04c",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/3fee28eb9479bf7d59e0fa08068f9cc4a6e2f04c",
+    "package": "pillow",
+    "published": "2021-03-29"
+  },
+  {
+    "cve_id": "CVE-2021-34552",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-120"
+    ],
+    "summary": "Buffer Overflow in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "31c473898c29d1b7cb6555ce67d9503a4906b83f",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/31c473898c29d1b7cb6555ce67d9503a4906b83f",
+    "package": "pillow",
+    "published": "2021-10-05"
+  },
+  {
+    "cve_id": "CVE-2022-22817",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-74"
+    ],
+    "summary": "Arbitrary expression injection in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "8531b01d6cdf0b70f256f93092caa2a5d91afc11",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/8531b01d6cdf0b70f256f93092caa2a5d91afc11",
+    "package": "pillow",
+    "published": "2022-01-12"
+  },
+  {
+    "cve_id": "CVE-2020-5312",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-120"
+    ],
+    "summary": "PCX P mode buffer overflow in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "93b22b846e0269ee9594ff71a72bec02d2bea8fd",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/93b22b846e0269ee9594ff71a72bec02d2bea8fd",
+    "package": "pillow",
+    "published": "2021-11-03"
+  },
+  {
+    "cve_id": "CVE-2020-5311",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-120"
+    ],
+    "summary": "Buffer Copy without Checking Size of Input in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "a79b65c47c7dc6fe623aadf09aa6192fc54548f3",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/a79b65c47c7dc6fe623aadf09aa6192fc54548f3",
+    "package": "pillow",
+    "published": "2022-05-24"
+  },
+  {
+    "cve_id": "CVE-2020-5310",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-190"
+    ],
+    "summary": "Integer overflow in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "4e2def2539ec13e53a82e06c4b3daf00454100c4",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/4e2def2539ec13e53a82e06c4b3daf00454100c4",
+    "package": "pillow",
+    "published": "2021-11-03"
+  },
+  {
+    "cve_id": "CVE-2012-0805",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "SQLAlchemy vulnerable to SQL injection",
+    "repo": "https://github.com/sqlalchemy/sqlalchemy",
+    "owner": "sqlalchemy",
+    "repo_name": "sqlalchemy",
+    "fix_commit": "51fea2e159ca93daa0bc8066a5c35d8436d99418",
+    "fix_commit_url": "https://github.com/sqlalchemy/sqlalchemy/commit/51fea2e159ca93daa0bc8066a5c35d8436d99418",
+    "package": "sqlalchemy",
+    "published": "2022-05-14"
+  },
+  {
+    "cve_id": "CVE-2024-8859",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22",
+      "CWE-29"
+    ],
+    "summary": "MLflow has a Local File Read/Path Traversal in dbfs",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "7791b8cdd595f21b5f179c7b17e4b5eb5cbbe654",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/7791b8cdd595f21b5f179c7b17e4b5eb5cbbe654",
+    "package": "mlflow",
+    "published": "2025-03-20"
+  },
+  {
+    "cve_id": "CVE-2025-10279",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-379"
+    ],
+    "summary": "mlflow Creates of Temporary File in Directory with Insecure Permissions",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "1d7c8d4cf0a67d407499a8a4ffac387ea4f8194a",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/1d7c8d4cf0a67d407499a8a4ffac387ea4f8194a",
+    "package": "mlflow",
+    "published": "2026-02-02"
+  },
+  {
+    "cve_id": "CVE-2025-11201",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "MLflow Tracking Server Model Creation Directory Traversal Remote Code Execution Vulnerability",
+    "repo": "https://github.com/B-Step62/mlflow",
+    "owner": "B-Step62",
+    "repo_name": "mlflow",
+    "fix_commit": "2e02bc7bb70df243e6eb792689d9b8eba0013161",
+    "fix_commit_url": "https://github.com/B-Step62/mlflow/commit/2e02bc7bb70df243e6eb792689d9b8eba0013161",
+    "package": "mlflow",
+    "published": "2025-10-29"
+  },
+  {
+    "cve_id": "CVE-2023-6909",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-29"
+    ],
+    "summary": "MLflow Path Traversal Vulnerability",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "1da75dfcecd4d169e34809ade55748384e8af6c1",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/1da75dfcecd4d169e34809ade55748384e8af6c1",
+    "package": "mlflow",
+    "published": "2023-12-20"
+  },
+  {
+    "cve_id": "CVE-2025-11200",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-521"
+    ],
+    "summary": "MLflow Weak Password Requirements Authentication Bypass Vulnerability",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "1f74f3f24d8273927b8db392c23e108576936c54",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/1f74f3f24d8273927b8db392c23e108576936c54",
+    "package": "mlflow",
+    "published": "2025-10-29"
+  },
+  {
+    "cve_id": "CVE-2023-6709",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-1336"
+    ],
+    "summary": "Jinja2 template injection in mlflow",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "432b8ccf27fd3a76df4ba79bb1bec62118a85625",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/432b8ccf27fd3a76df4ba79bb1bec62118a85625",
+    "package": "mlflow",
+    "published": "2023-12-12"
+  },
+  {
+    "cve_id": "CVE-2023-4033",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-78"
+    ],
+    "summary": "mlflow vulnerable to OS Command Injection",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "6dde93758d42455cb90ef324407919ed67668b9b",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/6dde93758d42455cb90ef324407919ed67668b9b",
+    "package": "mlflow",
+    "published": "2023-08-01"
+  },
+  {
+    "cve_id": "CVE-2025-15031",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "Arbitrary file write via tar traversal in mlflow",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "3bf6d81ac4d38654c8ff012dbd0c3e9f17e7e346",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/3bf6d81ac4d38654c8ff012dbd0c3e9f17e7e346",
+    "package": "mlflow",
+    "published": "2026-03-19"
+  },
+  {
+    "cve_id": "CVE-2023-6940",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-77"
+    ],
+    "summary": "mlflow Command Injection vulnerability",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "5139b1087d686fa52e2b087e09da66aff86297b1",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/5139b1087d686fa52e2b087e09da66aff86297b1",
+    "package": "mlflow",
+    "published": "2023-12-19"
+  },
+  {
+    "cve_id": "CVE-2024-2928",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22",
+      "CWE-29"
+    ],
+    "summary": "Local File Inclusion in mlflow",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "96f0b573a73d8eedd6735a2ce26e08859527be07",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/96f0b573a73d8eedd6735a2ce26e08859527be07",
+    "package": "mlflow",
+    "published": "2024-06-06"
+  },
+  {
+    "cve_id": "CVE-2025-14279",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-346"
+    ],
+    "summary": "MLFlow is vulnerable to DNS rebinding attacks due to a lack of Origin header validation",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "b0ffd289e9b0d0cc32c9e3a9b9f3843ae83dbec3",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/b0ffd289e9b0d0cc32c9e3a9b9f3843ae83dbec3",
+    "package": "mlflow",
+    "published": "2026-01-12"
+  },
+  {
+    "cve_id": "CVE-2026-2033",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "MLflow Tracking Server Artifact Handler Directory Traversal Remote Code Execution Vulnerability",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "5bf2ec2bd4222a18d78631183ac7f6b752afe8a4",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/5bf2ec2bd4222a18d78631183ac7f6b752afe8a4",
+    "package": "mlflow",
+    "published": "2026-02-21"
+  },
+  {
+    "cve_id": "CVE-2023-6977",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-29"
+    ],
+    "summary": "MLflow Local File Disclosure Vulnerability",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "4bd7f27c810ba7487d53ed5ef1038fca0f8dc28c",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/4bd7f27c810ba7487d53ed5ef1038fca0f8dc28c",
+    "package": "mlflow",
+    "published": "2023-12-20"
+  },
+  {
+    "cve_id": "CVE-2024-27134",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-276"
+    ],
+    "summary": "MLflow's excessive directory permissions allow local privilege escalation",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "0b1d995d66a678153e01ed3040f3f4dfc16a0d6b",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/0b1d995d66a678153e01ed3040f3f4dfc16a0d6b",
+    "package": "mlflow",
+    "published": "2024-11-25"
+  },
+  {
+    "cve_id": "CVE-2024-3848",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22",
+      "CWE-29"
+    ],
+    "summary": "MLflow has a Local File Read/Path Traversal bypass",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "f8d51e21523238280ebcfdb378612afd7844eca8",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/f8d51e21523238280ebcfdb378612afd7844eca8",
+    "package": "mlflow",
+    "published": "2024-05-16"
+  },
+  {
+    "cve_id": "CVE-2023-6753",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "Path traversal in MLflow",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "1c6309f884798fbf56017a3cc808016869ee8de4",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/1c6309f884798fbf56017a3cc808016869ee8de4",
+    "package": "mlflow",
+    "published": "2023-12-13"
+  },
+  {
+    "cve_id": "CVE-2022-0736",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-377",
+      "CWE-668"
+    ],
+    "summary": "Insecure Temporary File in mlflow",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "61984e6843d2e59235d82a580c529920cd8f3711",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/61984e6843d2e59235d82a580c529920cd8f3711",
+    "package": "mlflow",
+    "published": "2022-02-24"
+  },
+  {
+    "cve_id": "CVE-2023-30172",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "mflow vulnerable to directory traversal",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "ac4b697bb0bb8a331944dca63f4235b4bf602ab8",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/ac4b697bb0bb8a331944dca63f4235b4bf602ab8",
+    "package": "mlflow",
+    "published": "2023-05-11"
+  },
+  {
+    "cve_id": "CVE-2023-6976",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-434"
+    ],
+    "summary": "MLflow Path Traversal Vulnerability",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "5044878da0c1851ccfdd5c0a867157ed9a502fbc",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/5044878da0c1851ccfdd5c0a867157ed9a502fbc",
+    "package": "mlflow",
+    "published": "2023-12-20"
+  },
+  {
+    "cve_id": "CVE-2023-2356",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-23"
+    ],
+    "summary": "Relative path traversal in mlflow",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "f73147496e05c09a8b83d95fb4f1bf86696c6342",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/f73147496e05c09a8b83d95fb4f1bf86696c6342",
+    "package": "mlflow",
+    "published": "2023-04-28"
+  },
+  {
+    "cve_id": "CVE-2025-14287",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-94"
+    ],
+    "summary": "MLflow has a command injection in mlflow/sagemaker/__init__.py",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "8b8792a7034fb33a14b0b31cabcaa9b912d3485f",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/8b8792a7034fb33a14b0b31cabcaa9b912d3485f",
+    "package": "mlflow",
+    "published": "2026-03-16"
+  },
+  {
+    "cve_id": "CVE-2026-24123",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "BentoML has a Path Traversal via Bentofile Configuration",
+    "repo": "https://github.com/bentoml/BentoML",
+    "owner": "bentoml",
+    "repo_name": "BentoML",
+    "fix_commit": "84d08cfeb40c5f2ce71b3d3444bbaa0fb16b5ca4",
+    "fix_commit_url": "https://github.com/bentoml/BentoML/commit/84d08cfeb40c5f2ce71b3d3444bbaa0fb16b5ca4",
+    "package": "bentoml",
+    "published": "2026-01-26"
+  },
+  {
+    "cve_id": "CVE-2026-27905",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22",
+      "CWE-59"
+    ],
+    "summary": "BentoML Vulnerable to Arbitrary File Write via Symlink Path Traversal in Tar Extraction",
+    "repo": "https://github.com/bentoml/BentoML",
+    "owner": "bentoml",
+    "repo_name": "BentoML",
+    "fix_commit": "4e0eb007765ac04c7924220d643f264715cc9670",
+    "fix_commit_url": "https://github.com/bentoml/BentoML/commit/4e0eb007765ac04c7924220d643f264715cc9670",
+    "package": "bentoml",
+    "published": "2026-03-03"
+  },
+  {
+    "cve_id": "CVE-2026-28414",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22",
+      "CWE-36"
+    ],
+    "summary": "Gradio is Vulnerable to Absolute Path Traversal on Windows with Python 3.13+",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "6011b00d0154b85532fa901dd73cf8fa7d86fd04",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/6011b00d0154b85532fa901dd73cf8fa7d86fd04",
+    "package": "gradio",
+    "published": "2026-03-01"
+  },
+  {
+    "cve_id": "CVE-2024-8966",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400",
+      "CWE-770"
+    ],
+    "summary": "Gradio DOS in multipart boundry while uploading the file",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "f1718c47137f9c60240da7afe5e3290aa0f1cb47",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/f1718c47137f9c60240da7afe5e3290aa0f1cb47",
+    "package": "gradio",
+    "published": "2025-03-20"
+  },
+  {
+    "cve_id": "CVE-2023-51449",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "Gradio makes the `/file` secure against file traversal and server-side request forgery attacks",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "1b9d4234d6c25ef250d882c7b90e1f4039ed2d76",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/1b9d4234d6c25ef250d882c7b90e1f4039ed2d76",
+    "package": "gradio",
+    "published": "2023-12-21"
+  },
+  {
+    "cve_id": "CVE-2024-4941",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20",
+      "CWE-22"
+    ],
+    "summary": "Local file inclusion in gradio",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "ee1e2942e0a1ae84a08a05464e41c8108a03fa9c",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/ee1e2942e0a1ae84a08a05464e41c8108a03fa9c",
+    "package": "gradio",
+    "published": "2024-06-06"
+  },
+  {
+    "cve_id": "CVE-2024-0964",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "Gradio Path Traversal vulnerability",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "d76bcaaaf0734aaf49a680f94ea9d4d22a602e70",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/d76bcaaaf0734aaf49a680f94ea9d4d22a602e70",
+    "package": "gradio",
+    "published": "2024-02-06"
+  },
+  {
+    "cve_id": "CVE-2022-24770",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-1236"
+    ],
+    "summary": "Improper Neutralization of Formula Elements in a CSV File in Gradio Flagging",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "80fea89117358ee105973453fdc402398ae20239",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/80fea89117358ee105973453fdc402398ae20239",
+    "package": "gradio",
+    "published": "2022-03-18"
+  },
+  {
+    "cve_id": "CVE-2024-1561",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-29"
+    ],
+    "summary": "gradio vulnerable to Path Traversal",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "24a583688046867ca8b8b02959c441818bdb34a2",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/24a583688046867ca8b8b02959c441818bdb34a2",
+    "package": "gradio",
+    "published": "2024-04-16"
+  },
+  {
+    "cve_id": "CVE-2024-2206",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-918"
+    ],
+    "summary": "gradio Server-Side Request Forgery vulnerability",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "49d9c48537aa706bf72628e3640389470138bdc6",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/49d9c48537aa706bf72628e3640389470138bdc6",
+    "package": "gradio",
+    "published": "2024-03-27"
+  },
+  {
+    "cve_id": "CVE-2023-6022",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-352"
+    ],
+    "summary": "Cross-Site Request Forgery vulnerability in Prefect",
+    "repo": "https://github.com/prefecthq/prefect",
+    "owner": "prefecthq",
+    "repo_name": "prefect",
+    "fix_commit": "227dfcc7e3374c212a4bcd68b14e090b1c02d9d3",
+    "fix_commit_url": "https://github.com/prefecthq/prefect/commit/227dfcc7e3374c212a4bcd68b14e090b1c02d9d3",
+    "package": "prefect",
+    "published": "2023-11-16"
+  },
+  {
+    "cve_id": "CVE-2024-8183",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-346"
+    ],
+    "summary": "Prefect CORS (Cross-Origin Resource Sharing) misconfiguration",
+    "repo": "https://github.com/PrefectHQ/prefect",
+    "owner": "PrefectHQ",
+    "repo_name": "prefect",
+    "fix_commit": "8f159b404126d93964a4daace7619bc553fa318c",
+    "fix_commit_url": "https://github.com/PrefectHQ/prefect/commit/8f159b404126d93964a4daace7619bc553fa318c",
+    "package": "prefect",
+    "published": "2025-03-20"
+  },
+  {
+    "cve_id": "CVE-2016-9964",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-93"
+    ],
+    "summary": "bottle.py vulnerable to CRLF Injection",
+    "repo": "https://github.com/bottlepy/bottle",
+    "owner": "bottlepy",
+    "repo_name": "bottle",
+    "fix_commit": "6d7e13da0f998820800ecb3fe9ccee4189aefb54",
+    "fix_commit_url": "https://github.com/bottlepy/bottle/commit/6d7e13da0f998820800ecb3fe9ccee4189aefb54",
+    "package": "bottle",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2026-25478",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-942"
+    ],
+    "summary": "Litestar's CORS origin allowlist has a bypass due to unescaped regex metacharacters in allowed origins",
+    "repo": "https://github.com/litestar-org/litestar",
+    "owner": "litestar-org",
+    "repo_name": "litestar",
+    "fix_commit": "eb87703b309efcc0d1b087dcb12784e76b003d5a",
+    "fix_commit_url": "https://github.com/litestar-org/litestar/commit/eb87703b309efcc0d1b087dcb12784e76b003d5a",
+    "package": "litestar",
+    "published": "2026-02-09"
+  },
+  {
+    "cve_id": "CVE-2024-32982",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "Litestar and Starlite vulnerable to Path Traversal",
+    "repo": "https://github.com/litestar-org/litestar",
+    "owner": "litestar-org",
+    "repo_name": "litestar",
+    "fix_commit": "57e706e7effdc182fc9a2af5981bc88afb21851b",
+    "fix_commit_url": "https://github.com/litestar-org/litestar/commit/57e706e7effdc182fc9a2af5981bc88afb21851b",
+    "package": "litestar",
+    "published": "2024-05-06"
+  },
+  {
+    "cve_id": "CVE-2024-52581",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-770"
+    ],
+    "summary": "Litestar allows unbounded resource consumption (DoS vulnerability) ",
+    "repo": "https://github.com/litestar-org/litestar",
+    "owner": "litestar-org",
+    "repo_name": "litestar",
+    "fix_commit": "53c1473b5ff7502816a9a339ffc90731bb0c2138",
+    "fix_commit_url": "https://github.com/litestar-org/litestar/commit/53c1473b5ff7502816a9a339ffc90731bb0c2138",
+    "package": "litestar",
+    "published": "2024-11-20"
+  },
+  {
+    "cve_id": "CVE-2025-59152",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-807"
+    ],
+    "summary": "Litestar X-Forwarded-For Header Spoofing Vulnerability Enables Rate Limit Evasion",
+    "repo": "https://github.com/litestar-org/litestar",
+    "owner": "litestar-org",
+    "repo_name": "litestar",
+    "fix_commit": "42a89e043e50b515f8548a93954fe143f63cf9fb",
+    "fix_commit_url": "https://github.com/litestar-org/litestar/commit/42a89e043e50b515f8548a93954fe143f63cf9fb",
+    "package": "litestar",
+    "published": "2025-10-06"
+  },
+  {
+    "cve_id": "CVE-2026-28802",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-347"
+    ],
+    "summary": "Authlib: Setting `alg: none` and a blank signature appears to bypass signature verification",
+    "repo": "https://github.com/authlib/authlib",
+    "owner": "authlib",
+    "repo_name": "authlib",
+    "fix_commit": "a61c2acb807496e67f32051b5f1b1d5ccf8f0a75",
+    "fix_commit_url": "https://github.com/authlib/authlib/commit/a61c2acb807496e67f32051b5f1b1d5ccf8f0a75",
+    "package": "authlib",
+    "published": "2026-03-04"
+  },
+  {
+    "cve_id": "CVE-2025-59420",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-345",
+      "CWE-863"
+    ],
+    "summary": "Authlib: JWS/JWT accepts unknown crit headers (RFC violation \u2192 possible authz bypass)",
+    "repo": "https://github.com/authlib/authlib",
+    "owner": "authlib",
+    "repo_name": "authlib",
+    "fix_commit": "6b1813e4392eb7c168c276099ff7783b176479df",
+    "fix_commit_url": "https://github.com/authlib/authlib/commit/6b1813e4392eb7c168c276099ff7783b176479df",
+    "package": "authlib",
+    "published": "2025-09-22"
+  },
+  {
+    "cve_id": "CVE-2026-28498",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-354",
+      "CWE-573"
+    ],
+    "summary": "Authlib: Fail-Open Cryptographic Verification in OIDC Hash Binding",
+    "repo": "https://github.com/authlib/authlib",
+    "owner": "authlib",
+    "repo_name": "authlib",
+    "fix_commit": "b9bb2b25bf8b7e01512d847a95c1749646eaa72b",
+    "fix_commit_url": "https://github.com/authlib/authlib/commit/b9bb2b25bf8b7e01512d847a95c1749646eaa72b",
+    "package": "authlib",
+    "published": "2026-03-16"
+  },
+  {
+    "cve_id": "CVE-2025-61920",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20",
+      "CWE-400",
+      "CWE-770"
+    ],
+    "summary": "Authlib is vulnerable to Denial of Service via Oversized JOSE Segments",
+    "repo": "https://github.com/authlib/authlib",
+    "owner": "authlib",
+    "repo_name": "authlib",
+    "fix_commit": "867e3f87b072347a1ae9cf6983cc8bbf88447e5e",
+    "fix_commit_url": "https://github.com/authlib/authlib/commit/867e3f87b072347a1ae9cf6983cc8bbf88447e5e",
+    "package": "authlib",
+    "published": "2025-10-10"
+  },
+  {
+    "cve_id": "CVE-2025-67221",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-770"
+    ],
+    "summary": "orjson does not limit recursion for deeply nested JSON documents",
+    "repo": "https://github.com/ijl/orjson",
+    "owner": "ijl",
+    "repo_name": "orjson",
+    "fix_commit": "62bb185b70785ded49c79c26f8c9781f1e6fe370",
+    "fix_commit_url": "https://github.com/ijl/orjson/commit/62bb185b70785ded49c79c26f8c9781f1e6fe370",
+    "package": "orjson",
+    "published": "2026-01-22"
+  },
+  {
+    "cve_id": "CVE-2024-27454",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-674"
+    ],
+    "summary": "orjson does not limit recursion for deeply nested JSON documents",
+    "repo": "https://github.com/ijl/orjson",
+    "owner": "ijl",
+    "repo_name": "orjson",
+    "fix_commit": "b0e4d2c06ce06c6e63981bf0276e4b7c74e5845e",
+    "fix_commit_url": "https://github.com/ijl/orjson/commit/b0e4d2c06ce06c6e63981bf0276e4b7c74e5845e",
+    "package": "orjson",
+    "published": "2024-02-26"
+  },
+  {
+    "cve_id": "CVE-2026-32875",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-190",
+      "CWE-787",
+      "CWE-835"
+    ],
+    "summary": "UltraJSON has an integer overflow handling large indent leads to buffer overflow or infinite loop",
+    "repo": "https://github.com/ultrajson/ultrajson",
+    "owner": "ultrajson",
+    "repo_name": "ultrajson",
+    "fix_commit": "486bd4553dc471a1de11613bc7347a6b318e37ea",
+    "fix_commit_url": "https://github.com/ultrajson/ultrajson/commit/486bd4553dc471a1de11613bc7347a6b318e37ea",
+    "package": "ujson",
+    "published": "2026-03-18"
+  },
+  {
+    "cve_id": "CVE-2026-32874",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-401"
+    ],
+    "summary": "UltraJSON has a Memory Leak parsing large integers allows DoS ",
+    "repo": "https://github.com/ultrajson/ultrajson",
+    "owner": "ultrajson",
+    "repo_name": "ultrajson",
+    "fix_commit": "4baeb950df780092bd3c89fc702a868e99a3a1d2",
+    "fix_commit_url": "https://github.com/ultrajson/ultrajson/commit/4baeb950df780092bd3c89fc702a868e99a3a1d2",
+    "package": "ujson",
+    "published": "2026-03-18"
+  },
+  {
+    "cve_id": "CVE-2022-31116",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-670"
+    ],
+    "summary": "Incorrect handling of invalid surrogate pair characters",
+    "repo": "https://github.com/ultrajson/ultrajson",
+    "owner": "ultrajson",
+    "repo_name": "ultrajson",
+    "fix_commit": "67ec07183342589d602e0fcf7bb1ff3e19272687",
+    "fix_commit_url": "https://github.com/ultrajson/ultrajson/commit/67ec07183342589d602e0fcf7bb1ff3e19272687",
+    "package": "ujson",
+    "published": "2022-07-05"
+  },
+  {
+    "cve_id": "CVE-2021-33880",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-203",
+      "CWE-208"
+    ],
+    "summary": "Observable Timing Discrepancy in aaugustin websockets library",
+    "repo": "https://github.com/aaugustin/websockets",
+    "owner": "aaugustin",
+    "repo_name": "websockets",
+    "fix_commit": "547a26b685d08cac0aa64e5e65f7867ac0ea9bc0",
+    "fix_commit_url": "https://github.com/aaugustin/websockets/commit/547a26b685d08cac0aa64e5e65f7867ac0ea9bc0",
+    "package": "websockets",
+    "published": "2021-06-11"
+  },
+  {
+    "cve_id": "CVE-2013-4251",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-269"
+    ],
+    "summary": "SciPy creates insecure temporary directories",
+    "repo": "https://github.com/scipy/scipy",
+    "owner": "scipy",
+    "repo_name": "scipy",
+    "fix_commit": "bd296e0336420b840fcd2faabb97084fd252a973",
+    "fix_commit_url": "https://github.com/scipy/scipy/commit/bd296e0336420b840fcd2faabb97084fd252a973",
+    "package": "scipy",
+    "published": "2022-05-05"
+  },
+  {
+    "cve_id": "CVE-2021-3828",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-1333",
+      "CWE-697"
+    ],
+    "summary": "NLTK Vulnerable to REDoS",
+    "repo": "https://github.com/nltk/nltk",
+    "owner": "nltk",
+    "repo_name": "nltk",
+    "fix_commit": "277711ab1dec729e626b27aab6fa35ea5efbd7e6",
+    "fix_commit_url": "https://github.com/nltk/nltk/commit/277711ab1dec729e626b27aab6fa35ea5efbd7e6",
+    "package": "nltk",
+    "published": "2021-09-29"
+  },
+  {
+    "cve_id": "CVE-2026-33236",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "NLTK has a Downloader Path Traversal Vulnerability (AFO) - Arbitrary File Overwrite",
+    "repo": "https://github.com/nltk/nltk",
+    "owner": "nltk",
+    "repo_name": "nltk",
+    "fix_commit": "89fe2ec2c6bae6e2e7a46dad65cc34231976ed8a",
+    "fix_commit_url": "https://github.com/nltk/nltk/commit/89fe2ec2c6bae6e2e7a46dad65cc34231976ed8a",
+    "package": "nltk",
+    "published": "2026-03-19"
+  },
+  {
+    "cve_id": "CVE-2024-39705",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-300",
+      "CWE-502"
+    ],
+    "summary": "ntlk unsafe deserialization vulnerability",
+    "repo": "https://github.com/nltk/nltk",
+    "owner": "nltk",
+    "repo_name": "nltk",
+    "fix_commit": "441aecb7d33014bd08672232c6c8bb69c2ceaba2",
+    "fix_commit_url": "https://github.com/nltk/nltk/commit/441aecb7d33014bd08672232c6c8bb69c2ceaba2",
+    "package": "nltk",
+    "published": "2024-06-28"
+  },
+  {
+    "cve_id": "CVE-2021-43854",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400"
+    ],
+    "summary": "Inefficient Regular Expression Complexity in nltk (word_tokenize, sent_tokenize)",
+    "repo": "https://github.com/nltk/nltk",
+    "owner": "nltk",
+    "repo_name": "nltk",
+    "fix_commit": "1405aad979c6b8080dbbc8e0858f89b2e3690341",
+    "fix_commit_url": "https://github.com/nltk/nltk/commit/1405aad979c6b8080dbbc8e0858f89b2e3690341",
+    "package": "nltk",
+    "published": "2022-01-06"
+  },
+  {
+    "cve_id": "CVE-2026-0846",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-36"
+    ],
+    "summary": "NLTK has Arbitrary File Read via Absolute Path Input in nltk.util.filestring()",
+    "repo": "https://github.com/nltk/nltk",
+    "owner": "nltk",
+    "repo_name": "nltk",
+    "fix_commit": "b2e1164bf89277f79b65406c829b99fb20ca1974",
+    "fix_commit_url": "https://github.com/nltk/nltk/commit/b2e1164bf89277f79b65406c829b99fb20ca1974",
+    "package": "nltk",
+    "published": "2026-03-09"
+  },
+  {
+    "cve_id": "CVE-2026-33231",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-306"
+    ],
+    "summary": "Unauthenticated remote shutdown in nltk.app.wordnet_app",
+    "repo": "https://github.com/nltk/nltk",
+    "owner": "nltk",
+    "repo_name": "nltk",
+    "fix_commit": "bbaae83db86a0f49e00f5b0db44a7254c268de9b",
+    "fix_commit_url": "https://github.com/nltk/nltk/commit/bbaae83db86a0f49e00f5b0db44a7254c268de9b",
+    "package": "nltk",
+    "published": "2026-03-19"
+  },
+  {
+    "cve_id": "CVE-2021-3842",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-1333"
+    ],
+    "summary": "NLTK Vulnerable to REDoS",
+    "repo": "https://github.com/nltk/nltk",
+    "owner": "nltk",
+    "repo_name": "nltk",
+    "fix_commit": "2a50a3edc9d35f57ae42a921c621edc160877f4d",
+    "fix_commit_url": "https://github.com/nltk/nltk/commit/2a50a3edc9d35f57ae42a921c621edc160877f4d",
+    "package": "nltk",
+    "published": "2022-01-06"
+  },
+  {
+    "cve_id": "CVE-2019-18874",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-415"
+    ],
+    "summary": "Double Free in psutil",
+    "repo": "https://github.com/giampaolo/psutil",
+    "owner": "giampaolo",
+    "repo_name": "psutil",
+    "fix_commit": "7d512c8e4442a896d56505be3e78f1156f443465",
+    "fix_commit_url": "https://github.com/giampaolo/psutil/commit/7d512c8e4442a896d56505be3e78f1156f443465",
+    "package": "psutil",
+    "published": "2020-03-12"
+  },
+  {
+    "cve_id": "CVE-2024-21542",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22",
+      "CWE-29"
+    ],
+    "summary": "luigi Arbitrary File Write via Archive Extraction (Zip Slip)",
+    "repo": "https://github.com/spotify/luigi",
+    "owner": "spotify",
+    "repo_name": "luigi",
+    "fix_commit": "b5d1b965ead7d9f777a3216369b5baf23ec08999",
+    "fix_commit_url": "https://github.com/spotify/luigi/commit/b5d1b965ead7d9f777a3216369b5baf23ec08999",
+    "package": "luigi",
+    "published": "2024-12-10"
+  },
+  {
+    "cve_id": "CVE-2024-34069",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-352"
+    ],
+    "summary": "Werkzeug debugger vulnerable to remote execution when interacting with attacker controlled domain",
+    "repo": "https://github.com/pallets/werkzeug",
+    "owner": "pallets",
+    "repo_name": "werkzeug",
+    "fix_commit": "3386395b24c7371db11a5b8eaac0c91da5362692",
+    "fix_commit_url": "https://github.com/pallets/werkzeug/commit/3386395b24c7371db11a5b8eaac0c91da5362692",
+    "package": "werkzeug",
+    "published": "2024-05-06"
+  },
+  {
+    "cve_id": "CVE-2023-25577",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400",
+      "CWE-770"
+    ],
+    "summary": "High resource usage when parsing multipart form data with many fields",
+    "repo": "https://github.com/pallets/werkzeug",
+    "owner": "pallets",
+    "repo_name": "werkzeug",
+    "fix_commit": "517cac5a804e8c4dc4ed038bb20dacd038e7a9f1",
+    "fix_commit_url": "https://github.com/pallets/werkzeug/commit/517cac5a804e8c4dc4ed038bb20dacd038e7a9f1",
+    "package": "werkzeug",
+    "published": "2023-02-15"
+  },
+  {
+    "cve_id": "CVE-2023-30861",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-539"
+    ],
+    "summary": "Flask vulnerable to possible disclosure of permanent session cookie due to missing Vary: Cookie header",
+    "repo": "https://github.com/pallets/flask",
+    "owner": "pallets",
+    "repo_name": "flask",
+    "fix_commit": "70f906c51ce49c485f1d355703e9cc3386b1cc2b",
+    "fix_commit_url": "https://github.com/pallets/flask/commit/70f906c51ce49c485f1d355703e9cc3386b1cc2b",
+    "package": "flask",
+    "published": "2023-05-01"
+  },
+  {
+    "cve_id": "CVE-2021-32677",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-352"
+    ],
+    "summary": "Cross-Site Request Forgery (CSRF) in FastAPI",
+    "repo": "https://github.com/tiangolo/fastapi",
+    "owner": "tiangolo",
+    "repo_name": "fastapi",
+    "fix_commit": "fa7e3c996edf2d5482fff8f9d890ac2390dede4d",
+    "fix_commit_url": "https://github.com/tiangolo/fastapi/commit/fa7e3c996edf2d5482fff8f9d890ac2390dede4d",
+    "package": "fastapi",
+    "published": "2021-06-10"
+  },
+  {
+    "cve_id": "CVE-2012-4520",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "Django Allows Arbitrary URL Generation",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "92d3430f12171f16f566c9050c40feefb830a4a3",
+    "fix_commit_url": "https://github.com/django/django/commit/92d3430f12171f16f566c9050c40feefb830a4a3",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2014-0481",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400"
+    ],
+    "summary": "Django denial of service via file upload naming",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "26cd48e166ac4d84317c8ee6d63ac52a87e8da99",
+    "fix_commit_url": "https://github.com/django/django/commit/26cd48e166ac4d84317c8ee6d63ac52a87e8da99",
+    "package": "django",
+    "published": "2022-05-14"
+  },
+  {
+    "cve_id": "CVE-2023-24580",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400"
+    ],
+    "summary": "Resource exhaustion in Django",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "628b33a854a9c68ec8a0c51f382f304a0044ec92",
+    "fix_commit_url": "https://github.com/django/django/commit/628b33a854a9c68ec8a0c51f382f304a0044ec92",
+    "package": "django",
+    "published": "2023-02-15"
+  },
+  {
+    "cve_id": "CVE-2020-9402",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "SQL injection in Django",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "6695d29b1c1ce979725816295a26ecc64ae0e927",
+    "fix_commit_url": "https://github.com/django/django/commit/6695d29b1c1ce979725816295a26ecc64ae0e927",
+    "package": "django",
+    "published": "2020-06-05"
+  },
+  {
+    "cve_id": "CVE-2016-2048",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-284"
+    ],
+    "summary": "Django Access Restrictions Bypass ",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "adbca5e4db42542575734b8e5d26961c8ada7265",
+    "fix_commit_url": "https://github.com/django/django/commit/adbca5e4db42542575734b8e5d26961c8ada7265",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2013-1443",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400"
+    ],
+    "summary": "Django Denial of Service Vulnerability in the authentication framework ",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "22b74fa09d7ccbc8c52270d648a0da7f3f0fa2bc",
+    "fix_commit_url": "https://github.com/django/django/commit/22b74fa09d7ccbc8c52270d648a0da7f3f0fa2bc",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2021-45115",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400"
+    ],
+    "summary": "Denial-of-service in Django",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "2135637fdd5ce994de110affef9e67dffdf77277",
+    "fix_commit_url": "https://github.com/django/django/commit/2135637fdd5ce994de110affef9e67dffdf77277",
+    "package": "django",
+    "published": "2022-01-12"
+  },
+  {
+    "cve_id": "CVE-2012-3443",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20",
+      "CWE-400"
+    ],
+    "summary": "Django Image Field Vulnerable to Image Decompression Bombs",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "9ca0ff6268eeff92d0d0ac2c315d4b6a8e229155",
+    "fix_commit_url": "https://github.com/django/django/commit/9ca0ff6268eeff92d0d0ac2c315d4b6a8e229155",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2012-3444",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-119"
+    ],
+    "summary": "Django vulnerable to Improper Restriction of Operations within the Bounds of a Memory Buffer",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "9ca0ff6268eeff92d0d0ac2c315d4b6a8e229155",
+    "fix_commit_url": "https://github.com/django/django/commit/9ca0ff6268eeff92d0d0ac2c315d4b6a8e229155",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2022-23833",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-835"
+    ],
+    "summary": "Infinite Loop in Django",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "c477b761804984c932704554ad35f78a2e230c6a",
+    "fix_commit_url": "https://github.com/django/django/commit/c477b761804984c932704554ad35f78a2e230c6a",
+    "package": "django",
+    "published": "2022-02-04"
+  },
+  {
+    "cve_id": "CVE-2015-0222",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-770"
+    ],
+    "summary": "Django database denial-of-service with ModelMultipleChoiceField",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "bcfb47780ce7caecb409a9e9c1c314266e41d392",
+    "fix_commit_url": "https://github.com/django/django/commit/bcfb47780ce7caecb409a9e9c1c314266e41d392",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2025-57833",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "Django is subject to SQL injection through its column aliases",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "102965ea93072fe3c39a30be437c683ec1106ef5",
+    "fix_commit_url": "https://github.com/django/django/commit/102965ea93072fe3c39a30be437c683ec1106ef5",
+    "package": "django",
+    "published": "2025-09-08"
+  },
+  {
+    "cve_id": "CVE-2014-0473",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-200"
+    ],
+    "summary": "Django Reuses Cached CSRF Token",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "1170f285ddd6a94a65f911a27788ba49ca08c0b0",
+    "fix_commit_url": "https://github.com/django/django/commit/1170f285ddd6a94a65f911a27788ba49ca08c0b0",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2021-45116",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "Information disclosure in Django",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "2a8ec7f546d6d5806e221ec948c5146b55bd7489",
+    "fix_commit_url": "https://github.com/django/django/commit/2a8ec7f546d6d5806e221ec948c5146b55bd7489",
+    "package": "django",
+    "published": "2022-01-12"
+  },
+  {
+    "cve_id": "CVE-2022-36359",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-494"
+    ],
+    "summary": "Django vulnerable to Reflected File Download attack",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "b3e4494d759202a3b6bf247fd34455bf13be5b80",
+    "fix_commit_url": "https://github.com/django/django/commit/b3e4494d759202a3b6bf247fd34455bf13be5b80",
+    "package": "django",
+    "published": "2022-08-11"
+  },
+  {
+    "cve_id": "CVE-2024-39330",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "Django Path Traversal vulnerability",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "2b00edc0151a660d1eb86da4059904a0fc4e095e",
+    "fix_commit_url": "https://github.com/django/django/commit/2b00edc0151a660d1eb86da4059904a0fc4e095e",
+    "package": "django",
+    "published": "2024-07-10"
+  },
+  {
+    "cve_id": "CVE-2007-5712",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400"
+    ],
+    "summary": "Django vulnerable to Denial of Service via i18n middleware component",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "412ed22502e11c50dbfee854627594f0e7e2c234",
+    "fix_commit_url": "https://github.com/django/django/commit/412ed22502e11c50dbfee854627594f0e7e2c234",
+    "package": "django",
+    "published": "2022-05-01"
+  },
+  {
+    "cve_id": "CVE-2009-2659",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "Django Admin Media Handler Vulnerable to Directory Traversal",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "da85d76fd6ca846f3b0ff414e042ddb5e62e2e69",
+    "fix_commit_url": "https://github.com/django/django/commit/da85d76fd6ca846f3b0ff414e042ddb5e62e2e69",
+    "package": "django",
+    "published": "2022-05-02"
+  },
+  {
+    "cve_id": "CVE-2015-5145",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-1333",
+      "CWE-400"
+    ],
+    "summary": "Django ReDoS in validators.URLValidator",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "8f9a4d3a2bc42f14bb437defd30c7315adbff22c",
+    "fix_commit_url": "https://github.com/django/django/commit/8f9a4d3a2bc42f14bb437defd30c7315adbff22c",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2016-7401",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [],
+    "summary": "Django CSRF Protection Bypass",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "6118ab7d0676f0d622278e5be215f14fb5410b6a",
+    "fix_commit_url": "https://github.com/django/django/commit/6118ab7d0676f0d622278e5be215f14fb5410b6a",
+    "package": "django",
+    "published": "2022-05-14"
+  },
+  {
+    "cve_id": "CVE-2024-39614",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-130",
+      "CWE-770"
+    ],
+    "summary": "Django vulnerable to Denial of Service",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "17358fb35fb7217423d4c4877ccb6d1a3a40b1c3",
+    "fix_commit_url": "https://github.com/django/django/commit/17358fb35fb7217423d4c4877ccb6d1a3a40b1c3",
+    "package": "django",
+    "published": "2024-07-10"
+  },
+  {
+    "cve_id": "CVE-2014-0480",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "Django Incorrectly Validates URLs",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "45ac9d4fb087d21902469fc22643f5201d41a0cd",
+    "fix_commit_url": "https://github.com/django/django/commit/45ac9d4fb087d21902469fc22643f5201d41a0cd",
+    "package": "django",
+    "published": "2022-05-14"
+  },
+  {
+    "cve_id": "CVE-2026-1287",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "Django has an SQL Injection issue",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "e891a84c7ef9962bfcc3b4685690219542f86a22",
+    "fix_commit_url": "https://github.com/django/django/commit/e891a84c7ef9962bfcc3b4685690219542f86a22",
+    "package": "django",
+    "published": "2026-02-03"
+  },
+  {
+    "cve_id": "CVE-2023-43665",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-1284",
+      "CWE-400"
+    ],
+    "summary": "Django Denial-of-service in django.utils.text.Truncator",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "be9c27c4d18c2e6a5be8af4e53c0797440794473",
+    "fix_commit_url": "https://github.com/django/django/commit/be9c27c4d18c2e6a5be8af4e53c0797440794473",
+    "package": "django",
+    "published": "2023-11-03"
+  },
+  {
+    "cve_id": "CVE-2025-59681",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "Django vulnerable to SQL injection in column aliases",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "41b43c74bda19753c757036673ea9db74acf494a",
+    "fix_commit_url": "https://github.com/django/django/commit/41b43c74bda19753c757036673ea9db74acf494a",
+    "package": "django",
+    "published": "2025-10-01"
+  },
+  {
+    "cve_id": "CVE-2015-2316",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-770"
+    ],
+    "summary": "Django Denial-of-service possibility with strip_tags",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "5447709a571cd5d95971f1d5d21d4a7edcf85bbd",
+    "fix_commit_url": "https://github.com/django/django/commit/5447709a571cd5d95971f1d5d21d4a7edcf85bbd",
+    "package": "django",
+    "published": "2022-05-14"
+  },
+  {
+    "cve_id": "CVE-2023-36053",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-1333"
+    ],
+    "summary": "Django has regular expression denial of service vulnerability in EmailValidator/URLValidator",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "454f2fb93437f98917283336201b4048293f7582",
+    "fix_commit_url": "https://github.com/django/django/commit/454f2fb93437f98917283336201b4048293f7582",
+    "package": "django",
+    "published": "2023-07-03"
+  },
+  {
+    "cve_id": "CVE-2015-0221",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400"
+    ],
+    "summary": "Django DoS in django.views.static.serve",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "553779c4055e8742cc832ed525b9ee34b174934f",
+    "fix_commit_url": "https://github.com/django/django/commit/553779c4055e8742cc832ed525b9ee34b174934f",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2020-24583",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-276"
+    ],
+    "summary": "Django Incorrect Default Permissions",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "8d7271578d7b153435b40fe40236ebec43cbf1b9",
+    "fix_commit_url": "https://github.com/django/django/commit/8d7271578d7b153435b40fe40236ebec43cbf1b9",
+    "package": "django",
+    "published": "2021-03-18"
+  },
+  {
+    "cve_id": "CVE-2026-1207",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "Django has an SQL Injection issue",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "81aa5292967cd09319c45fe2c1a525ce7b6684d8",
+    "fix_commit_url": "https://github.com/django/django/commit/81aa5292967cd09319c45fe2c1a525ce7b6684d8",
+    "package": "django",
+    "published": "2026-02-03"
+  },
+  {
+    "cve_id": "CVE-2009-3695",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-1333",
+      "CWE-400"
+    ],
+    "summary": "Django Regex Algorithmic Complexity Causes Denial of Service",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "594a28a9044120bed58671dde8a805c9e0f6c79a",
+    "fix_commit_url": "https://github.com/django/django/commit/594a28a9044120bed58671dde8a805c9e0f6c79a",
+    "package": "django",
+    "published": "2022-05-02"
+  },
+  {
+    "cve_id": "CVE-2021-33571",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-918"
+    ],
+    "summary": "Django Access Control Bypass possibly leading to SSRF, RFI, and LFI attacks ",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "203d4ab9ebcd72fc4d6eb7398e66ed9e474e118e",
+    "fix_commit_url": "https://github.com/django/django/commit/203d4ab9ebcd72fc4d6eb7398e66ed9e474e118e",
+    "package": "django",
+    "published": "2021-06-10"
+  },
+  {
+    "cve_id": "CVE-2023-23969",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400",
+      "CWE-770"
+    ],
+    "summary": "Django contains Uncontrolled Resource Consumption via cached header",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "4452642f193533e288a52c02efb5bbc766a68f95",
+    "fix_commit_url": "https://github.com/django/django/commit/4452642f193533e288a52c02efb5bbc766a68f95",
+    "package": "django",
+    "published": "2023-02-01"
+  },
+  {
+    "cve_id": "CVE-2015-5144",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "Django Vulnerable to HTTP Response Splitting Attack",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "1ba1cdce7d58e6740fe51955d945b56ae51d072a",
+    "fix_commit_url": "https://github.com/django/django/commit/1ba1cdce7d58e6740fe51955d945b56ae51d072a",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2007-0404",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [],
+    "summary": "Django Arbitrary Code Execution",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "518d406e53",
+    "fix_commit_url": "https://github.com/django/django/commit/518d406e53",
+    "package": "django",
+    "published": "2022-05-01"
+  },
+  {
+    "cve_id": "CVE-2024-38875",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-130",
+      "CWE-770"
+    ],
+    "summary": "Django vulnerable to Denial of Service",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "7285644640f085f41d60ab0c8ae4e9153f0485db",
+    "fix_commit_url": "https://github.com/django/django/commit/7285644640f085f41d60ab0c8ae4e9153f0485db",
+    "package": "django",
+    "published": "2024-07-10"
+  },
+  {
+    "cve_id": "CVE-2023-46695",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400",
+      "CWE-770"
+    ],
+    "summary": "Django potential denial of service vulnerability in UsernameField on Windows",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "048a9ebb6ea468426cb4e57c71572cbbd975517f",
+    "fix_commit_url": "https://github.com/django/django/commit/048a9ebb6ea468426cb4e57c71572cbbd975517f",
+    "package": "django",
+    "published": "2023-11-02"
+  },
+  {
+    "cve_id": "CVE-2022-41323",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-1333"
+    ],
+    "summary": "Django denial-of-service vulnerability in internationalized URLs",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "23f0093125ac2e553da6c1b2f9988eb6a3dd2ea1",
+    "fix_commit_url": "https://github.com/django/django/commit/23f0093125ac2e553da6c1b2f9988eb6a3dd2ea1",
+    "package": "django",
+    "published": "2022-10-16"
+  },
+  {
+    "cve_id": "CVE-2025-64458",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-407"
+    ],
+    "summary": "Django has a denial-of-service vulnerability in HttpResponseRedirect and HttpResponsePermanentRedirect on Windows",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "3790593781d26168e7306b5b2f8ea0309de16242",
+    "fix_commit_url": "https://github.com/django/django/commit/3790593781d26168e7306b5b2f8ea0309de16242",
+    "package": "django",
+    "published": "2025-11-05"
+  },
+  {
+    "cve_id": "CVE-2008-3909",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-352"
+    ],
+    "summary": "Django cross-site request forgery (CSRF) vulnerability",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "44debfeaa4473bd28872c735dd3d9afde6886752",
+    "fix_commit_url": "https://github.com/django/django/commit/44debfeaa4473bd28872c735dd3d9afde6886752",
+    "package": "django",
+    "published": "2022-05-02"
+  },
+  {
+    "cve_id": "CVE-2011-4139",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20",
+      "CWE-349"
+    ],
+    "summary": "Django Vulnerable to Cache Poisoning",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "2f7fadc38efa58ac0a8f93f936b82332a199f396",
+    "fix_commit_url": "https://github.com/django/django/commit/2f7fadc38efa58ac0a8f93f936b82332a199f396",
+    "package": "django",
+    "published": "2022-05-14"
+  },
+  {
+    "cve_id": "CVE-2021-31542",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22",
+      "CWE-434"
+    ],
+    "summary": "Path Traversal in Django",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "04ac1624bdc2fa737188401757cf95ced122d26d",
+    "fix_commit_url": "https://github.com/django/django/commit/04ac1624bdc2fa737188401757cf95ced122d26d",
+    "package": "django",
+    "published": "2021-06-04"
+  },
+  {
+    "cve_id": "CVE-2013-4315",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "Django Directory Traversal via ssi template tag",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "87d2750b39f6f2d54b7047225521a44dcd37e896",
+    "fix_commit_url": "https://github.com/django/django/commit/87d2750b39f6f2d54b7047225521a44dcd37e896",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2014-3730",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "Django Allows Open Redirects",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "601107524523bca02376a0ddc1a06c6fdb8f22f3",
+    "fix_commit_url": "https://github.com/django/django/commit/601107524523bca02376a0ddc1a06c6fdb8f22f3",
+    "package": "django",
+    "published": "2022-05-14"
+  },
+  {
+    "cve_id": "CVE-2020-13254",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-295"
+    ],
+    "summary": "Data leakage via cache key collision in Django",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "07e59caa02831c4569bbebb9eb773bdd9cb4b206",
+    "fix_commit_url": "https://github.com/django/django/commit/07e59caa02831c4569bbebb9eb773bdd9cb4b206",
+    "package": "django",
+    "published": "2020-06-05"
+  },
+  {
+    "cve_id": "CVE-2014-0474",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "Django Vulnerable to MySQL Injection",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "5f0829a27e85d89ad8c433f5c6a7a7d17c9e9292",
+    "fix_commit_url": "https://github.com/django/django/commit/5f0829a27e85d89ad8c433f5c6a7a7d17c9e9292",
+    "package": "django",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2011-4138",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "Django Might Allow CSRF Requests via URL Verification",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "1a76dbefdfc60e2d5954c0ba614c3d054ba9c3f0",
+    "fix_commit_url": "https://github.com/django/django/commit/1a76dbefdfc60e2d5954c0ba614c3d054ba9c3f0",
+    "package": "django",
+    "published": "2022-05-14"
+  },
+  {
+    "cve_id": "CVE-2024-24680",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-770"
+    ],
+    "summary": "Django denial-of-service attack in the intcomma template filter",
+    "repo": "https://github.com/django/django",
+    "owner": "django",
+    "repo_name": "django",
+    "fix_commit": "16a8fe18a3b81250f4fa57e3f93f0599dc4895bc",
+    "fix_commit_url": "https://github.com/django/django/commit/16a8fe18a3b81250f4fa57e3f93f0599dc4895bc",
+    "package": "django",
+    "published": "2024-02-07"
+  },
+  {
+    "cve_id": "CVE-2024-23334",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "aiohttp is vulnerable to directory traversal",
+    "repo": "https://github.com/aio-libs/aiohttp",
+    "owner": "aio-libs",
+    "repo_name": "aiohttp",
+    "fix_commit": "1c335944d6a8b1298baf179b7c0b3069f10c514b",
+    "fix_commit_url": "https://github.com/aio-libs/aiohttp/commit/1c335944d6a8b1298baf179b7c0b3069f10c514b",
+    "package": "aiohttp",
+    "published": "2024-01-29"
+  },
+  {
+    "cve_id": "CVE-2024-30251",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-835"
+    ],
+    "summary": "aiohttp vulnerable to Denial of Service when trying to parse malformed POST requests",
+    "repo": "https://github.com/aio-libs/aiohttp",
+    "owner": "aio-libs",
+    "repo_name": "aiohttp",
+    "fix_commit": "7eecdff163ccf029fbb1ddc9de4169d4aaeb6597",
+    "fix_commit_url": "https://github.com/aio-libs/aiohttp/commit/7eecdff163ccf029fbb1ddc9de4169d4aaeb6597",
+    "package": "aiohttp",
+    "published": "2024-05-03"
+  },
+  {
+    "cve_id": "CVE-2025-69223",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-409",
+      "CWE-770"
+    ],
+    "summary": "AIOHTTP's HTTP Parser auto_decompress feature is vulnerable to zip bomb",
+    "repo": "https://github.com/aio-libs/aiohttp",
+    "owner": "aio-libs",
+    "repo_name": "aiohttp",
+    "fix_commit": "2b920c39002cee0ec5b402581779bbaaf7c9138a",
+    "fix_commit_url": "https://github.com/aio-libs/aiohttp/commit/2b920c39002cee0ec5b402581779bbaaf7c9138a",
+    "package": "aiohttp",
+    "published": "2026-01-05"
+  },
+  {
+    "cve_id": "CVE-2022-24302",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-362"
+    ],
+    "summary": "Race Condition in Paramiko",
+    "repo": "https://github.com/paramiko/paramiko",
+    "owner": "paramiko",
+    "repo_name": "paramiko",
+    "fix_commit": "4c491e299c9b800358b16fa4886d8d94f45abe2e",
+    "fix_commit_url": "https://github.com/paramiko/paramiko/commit/4c491e299c9b800358b16fa4886d8d94f45abe2e",
+    "package": "paramiko",
+    "published": "2022-03-19"
+  },
+  {
+    "cve_id": "CVE-2024-26130",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-476"
+    ],
+    "summary": "cryptography NULL pointer dereference with pkcs12.serialize_key_and_certificates when called with a non-matching certificate and private key and an hmac_hash override",
+    "repo": "https://github.com/pyca/cryptography",
+    "owner": "pyca",
+    "repo_name": "cryptography",
+    "fix_commit": "97d231672763cdb5959a3b191e692a362f1b9e55",
+    "fix_commit_url": "https://github.com/pyca/cryptography/commit/97d231672763cdb5959a3b191e692a362f1b9e55",
+    "package": "cryptography",
+    "published": "2024-02-21"
+  },
+  {
+    "cve_id": "CVE-2023-38325",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-295"
+    ],
+    "summary": "cryptography mishandles SSH certificates",
+    "repo": "https://github.com/pyca/cryptography",
+    "owner": "pyca",
+    "repo_name": "cryptography",
+    "fix_commit": "1ca7adc97b76a9dfbd3d850628b613eb93b78fc3",
+    "fix_commit_url": "https://github.com/pyca/cryptography/commit/1ca7adc97b76a9dfbd3d850628b613eb93b78fc3",
+    "package": "cryptography",
+    "published": "2023-07-14"
+  },
+  {
+    "cve_id": "CVE-2020-25659",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-385"
+    ],
+    "summary": "RSA decryption vulnerable to Bleichenbacher timing vulnerability",
+    "repo": "https://github.com/pyca/cryptography",
+    "owner": "pyca",
+    "repo_name": "cryptography",
+    "fix_commit": "58494b41d6ecb0f56b7c5f05d5f5e3ca0320d494",
+    "fix_commit_url": "https://github.com/pyca/cryptography/commit/58494b41d6ecb0f56b7c5f05d5f5e3ca0320d494",
+    "package": "cryptography",
+    "published": "2020-10-27"
+  },
+  {
+    "cve_id": "CVE-2016-9243",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "Improper input validation in cryptography",
+    "repo": "https://github.com/pyca/cryptography",
+    "owner": "pyca",
+    "repo_name": "cryptography",
+    "fix_commit": "b924696b2e8731f39696584d12cceeb3aeb2d874",
+    "fix_commit_url": "https://github.com/pyca/cryptography/commit/b924696b2e8731f39696584d12cceeb3aeb2d874",
+    "package": "cryptography",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2026-26007",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-345"
+    ],
+    "summary": "cryptography Vulnerable to a Subgroup Attack Due to Missing Subgroup Validation for SECT Curves",
+    "repo": "https://github.com/pyca/cryptography",
+    "owner": "pyca",
+    "repo_name": "cryptography",
+    "fix_commit": "0eebb9dbb6343d9bc1d91e5a2482ed4e054a6d8c",
+    "fix_commit_url": "https://github.com/pyca/cryptography/commit/0eebb9dbb6343d9bc1d91e5a2482ed4e054a6d8c",
+    "package": "cryptography",
+    "published": "2026-02-10"
+  },
+  {
+    "cve_id": "CVE-2020-36242",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-190",
+      "CWE-787"
+    ],
+    "summary": "PyCA Cryptography symmetrically encrypting large values can lead to integer overflow",
+    "repo": "https://github.com/pyca/cryptography",
+    "owner": "pyca",
+    "repo_name": "cryptography",
+    "fix_commit": "82b6ce28389f0a317bc55ba2091a74b346db7cae",
+    "fix_commit_url": "https://github.com/pyca/cryptography/commit/82b6ce28389f0a317bc55ba2091a74b346db7cae",
+    "package": "cryptography",
+    "published": "2021-02-10"
+  },
+  {
+    "cve_id": "CVE-2022-29217",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-327"
+    ],
+    "summary": "Key confusion through non-blocklisted public key formats",
+    "repo": "https://github.com/jpadilla/pyjwt",
+    "owner": "jpadilla",
+    "repo_name": "pyjwt",
+    "fix_commit": "9c528670c455b8d948aff95ed50e22940d1ad3fc",
+    "fix_commit_url": "https://github.com/jpadilla/pyjwt/commit/9c528670c455b8d948aff95ed50e22940d1ad3fc",
+    "package": "pyjwt",
+    "published": "2022-05-24"
+  },
+  {
+    "cve_id": "CVE-2026-27459",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-120"
+    ],
+    "summary": "pyOpenSSL DTLS cookie callback buffer overflow",
+    "repo": "https://github.com/pyca/pyopenssl",
+    "owner": "pyca",
+    "repo_name": "pyopenssl",
+    "fix_commit": "57f09bb4bb051d3bc2a1abd36e9525313d5cd408",
+    "fix_commit_url": "https://github.com/pyca/pyopenssl/commit/57f09bb4bb051d3bc2a1abd36e9525313d5cd408",
+    "package": "pyopenssl",
+    "published": "2026-03-16"
+  },
+  {
+    "cve_id": "CVE-2013-4314",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "PyOpenSSL Mishandles NUL Byte In Certificate Subject Alternative Name",
+    "repo": "https://github.com/pyca/pyopenssl",
+    "owner": "pyca",
+    "repo_name": "pyopenssl",
+    "fix_commit": "6bbf44a00b35fb28df1f66aa194b2fe95eab1ab2",
+    "fix_commit_url": "https://github.com/pyca/pyopenssl/commit/6bbf44a00b35fb28df1f66aa194b2fe95eab1ab2",
+    "package": "pyopenssl",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2026-0994",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-674"
+    ],
+    "summary": "protobuf affected by a JSON recursion depth bypass",
+    "repo": "https://github.com/protocolbuffers/protobuf",
+    "owner": "protocolbuffers",
+    "repo_name": "protobuf",
+    "fix_commit": "5ebddcb1bcbe51d1fe323baa145e85f4f23128cf",
+    "fix_commit_url": "https://github.com/protocolbuffers/protobuf/commit/5ebddcb1bcbe51d1fe323baa145e85f4f23128cf",
+    "package": "protobuf",
+    "published": "2026-01-23"
+  },
+  {
+    "cve_id": "CVE-2025-4565",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-674"
+    ],
+    "summary": "protobuf-python has a potential Denial of Service issue",
+    "repo": "https://github.com/protocolbuffers/protobuf",
+    "owner": "protocolbuffers",
+    "repo_name": "protobuf",
+    "fix_commit": "17838beda2943d08b8a9d4df5b68f5f04f26d901",
+    "fix_commit_url": "https://github.com/protocolbuffers/protobuf/commit/17838beda2943d08b8a9d4df5b68f5f04f26d901",
+    "package": "protobuf",
+    "published": "2025-06-16"
+  },
+  {
+    "cve_id": "CVE-2021-23727",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-77",
+      "CWE-78"
+    ],
+    "summary": "OS Command Injection in celery",
+    "repo": "https://github.com/celery/celery",
+    "owner": "celery",
+    "repo_name": "celery",
+    "fix_commit": "1f7ad7e6df1e02039b6ab9eec617d283598cad6b",
+    "fix_commit_url": "https://github.com/celery/celery/commit/1f7ad7e6df1e02039b6ab9eec617d283598cad6b",
+    "package": "celery",
+    "published": "2022-01-06"
+  },
+  {
+    "cve_id": "CVE-2022-21712",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-200",
+      "CWE-346"
+    ],
+    "summary": "Cookie and header exposure in twisted",
+    "repo": "https://github.com/twisted/twisted",
+    "owner": "twisted",
+    "repo_name": "twisted",
+    "fix_commit": "af8fe78542a6f2bf2235ccee8158d9c88d31e8e2",
+    "fix_commit_url": "https://github.com/twisted/twisted/commit/af8fe78542a6f2bf2235ccee8158d9c88d31e8e2",
+    "package": "twisted",
+    "published": "2022-02-07"
+  },
+  {
+    "cve_id": "CVE-2022-21716",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-120",
+      "CWE-770"
+    ],
+    "summary": "Twisted SSH client and server deny of service during SSH handshake.",
+    "repo": "https://github.com/twisted/twisted",
+    "owner": "twisted",
+    "repo_name": "twisted",
+    "fix_commit": "89c395ee794e85a9657b112c4351417850330ef9",
+    "fix_commit_url": "https://github.com/twisted/twisted/commit/89c395ee794e85a9657b112c4351417850330ef9",
+    "package": "twisted",
+    "published": "2022-03-03"
+  },
+  {
+    "cve_id": "CVE-2025-47287",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-770"
+    ],
+    "summary": "Tornado vulnerable to excessive logging caused by malformed multipart form data",
+    "repo": "https://github.com/tornadoweb/tornado",
+    "owner": "tornadoweb",
+    "repo_name": "tornado",
+    "fix_commit": "b39b892bf78fe8fea01dd45199aa88307e7162f3",
+    "fix_commit_url": "https://github.com/tornadoweb/tornado/commit/b39b892bf78fe8fea01dd45199aa88307e7162f3",
+    "package": "tornado",
+    "published": "2025-05-16"
+  },
+  {
+    "cve_id": "CVE-2014-9720",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-203"
+    ],
+    "summary": "Tornado XSRF cookie allows side-channel attack against TLS (BREACH attack)",
+    "repo": "https://github.com/tornadoweb/tornado",
+    "owner": "tornadoweb",
+    "repo_name": "tornado",
+    "fix_commit": "1c36307463b1e8affae100bf9386948e6c1b2308",
+    "fix_commit_url": "https://github.com/tornadoweb/tornado/commit/1c36307463b1e8affae100bf9386948e6c1b2308",
+    "package": "tornado",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2024-52804",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400",
+      "CWE-770"
+    ],
+    "summary": "Tornado has an HTTP cookie parsing DoS vulnerability",
+    "repo": "https://github.com/tornadoweb/tornado",
+    "owner": "tornadoweb",
+    "repo_name": "tornado",
+    "fix_commit": "d5ba4a1695fbf7c6a3e54313262639b198291533",
+    "fix_commit_url": "https://github.com/tornadoweb/tornado/commit/d5ba4a1695fbf7c6a3e54313262639b198291533",
+    "package": "tornado",
+    "published": "2024-11-22"
+  },
+  {
+    "cve_id": "CVE-2012-2374",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "Tornado CRLF injection vulnerability",
+    "repo": "https://github.com/tornadoweb/tornado",
+    "owner": "tornadoweb",
+    "repo_name": "tornado",
+    "fix_commit": "1ae91f6d58e6257e0ab49d295d8741ce1727bdb7",
+    "fix_commit_url": "https://github.com/tornadoweb/tornado/commit/1ae91f6d58e6257e0ab49d295d8741ce1727bdb7",
+    "package": "tornado",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2026-31958",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400"
+    ],
+    "summary": "Tornado is vulnerable to DoS due to too many multipart parts",
+    "repo": "https://github.com/tornadoweb/tornado",
+    "owner": "tornadoweb",
+    "repo_name": "tornado",
+    "fix_commit": "119a195e290c43ad2d63a2cf012c29d43d6ed839",
+    "fix_commit_url": "https://github.com/tornadoweb/tornado/commit/119a195e290c43ad2d63a2cf012c29d43d6ed839",
+    "package": "tornado",
+    "published": "2026-03-12"
+  },
+  {
+    "cve_id": "CVE-2014-1859",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-59"
+    ],
+    "summary": "Numpy arbitrary file write via symlink attack",
+    "repo": "https://github.com/numpy/numpy",
+    "owner": "numpy",
+    "repo_name": "numpy",
+    "fix_commit": "0bb46c1448b0d3f5453d5182a17ea7ac5854ee15",
+    "fix_commit_url": "https://github.com/numpy/numpy/commit/0bb46c1448b0d3f5453d5182a17ea7ac5854ee15",
+    "package": "numpy",
+    "published": "2022-05-14"
+  },
+  {
+    "cve_id": "CVE-2014-1858",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "Arbitrary file write in NumPy",
+    "repo": "https://github.com/numpy/numpy",
+    "owner": "numpy",
+    "repo_name": "numpy",
+    "fix_commit": "0bb46c1448b0d3f5453d5182a17ea7ac5854ee15",
+    "fix_commit_url": "https://github.com/numpy/numpy/commit/0bb46c1448b0d3f5453d5182a17ea7ac5854ee15",
+    "package": "numpy",
+    "published": "2022-05-14"
+  },
+  {
+    "cve_id": "CVE-2021-27922",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20",
+      "CWE-400"
+    ],
+    "summary": "Pillow Uncontrolled Resource Consumption",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "756fff33128a0b643d10518a26ad04b726dd8973",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/756fff33128a0b643d10518a26ad04b726dd8973",
+    "package": "pillow",
+    "published": "2021-03-18"
+  },
+  {
+    "cve_id": "CVE-2020-10378",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-125"
+    ],
+    "summary": "Out-of-bounds read in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "124f4bb591e16212605d0e41c413ed53e242cba2",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/124f4bb591e16212605d0e41c413ed53e242cba2",
+    "package": "pillow",
+    "published": "2021-11-03"
+  },
+  {
+    "cve_id": "CVE-2024-28219",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-120",
+      "CWE-676",
+      "CWE-680"
+    ],
+    "summary": "Pillow buffer overflow vulnerability",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "2a93aba5cfcf6e241ab4f9392c13e3b74032c061",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/2a93aba5cfcf6e241ab4f9392c13e3b74032c061",
+    "package": "pillow",
+    "published": "2024-04-03"
+  },
+  {
+    "cve_id": "CVE-2019-19911",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-190"
+    ],
+    "summary": "Uncontrolled Resource Consumption in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "774e53bb132461d8d5ebefec1162e29ec0ebc63d",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/774e53bb132461d8d5ebefec1162e29ec0ebc63d",
+    "package": "pillow",
+    "published": "2020-04-01"
+  },
+  {
+    "cve_id": "CVE-2021-25287",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-125"
+    ],
+    "summary": "Out-of-bounds Read in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "3bf5eddb89afdf690eceaa52bc4d3546ba9a5f87",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/3bf5eddb89afdf690eceaa52bc4d3546ba9a5f87",
+    "package": "pillow",
+    "published": "2021-06-08"
+  },
+  {
+    "cve_id": "CVE-2021-28676",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-835"
+    ],
+    "summary": "Potential infinite loop in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "bb6c11fb889e6c11b0ee122b828132ee763b5856",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/bb6c11fb889e6c11b0ee122b828132ee763b5856",
+    "package": "pillow",
+    "published": "2021-06-08"
+  },
+  {
+    "cve_id": "CVE-2020-10379",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-120"
+    ],
+    "summary": "Buffer overflow in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "46f4a349b88915787fea3fb91348bb1665831bbb",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/46f4a349b88915787fea3fb91348bb1665831bbb#diff-9478f2787e3ae9668a15123b165c23ac",
+    "package": "pillow",
+    "published": "2020-07-27"
+  },
+  {
+    "cve_id": "CVE-2023-44271",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400",
+      "CWE-770"
+    ],
+    "summary": "Pillow Denial of Service vulnerability",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "1fe1bb49c452b0318cad12ea9d97c3bef188e9a7",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/1fe1bb49c452b0318cad12ea9d97c3bef188e9a7",
+    "package": "pillow",
+    "published": "2023-11-03"
+  },
+  {
+    "cve_id": "CVE-2021-25290",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-787"
+    ],
+    "summary": "Out-of-bounds Write in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "86f02f7c70862a0954bfe8133736d352db978eaa",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/86f02f7c70862a0954bfe8133736d352db978eaa",
+    "package": "pillow",
+    "published": "2021-03-29"
+  },
+  {
+    "cve_id": "CVE-2021-27923",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20",
+      "CWE-400"
+    ],
+    "summary": "Pillow Denial of Service by Uncontrolled Resource Consumption",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "756fff33128a0b643d10518a26ad04b726dd8973",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/756fff33128a0b643d10518a26ad04b726dd8973",
+    "package": "pillow",
+    "published": "2021-03-18"
+  },
+  {
+    "cve_id": "CVE-2021-23437",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-125",
+      "CWE-400"
+    ],
+    "summary": "Uncontrolled Resource Consumption in pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "9e08eb8f78fdfd2f476e1b20b7cf38683754866b",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/9e08eb8f78fdfd2f476e1b20b7cf38683754866b",
+    "package": "pillow",
+    "published": "2021-09-07"
+  },
+  {
+    "cve_id": "CVE-2022-24303",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "Path traversal in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "10c4f75aaa383bd9671e923e3b91d391ea12d781",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/10c4f75aaa383bd9671e923e3b91d391ea12d781",
+    "package": "pillow",
+    "published": "2022-03-11"
+  },
+  {
+    "cve_id": "CVE-2026-25990",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-787"
+    ],
+    "summary": "Pillow affected by out-of-bounds write when loading PSD images",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "54ba4db542ad3c7b918812a4e2d69c27735a3199",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/54ba4db542ad3c7b918812a4e2d69c27735a3199",
+    "package": "pillow",
+    "published": "2026-02-11"
+  },
+  {
+    "cve_id": "CVE-2014-3589",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20"
+    ],
+    "summary": "Pillow denial of service via Crafted Block Size",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "205e056f8f9b06ed7b925cf8aa0874bc4aaf8a7d",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/205e056f8f9b06ed7b925cf8aa0874bc4aaf8a7d",
+    "package": "pillow",
+    "published": "2022-05-14"
+  },
+  {
+    "cve_id": "CVE-2020-10177",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-125"
+    ],
+    "summary": "Out-of-bounds reads in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "f6926a041b4b544fd2ced3752542afb6c8c19405",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/f6926a041b4b544fd2ced3752542afb6c8c19405",
+    "package": "pillow",
+    "published": "2020-07-27"
+  },
+  {
+    "cve_id": "CVE-2021-27921",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-20",
+      "CWE-400"
+    ],
+    "summary": "Pillow Denial of Service by Uncontrolled Resource Consumption",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "756fff33128a0b643d10518a26ad04b726dd8973",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/756fff33128a0b643d10518a26ad04b726dd8973",
+    "package": "pillow",
+    "published": "2021-03-18"
+  },
+  {
+    "cve_id": "CVE-2020-35653",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-125"
+    ],
+    "summary": "Pillow Out-of-bounds Read",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "2f409261eb1228e166868f8f0b5da5cda52e55bf",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/2f409261eb1228e166868f8f0b5da5cda52e55bf",
+    "package": "pillow",
+    "published": "2021-03-18"
+  },
+  {
+    "cve_id": "CVE-2020-5313",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-125"
+    ],
+    "summary": "Out-of-bounds Read in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "a09acd0decd8a87ccce939d5ff65dab59e7d365b",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/a09acd0decd8a87ccce939d5ff65dab59e7d365b",
+    "package": "pillow",
+    "published": "2020-04-01"
+  },
+  {
+    "cve_id": "CVE-2022-30595",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-120"
+    ],
+    "summary": "Buffer over-flow in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "c846cc881ebe34e3518412c2e3636433d9947280",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/c846cc881ebe34e3518412c2e3636433d9947280",
+    "package": "pillow",
+    "published": "2022-05-26"
+  },
+  {
+    "cve_id": "CVE-2014-3598",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [],
+    "summary": "Pillow is vulnerable to Denial of Service (DOS) in the Jpeg2KImagePlugin",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "347a1d8d956f9e64af4463ee25311b60cdd5657d",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/347a1d8d956f9e64af4463ee25311b60cdd5657d",
+    "package": "pillow",
+    "published": "2022-05-14"
+  },
+  {
+    "cve_id": "CVE-2023-4863",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-787"
+    ],
+    "summary": "libwebp: OOB write in BuildHuffmanTable",
+    "repo": "https://github.com/webmproject/libwebp",
+    "owner": "webmproject",
+    "repo_name": "libwebp",
+    "fix_commit": "902bc9190331343b2017211debcec8d2ab87e17a",
+    "fix_commit_url": "https://github.com/webmproject/libwebp/commit/902bc9190331343b2017211debcec8d2ab87e17a",
+    "package": "pillow",
+    "published": "2023-09-12"
+  },
+  {
+    "cve_id": "CVE-2022-45198",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-409"
+    ],
+    "summary": "Pillow vulnerable to Data Amplification attack.",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "11918eac0628ec8ac0812670d9838361ead2d6a4",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/11918eac0628ec8ac0812670d9838361ead2d6a4",
+    "package": "pillow",
+    "published": "2022-11-14"
+  },
+  {
+    "cve_id": "CVE-2021-25291",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-125"
+    ],
+    "summary": "Out of bounds read in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "8b8076bdcb3815be0ef0d279651d8d1342b8ea61",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/8b8076bdcb3815be0ef0d279651d8d1342b8ea61",
+    "package": "pillow",
+    "published": "2021-03-29"
+  },
+  {
+    "cve_id": "CVE-2021-25293",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-125"
+    ],
+    "summary": "Out of bounds read in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "4853e522bddbec66022c0915b9a56255d0188bf9",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/4853e522bddbec66022c0915b9a56255d0188bf9",
+    "package": "pillow",
+    "published": "2021-03-29"
+  },
+  {
+    "cve_id": "CVE-2022-45199",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400"
+    ],
+    "summary": "Pillow subject to DoS via SAMPLESPERPIXEL tag",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "2444cddab2f83f28687c7c20871574acbb6dbcf3",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/2444cddab2f83f28687c7c20871574acbb6dbcf3",
+    "package": "pillow",
+    "published": "2022-11-14"
+  },
+  {
+    "cve_id": "CVE-2021-28677",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400"
+    ],
+    "summary": "Uncontrolled Resource Consumption in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "5a5e6db0abf4e7a638fb1b3408c4e495a096cb92",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/5a5e6db0abf4e7a638fb1b3408c4e495a096cb92",
+    "package": "pillow",
+    "published": "2021-06-08"
+  },
+  {
+    "cve_id": "CVE-2021-25288",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-125"
+    ],
+    "summary": "Pillow Out-of-bounds Read vulnerability",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "3bf5eddb89afdf690eceaa52bc4d3546ba9a5f87",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/3bf5eddb89afdf690eceaa52bc4d3546ba9a5f87",
+    "package": "pillow",
+    "published": "2021-06-08"
+  },
+  {
+    "cve_id": "CVE-2020-10994",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-125"
+    ],
+    "summary": "Out-of-bounds reads in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "ff60894d697d1992147b791101ad53a8bf1352e4",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/ff60894d697d1992147b791101ad53a8bf1352e4",
+    "package": "pillow",
+    "published": "2020-07-27"
+  },
+  {
+    "cve_id": "CVE-2020-35654",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-787"
+    ],
+    "summary": "Pillow Out-of-bounds Write",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "eb8c1206d6b170d4e798a00db7432e023853da5c",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/eb8c1206d6b170d4e798a00db7432e023853da5c",
+    "package": "pillow",
+    "published": "2021-03-18"
+  },
+  {
+    "cve_id": "CVE-2026-40192",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-400",
+      "CWE-770"
+    ],
+    "summary": "FITS GZIP decompression bomb in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "3cb854e8b2bab43f40e342e665f9340d861aa628",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/3cb854e8b2bab43f40e342e665f9340d861aa628",
+    "package": "pillow",
+    "published": "2026-04-13"
+  },
+  {
+    "cve_id": "CVE-2014-1932",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-59"
+    ],
+    "summary": "PIL and Pillow Vulnerable to Symlink Attack on Tmpfiles",
+    "repo": "https://github.com/python-imaging/Pillow",
+    "owner": "python-imaging",
+    "repo_name": "Pillow",
+    "fix_commit": "4e9f367dfd3f04c8f5d23f7f759ec12782e10ee7",
+    "fix_commit_url": "https://github.com/python-imaging/Pillow/commit/4e9f367dfd3f04c8f5d23f7f759ec12782e10ee7",
+    "package": "pillow",
+    "published": "2022-05-17"
+  },
+  {
+    "cve_id": "CVE-2025-48379",
+    "ghsa_id": "",
+    "severity": "high",
+    "cwe_ids": [
+      "CWE-122"
+    ],
+    "summary": "Pillow vulnerability can cause write buffer overflow on BCn encoding",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "ef98b3510e3e4f14b547762764813d7e5ca3c5a4",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/ef98b3510e3e4f14b547762764813d7e5ca3c5a4",
+    "package": "pillow",
+    "published": "2025-07-01"
+  }
+]

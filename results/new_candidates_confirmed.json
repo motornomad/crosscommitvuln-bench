@@ -1,0 +1,413 @@
+[
+  {
+    "cve_id": "CVE-2025-27520",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-502"
+    ],
+    "summary": "BentoML Allows Remote Code Execution (RCE) via Insecure Deserialization",
+    "repo": "https://github.com/bentoml/BentoML",
+    "owner": "bentoml",
+    "repo_name": "BentoML",
+    "fix_commit": "b35f4f4fcc53a8c3fe8ed9c18a013fe0a728e194",
+    "fix_commit_url": "https://github.com/bentoml/BentoML/commit/b35f4f4fcc53a8c3fe8ed9c18a013fe0a728e194",
+    "package": "bentoml",
+    "published": "2025-04-04",
+    "multi_commit_confirmed": true,
+    "distinct_blame_commits": 9,
+    "blame_commits": [
+      "4a71393f7120a80882488325f37e1c1dcbff7b1d",
+      "6c0c4bbb4562f8c05d7054dd62456a2365520816",
+      "74076a7f3314b874d24158d8ec9f101674b7e8a5",
+      "889845162dacf42d16a6e44df022e2581f11c340",
+      "a3959b73787a8b02f0b400d9953aff84a29bb409",
+      "a9692fb1525ba93e8d2cd962152c7f1d53cf04e1",
+      "b64e9b481b89c70157b8275c06d2ed909a1fb4cf",
+      "b65eb2c32bcdefefb40563d7374edb4f86f218ec",
+      "d1a43c74db54ebc196cc1b63fe22d6be2fea66a5"
+    ],
+    "py_files_changed": 1,
+    "py_files": [
+      "src/_bentoml_impl/server/app.py"
+    ]
+  },
+  {
+    "cve_id": "CVE-2025-23042",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-178",
+      "CWE-285"
+    ],
+    "summary": "Gradio Blocked Path ACL Bypass Vulnerability",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "6b63fdec441b5c9bf910f910a2505d8defbb6bf8",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/6b63fdec441b5c9bf910f910a2505d8defbb6bf8",
+    "package": "gradio",
+    "published": "2025-01-14",
+    "multi_commit_confirmed": true,
+    "distinct_blame_commits": 5,
+    "blame_commits": [
+      "19e1ef52dcd2c7f2bae49ef7844fbfd31c1785fe",
+      "3f192100d6997751d0246b396a4fd8eaa86a826b",
+      "5ce28324971e974ae24dc9a229b2160793140fb2",
+      "5da6c1da474cc5cfe2e6abfb242a3b1f3dcdfcb7",
+      "cb5b89108e0217131a914315be698827a4d05c15"
+    ],
+    "py_files_changed": 2,
+    "py_files": [
+      "gradio/utils.py",
+      "test/test_routes.py"
+    ]
+  },
+  {
+    "cve_id": "CVE-2024-1728",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-22"
+    ],
+    "summary": "Gradio allows users to access arbitrary files",
+    "repo": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "repo_name": "gradio",
+    "fix_commit": "16fbe9cd0cffa9f2a824a0165beb43446114eec7",
+    "fix_commit_url": "https://github.com/gradio-app/gradio/commit/16fbe9cd0cffa9f2a824a0165beb43446114eec7",
+    "package": "gradio",
+    "published": "2024-09-25",
+    "multi_commit_confirmed": true,
+    "distinct_blame_commits": 18,
+    "blame_commits": [
+      "0fddd0f971761bff3ef6ccc7ab9deb1891cd80d0",
+      "32b317f24e3d43f26684bb9f3964f31efd0ea556",
+      "3e4e680a52ba5a73c108ef1b328dacd7b6e4b566",
+      "49d9c48537aa706bf72628e3640389470138bdc6",
+      "4ab399f40a300f267231f1b2dbe2a07494322d4d",
+      "4faf8a7e86bfe811ef3d90ac5abdbd41409fafb1",
+      "7302a6e151dac553c17833be64d4639ee4cf97aa",
+      "87d510580e7061c00848b70613c74838d9c71de7",
+      "b25e95e164e80d66203ef71ce6bdb67ceb6b24df",
+      "b5c74ffadbee351b2d5d79e578246f5343255508",
+      "ba747adb87e1937c0a791186eee3997d034363e6",
+      "c88290d90a81811911361e26fa9523c9b13db527",
+      "d901b7c80717ce38066c9d2b66c9a3e3a9734a2f",
+      "ddd4d3e4d3883fb7540d1df240fb08202fc77705",
+      "e329f1fd38935213fe0e73962e8cbd5d3af6e87b",
+      "edfd05d18d20542d350d883d5e7f84d2774ad99e",
+      "fa8225d24d86c0ec9a48cadee78dcc11b7084584",
+      "fb1f6befad12106faafd94d221c1ed0e50b0a037"
+    ],
+    "py_files_changed": 4,
+    "py_files": [
+      "gradio/blocks.py",
+      "gradio/processing_utils.py",
+      "gradio/routes.py",
+      "gradio/utils.py"
+    ]
+  },
+  {
+    "cve_id": "CVE-2024-0520",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-22",
+      "CWE-23"
+    ],
+    "summary": "Remote code execution in mlflow",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "400c226953b4568f4361bc0a0c223511652c2b9d",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/400c226953b4568f4361bc0a0c223511652c2b9d",
+    "package": "mlflow",
+    "published": "2024-06-06",
+    "multi_commit_confirmed": true,
+    "distinct_blame_commits": 2,
+    "blame_commits": [
+      "770d84ca182b98fdb9ce865587229dc31afa9abf",
+      "b77667898c9f1a137a5987cc0936555f2139ade5"
+    ],
+    "py_files_changed": 2,
+    "py_files": [
+      "mlflow/data/http_dataset_source.py",
+      "tests/data/test_http_dataset_source.py"
+    ]
+  },
+  {
+    "cve_id": "CVE-2024-36039",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-89"
+    ],
+    "summary": "PyMySQL SQL Injection vulnerability",
+    "repo": "https://github.com/PyMySQL/PyMySQL",
+    "owner": "PyMySQL",
+    "repo_name": "PyMySQL",
+    "fix_commit": "521e40050cb386a499f68f483fefd144c493053c",
+    "fix_commit_url": "https://github.com/PyMySQL/PyMySQL/commit/521e40050cb386a499f68f483fefd144c493053c",
+    "package": "pymysql",
+    "published": "2024-05-21",
+    "multi_commit_confirmed": true,
+    "distinct_blame_commits": 9,
+    "blame_commits": [
+      "062384c26d10556529af91d0f0946e302b727d18",
+      "103004d6ed59d8eef95fe069e8ca4f60d4965be3",
+      "2fe0b1293d1a24140f6d35f5ff37d7b5a46a28e1",
+      "69290924144f961167c257ae33959c46e298efd2",
+      "d206182822d61650eed8ccd167171ea6131113d1",
+      "e77b21898ab46887067df981eaa19809533ec4bf",
+      "ed56379dcc165f8810c8678c56bff7bb544a710f",
+      "f0091e09889a3db2400f821bee6a411fa1822a44",
+      "f24cb9aa7295921bcd8f34f752c8a05b981d3125"
+    ],
+    "py_files_changed": 2,
+    "py_files": [
+      "pymysql/converters.py",
+      "pymysql/tests/test_connection.py"
+    ]
+  },
+  {
+    "cve_id": "CVE-2024-3573",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-29"
+    ],
+    "summary": "mlflow vulnerable to Path Traversal",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "438a450714a3ca06285eeea34bdc6cf79d7f6cbc",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/438a450714a3ca06285eeea34bdc6cf79d7f6cbc",
+    "package": "mlflow",
+    "published": "2024-04-16",
+    "multi_commit_confirmed": true,
+    "distinct_blame_commits": 6,
+    "blame_commits": [
+      "119eef6a0a8008eeb5820f41a5b7afcb92f2d118",
+      "1da75dfcecd4d169e34809ade55748384e8af6c1",
+      "4bd7f27c810ba7487d53ed5ef1038fca0f8dc28c",
+      "5044878da0c1851ccfdd5c0a867157ed9a502fbc",
+      "8174250f83352a04c2d42079f414759060458555",
+      "b4b0b8aa34866071bcf128e108445c4743920e1b"
+    ],
+    "py_files_changed": 9,
+    "py_files": [
+      "mlflow/environment_variables.py",
+      "mlflow/server/handlers.py",
+      "mlflow/utils/uri.py",
+      "tests/artifacts/test_artifacts.py",
+      "tests/store/tracking/test_file_store.py"
+    ]
+  },
+  {
+    "cve_id": "CVE-2024-2912",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-1188"
+    ],
+    "summary": "Insecure deserialization in BentoML",
+    "repo": "https://github.com/bentoml/bentoml",
+    "owner": "bentoml",
+    "repo_name": "bentoml",
+    "fix_commit": "fd70379733c57c6368cc022ac1f841b7b426db7b",
+    "fix_commit_url": "https://github.com/bentoml/bentoml/commit/fd70379733c57c6368cc022ac1f841b7b426db7b",
+    "package": "bentoml",
+    "published": "2024-04-16",
+    "multi_commit_confirmed": true,
+    "distinct_blame_commits": 18,
+    "blame_commits": [
+      "0a158caf48f9b80f6d292450e62d827d84f87ac2",
+      "2cc2c546730f31e71ee84afb545da4cccba13d78",
+      "2ea0ddee02264a4501d289c8b2d82af41e877a0a",
+      "30f05efd9428468210388d09cb86893088bfa12e",
+      "342e5f65f8df529ec395398b44451486e87cb800",
+      "51ca3b2d873200848f66daaf1db41997bcfc1dee",
+      "6ad31058d3b9e596eae97efbc9acca05641ebe18",
+      "6c2ac389799b6f18ec529904139a09af5d0349f6",
+      "7a0e9b352f2213bb555e9f175a039f5df44e1ebd",
+      "808c1ea4c183baa7c3f00d7c54e89dd44b54a2cf",
+      "821ad9a7bf87286eb26c08dea213198b06b59572",
+      "8ef882ae20bbb240762824245b4c2fdad62116a7",
+      "abd8e09ca9816c27db0846cd68530c370ef17841",
+      "b346b6cfed5bd5c3f883f739362ff8214ad8ba78",
+      "d86e5236c6fc896939af06ec9b995f273c27b7d5",
+      "da08bfabb0805f01079f8bd176e22b3658a780eb",
+      "e9e40b5d2b524cf30554ad84b541b87147bd197b",
+      "f0d1676ce1940929408a3b600049dfad7742ab60"
+    ],
+    "py_files_changed": 6,
+    "py_files": [
+      "src/_bentoml_impl/client/__init__.py",
+      "src/_bentoml_impl/client/http.py",
+      "src/_bentoml_impl/loader.py",
+      "src/_bentoml_impl/server/app.py",
+      "src/_bentoml_impl/server/serving.py"
+    ]
+  },
+  {
+    "cve_id": "CVE-2024-27133",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-79"
+    ],
+    "summary": "MLFlow Cross-site Scripting vulnerability leads to client-side Remote Code Execution",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "c43823750bffa5b6abcc086683b15a068513b67b",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/c43823750bffa5b6abcc086683b15a068513b67b",
+    "package": "mlflow",
+    "published": "2024-02-24",
+    "multi_commit_confirmed": true,
+    "distinct_blame_commits": 2,
+    "blame_commits": [
+      "4ae428205821795da7364af951a7b27e21e2022f",
+      "c9529165931ea58599cbe1ff8cedbd06100804d4"
+    ],
+    "py_files_changed": 2,
+    "py_files": [
+      "mlflow/recipes/cards/__init__.py",
+      "mlflow/recipes/steps/ingest/__init__.py"
+    ]
+  },
+  {
+    "cve_id": "CVE-2023-50447",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-94",
+      "CWE-95"
+    ],
+    "summary": "Arbitrary Code Execution in Pillow",
+    "repo": "https://github.com/python-pillow/Pillow",
+    "owner": "python-pillow",
+    "repo_name": "Pillow",
+    "fix_commit": "45c726fd4daa63236a8f3653530f297dc87b160a",
+    "fix_commit_url": "https://github.com/python-pillow/Pillow/commit/45c726fd4daa63236a8f3653530f297dc87b160a",
+    "package": "pillow",
+    "published": "2024-01-19",
+    "multi_commit_confirmed": true,
+    "distinct_blame_commits": 6,
+    "blame_commits": [
+      "15930be644d97dd5d1c133b50c92d5ae411306f6",
+      "2ae55ccbdad9c842929fb238ea1eb81d1f999024",
+      "3652f431c2d8b9c10bf20b70f284d300d12e814a",
+      "368c05c9dc6f12528df2bbe254f2b6677c61b47f",
+      "43b2f61e7953a4d2586aa0d6ba84426698fc9179",
+      "f452f9a3f3a90f8b44df973f3144d1b7d3b0c41f"
+    ],
+    "py_files_changed": 1,
+    "py_files": [
+      "src/PIL/ImageMath.py"
+    ]
+  },
+  {
+    "cve_id": "CVE-2023-6831",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-22",
+      "CWE-29"
+    ],
+    "summary": "Path traversal in MLflow",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "1da75dfcecd4d169e34809ade55748384e8af6c1",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/1da75dfcecd4d169e34809ade55748384e8af6c1",
+    "package": "mlflow",
+    "published": "2023-12-15",
+    "multi_commit_confirmed": true,
+    "distinct_blame_commits": 7,
+    "blame_commits": [
+      "28ff3f94994941e038f2172c6484b65dc4db6ca1",
+      "2ef3a13824a11c49bb8feb23dce9ab5a6d85866a",
+      "369fde468e4231eda4e7fb8e91a74d673226e497",
+      "439a0508f5f8bf73e19fe70d25bf5c5bd0baeec7",
+      "4bd7f27c810ba7487d53ed5ef1038fca0f8dc28c",
+      "55c72d02380e8db8118595a4fdae7879cb7ac5bd",
+      "d0062b2dbac7e4eb5013040c31ce1202dfb71865"
+    ],
+    "py_files_changed": 5,
+    "py_files": [
+      "mlflow/utils/uri.py",
+      "tests/server/test_handlers.py",
+      "tests/store/artifact/test_http_artifact_repo.py",
+      "tests/tracking/test_rest_tracking.py",
+      "tests/utils/test_uri.py"
+    ]
+  },
+  {
+    "cve_id": "CVE-2023-6974",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-918"
+    ],
+    "summary": "MLflow Server-Side Request Forgery (SSRF)",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "8174250f83352a04c2d42079f414759060458555",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/8174250f83352a04c2d42079f414759060458555",
+    "package": "mlflow",
+    "published": "2023-12-20",
+    "multi_commit_confirmed": true,
+    "distinct_blame_commits": 6,
+    "blame_commits": [
+      "119eef6a0a8008eeb5820f41a5b7afcb92f2d118",
+      "2ef3a13824a11c49bb8feb23dce9ab5a6d85866a",
+      "9ba8519f3ce2deeef106c7067c850a612307bba3",
+      "d0062b2dbac7e4eb5013040c31ce1202dfb71865",
+      "ddfeea619f48856f21ccbdaf280df9a1c1606061",
+      "fa6e32720a789e0d0885d7dc1b8bda2c9ff82de0"
+    ],
+    "py_files_changed": 7,
+    "py_files": [
+      "mlflow/environment_variables.py",
+      "mlflow/utils/request_utils.py",
+      "tests/projects/test_databricks.py",
+      "tests/store/artifact/test_databricks_artifact_repo.py",
+      "tests/store/tracking/test_rest_store.py"
+    ]
+  },
+  {
+    "cve_id": "CVE-2023-6018",
+    "ghsa_id": "",
+    "severity": "critical",
+    "cwe_ids": [
+      "CWE-78"
+    ],
+    "summary": "Remote Code Execution due to Full Controled File Write in mlflow",
+    "repo": "https://github.com/mlflow/mlflow",
+    "owner": "mlflow",
+    "repo_name": "mlflow",
+    "fix_commit": "55c72d02380e8db8118595a4fdae7879cb7ac5bd",
+    "fix_commit_url": "https://github.com/mlflow/mlflow/commit/55c72d02380e8db8118595a4fdae7879cb7ac5bd",
+    "package": "mlflow",
+    "published": "2023-11-16",
+    "multi_commit_confirmed": true,
+    "distinct_blame_commits": 5,
+    "blame_commits": [
+      "0f5bc14c16122cc46ae6d0eaf43dff0df392dfa7",
+      "28ff3f94994941e038f2172c6484b65dc4db6ca1",
+      "4b8bb73ea5e30e3df312ae4ce9d1d3825a6faf09",
+      "b68b435066295e02e6801b95433d1b40dbcee0e0",
+      "d0062b2dbac7e4eb5013040c31ce1202dfb71865"
+    ],
+    "py_files_changed": 4,
+    "py_files": [
+      "mlflow/server/handlers.py",
+      "mlflow/store/artifact/http_artifact_repo.py",
+      "mlflow/utils/uri.py",
+      "tests/store/artifact/test_http_artifact_repo.py"
+    ]
+  }
+]
